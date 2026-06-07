@@ -1,0 +1,15 @@
+python
+.vscode
+.env.development
+.env.production
+/datasets/
+.venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.log
+.DS_Store
+.env

@@ -1,0 +1,3741 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "clean_duplicates",
+        "importPath": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "description": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "clean_duplicates",
+        "importPath": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "description": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "clean_duplicates",
+        "importPath": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "description": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "clean_duplicates",
+        "importPath": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "description": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.clean_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "enforce_daily_continuity",
+        "importPath": "python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "description": "python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "enforce_daily_continuity",
+        "importPath": "python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "description": "python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "split_by_year",
+        "importPath": "python.TLO.PreprocessingPipeline.split_by_year",
+        "description": "python.TLO.PreprocessingPipeline.split_by_year",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.split_by_year",
+        "documentation": {}
+    },
+    {
+        "label": "split_by_year",
+        "importPath": "python.TLO.PreprocessingPipeline.split_by_year",
+        "description": "python.TLO.PreprocessingPipeline.split_by_year",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.split_by_year",
+        "documentation": {}
+    },
+    {
+        "label": "validate_continuity",
+        "importPath": "python.TLO.PreprocessingPipeline.validate_continuity",
+        "description": "python.TLO.PreprocessingPipeline.validate_continuity",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.validate_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "validate_continuity",
+        "importPath": "python.TLO.PreprocessingPipeline.validate_continuity",
+        "description": "python.TLO.PreprocessingPipeline.validate_continuity",
+        "isExtraImport": true,
+        "detail": "python.TLO.PreprocessingPipeline.validate_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "ReplacementEngine",
+        "importPath": "algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "description": "algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "isExtraImport": true,
+        "detail": "algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "documentation": {}
+    },
+    {
+        "label": "ReplacementEngine",
+        "importPath": "algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "description": "algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "isExtraImport": true,
+        "detail": "algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "documentation": {}
+    },
+    {
+        "label": "adfuller",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "adfuller",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "adfuller",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "adfuller",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "adfuller",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "kpss",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "adfuller",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "kpss",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "adfuller",
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "skew",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "kurtosis",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "zscore",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "linregress",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "skew",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "kurtosis",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "zscore",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "linregress",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetOverviewAnalyzer",
+        "importPath": "algorithm.report.analyzers.DatasetOverviewAnalyzer",
+        "description": "algorithm.report.analyzers.DatasetOverviewAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.DatasetOverviewAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DateCoverageAnalyzer",
+        "importPath": "algorithm.report.analyzers.DateCoverageAnalyzer",
+        "description": "algorithm.report.analyzers.DateCoverageAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.DateCoverageAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "FrequencyAnalysisAnalyzer",
+        "importPath": "algorithm.report.analyzers.FrequencyAnalysisAnalyzer",
+        "description": "algorithm.report.analyzers.FrequencyAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.FrequencyAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MissingValueAnalyzer",
+        "importPath": "algorithm.report.analyzers.MissingValueAnalyzer",
+        "description": "algorithm.report.analyzers.MissingValueAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.MissingValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateAnalyzer",
+        "importPath": "algorithm.report.analyzers.DuplicateAnalyzer",
+        "description": "algorithm.report.analyzers.DuplicateAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.DuplicateAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StatisticalSummaryAnalyzer",
+        "importPath": "algorithm.report.analyzers.StatisticalSummaryAnalyzer",
+        "description": "algorithm.report.analyzers.StatisticalSummaryAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.StatisticalSummaryAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DistributionAnalysisAnalyzer",
+        "importPath": "algorithm.report.analyzers.DistributionAnalysisAnalyzer",
+        "description": "algorithm.report.analyzers.DistributionAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.DistributionAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "OutlierAnalysisAnalyzer",
+        "importPath": "algorithm.report.analyzers.OutlierAnalysisAnalyzer",
+        "description": "algorithm.report.analyzers.OutlierAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.OutlierAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "TrendAnalysisAnalyzer",
+        "importPath": "algorithm.report.analyzers.TrendAnalysisAnalyzer",
+        "description": "algorithm.report.analyzers.TrendAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.TrendAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "SeasonalityAnalysisAnalyzer",
+        "importPath": "algorithm.report.analyzers.SeasonalityAnalysisAnalyzer",
+        "description": "algorithm.report.analyzers.SeasonalityAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.SeasonalityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "AnnualBreakdownAnalyzer",
+        "importPath": "algorithm.report.analyzers.AnnualBreakdownAnalyzer",
+        "description": "algorithm.report.analyzers.AnnualBreakdownAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.AnnualBreakdownAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StationarityAnalysisAnalyzer",
+        "importPath": "algorithm.report.analyzers.StationarityAnalysisAnalyzer",
+        "description": "algorithm.report.analyzers.StationarityAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.StationarityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "ForecastingReadinessAnalyzer",
+        "importPath": "algorithm.report.analyzers.ForecastingReadinessAnalyzer",
+        "description": "algorithm.report.analyzers.ForecastingReadinessAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.ForecastingReadinessAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "EnergyValueAnalyzer",
+        "importPath": "algorithm.report.analyzers.EnergyValueAnalyzer",
+        "description": "algorithm.report.analyzers.EnergyValueAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.EnergyValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DifferencingAnalysisAnalyzer",
+        "importPath": "algorithm.report.analyzers.DifferencingAnalysisAnalyzer",
+        "description": "algorithm.report.analyzers.DifferencingAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.analyzers.DifferencingAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MetadataReport",
+        "importPath": "algorithm.report.MetadataReport",
+        "description": "algorithm.report.MetadataReport",
+        "isExtraImport": true,
+        "detail": "algorithm.report.MetadataReport",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "IsAdminUser",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "default_storage",
+        "importPath": "django.core.files.storage",
+        "description": "django.core.files.storage",
+        "isExtraImport": true,
+        "detail": "django.core.files.storage",
+        "documentation": {}
+    },
+    {
+        "label": "default_storage",
+        "importPath": "django.core.files.storage",
+        "description": "django.core.files.storage",
+        "isExtraImport": true,
+        "detail": "django.core.files.storage",
+        "documentation": {}
+    },
+    {
+        "label": "default_storage",
+        "importPath": "django.core.files.storage",
+        "description": "django.core.files.storage",
+        "isExtraImport": true,
+        "detail": "django.core.files.storage",
+        "documentation": {}
+    },
+    {
+        "label": "TimeSeriesQualityAnalyzer",
+        "importPath": "algorithm.report.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "description": "algorithm.report.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "isExtraImport": true,
+        "detail": "algorithm.report.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "utils.data_loader",
+        "description": "utils.data_loader",
+        "isExtraImport": true,
+        "detail": "utils.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "utils.data_loader",
+        "description": "utils.data_loader",
+        "isExtraImport": true,
+        "detail": "utils.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "utils.data_loader",
+        "description": "utils.data_loader",
+        "isExtraImport": true,
+        "detail": "utils.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "ContentFile",
+        "importPath": "django.core.files.base",
+        "description": "django.core.files.base",
+        "isExtraImport": true,
+        "detail": "django.core.files.base",
+        "documentation": {}
+    },
+    {
+        "label": "ContentFile",
+        "importPath": "django.core.files.base",
+        "description": "django.core.files.base",
+        "isExtraImport": true,
+        "detail": "django.core.files.base",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "apps.datasets.models",
+        "description": "apps.datasets.models",
+        "isExtraImport": true,
+        "detail": "apps.datasets.models",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "apps.datasets.models",
+        "description": "apps.datasets.models",
+        "isExtraImport": true,
+        "detail": "apps.datasets.models",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "apps.datasets.models",
+        "description": "apps.datasets.models",
+        "isExtraImport": true,
+        "detail": "apps.datasets.models",
+        "documentation": {}
+    },
+    {
+        "label": "clean_duplicates",
+        "importPath": "algorithm.preprocess.dataClearning.clean_duplicates",
+        "description": "algorithm.preprocess.dataClearning.clean_duplicates",
+        "isExtraImport": true,
+        "detail": "algorithm.preprocess.dataClearning.clean_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "enforce_daily_continuity",
+        "importPath": "algorithm.preprocess.dataClearning.enforce_daily_continuity",
+        "description": "algorithm.preprocess.dataClearning.enforce_daily_continuity",
+        "isExtraImport": true,
+        "detail": "algorithm.preprocess.dataClearning.enforce_daily_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "fill_missing_values",
+        "importPath": "algorithm.preprocess.dataClearning.fill_missing_values",
+        "description": "algorithm.preprocess.dataClearning.fill_missing_values",
+        "isExtraImport": true,
+        "detail": "algorithm.preprocess.dataClearning.fill_missing_values",
+        "documentation": {}
+    },
+    {
+        "label": "IQRCleaner",
+        "importPath": "algorithm.preprocess.outlierProcessing.IQRCleaner",
+        "description": "algorithm.preprocess.outlierProcessing.IQRCleaner",
+        "isExtraImport": true,
+        "detail": "algorithm.preprocess.outlierProcessing.IQRCleaner",
+        "documentation": {}
+    },
+    {
+        "label": "ZScoreCleaner",
+        "importPath": "algorithm.preprocess.outlierProcessing.ZScoreCleaner",
+        "description": "algorithm.preprocess.outlierProcessing.ZScoreCleaner",
+        "isExtraImport": true,
+        "detail": "algorithm.preprocess.outlierProcessing.ZScoreCleaner",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "data_loader",
+        "description": "data_loader",
+        "isExtraImport": true,
+        "detail": "data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "data_loader",
+        "description": "data_loader",
+        "isExtraImport": true,
+        "detail": "data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "data_loader",
+        "description": "data_loader",
+        "isExtraImport": true,
+        "detail": "data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "data_loader",
+        "description": "data_loader",
+        "isExtraImport": true,
+        "detail": "data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "DataMetaExtractor",
+        "importPath": "data_meta_extractor",
+        "description": "data_meta_extractor",
+        "isExtraImport": true,
+        "detail": "data_meta_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "generate_filename",
+        "importPath": "filename_generator",
+        "description": "filename_generator",
+        "isExtraImport": true,
+        "detail": "filename_generator",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateDateHandler",
+        "importPath": "duplicate_handler",
+        "description": "duplicate_handler",
+        "isExtraImport": true,
+        "detail": "duplicate_handler",
+        "documentation": {}
+    },
+    {
+        "label": "DataValidator",
+        "importPath": "data_validator",
+        "description": "data_validator",
+        "isExtraImport": true,
+        "detail": "data_validator",
+        "documentation": {}
+    },
+    {
+        "label": "YearProfile",
+        "importPath": "year_profile",
+        "description": "year_profile",
+        "isExtraImport": true,
+        "detail": "year_profile",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAOptimizer",
+        "importPath": "SARIMAOptimizer",
+        "description": "SARIMAOptimizer",
+        "isExtraImport": true,
+        "detail": "SARIMAOptimizer",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMATrainer",
+        "importPath": "SARIMATrainer",
+        "description": "SARIMATrainer",
+        "isExtraImport": true,
+        "detail": "SARIMATrainer",
+        "documentation": {}
+    },
+    {
+        "label": "itertools",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "itertools",
+        "description": "itertools",
+        "detail": "itertools",
+        "documentation": {}
+    },
+    {
+        "label": "warnings",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "warnings",
+        "description": "warnings",
+        "detail": "warnings",
+        "documentation": {}
+    },
+    {
+        "label": "ConvergenceWarning",
+        "importPath": "statsmodels.tools.sm_exceptions",
+        "description": "statsmodels.tools.sm_exceptions",
+        "isExtraImport": true,
+        "detail": "statsmodels.tools.sm_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ConvergenceWarning",
+        "importPath": "statsmodels.tools.sm_exceptions",
+        "description": "statsmodels.tools.sm_exceptions",
+        "isExtraImport": true,
+        "detail": "statsmodels.tools.sm_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAX",
+        "importPath": "statsmodels.tsa.statespace.sarimax",
+        "description": "statsmodels.tsa.statespace.sarimax",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.statespace.sarimax",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAX",
+        "importPath": "statsmodels.tsa.statespace.sarimax",
+        "description": "statsmodels.tsa.statespace.sarimax",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.statespace.sarimax",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAX",
+        "importPath": "statsmodels.tsa.statespace.sarimax",
+        "description": "statsmodels.tsa.statespace.sarimax",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.statespace.sarimax",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAX",
+        "importPath": "statsmodels.tsa.statespace.sarimax",
+        "description": "statsmodels.tsa.statespace.sarimax",
+        "isExtraImport": true,
+        "detail": "statsmodels.tsa.statespace.sarimax",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetOverviewAnalyzer",
+        "importPath": "analyzers.DatasetOverviewAnalyzer",
+        "description": "analyzers.DatasetOverviewAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.DatasetOverviewAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DateCoverageAnalyzer",
+        "importPath": "analyzers.DateCoverageAnalyzer",
+        "description": "analyzers.DateCoverageAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.DateCoverageAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "FrequencyAnalysisAnalyzer",
+        "importPath": "analyzers.FrequencyAnalysisAnalyzer",
+        "description": "analyzers.FrequencyAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.FrequencyAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MissingValueAnalyzer",
+        "importPath": "analyzers.MissingValueAnalyzer",
+        "description": "analyzers.MissingValueAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.MissingValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateAnalyzer",
+        "importPath": "analyzers.DuplicateAnalyzer",
+        "description": "analyzers.DuplicateAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.DuplicateAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StatisticalSummaryAnalyzer",
+        "importPath": "analyzers.StatisticalSummaryAnalyzer",
+        "description": "analyzers.StatisticalSummaryAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.StatisticalSummaryAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DistributionAnalysisAnalyzer",
+        "importPath": "analyzers.DistributionAnalysisAnalyzer",
+        "description": "analyzers.DistributionAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.DistributionAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "OutlierAnalysisAnalyzer",
+        "importPath": "analyzers.OutlierAnalysisAnalyzer",
+        "description": "analyzers.OutlierAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.OutlierAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "TrendAnalysisAnalyzer",
+        "importPath": "analyzers.TrendAnalysisAnalyzer",
+        "description": "analyzers.TrendAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.TrendAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "SeasonalityAnalysisAnalyzer",
+        "importPath": "analyzers.SeasonalityAnalysisAnalyzer",
+        "description": "analyzers.SeasonalityAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.SeasonalityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "AnnualBreakdownAnalyzer",
+        "importPath": "analyzers.AnnualBreakdownAnalyzer",
+        "description": "analyzers.AnnualBreakdownAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.AnnualBreakdownAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StationarityAnalysisAnalyzer",
+        "importPath": "analyzers.StationarityAnalysisAnalyzer",
+        "description": "analyzers.StationarityAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.StationarityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "ForecastingReadinessAnalyzer",
+        "importPath": "analyzers.ForecastingReadinessAnalyzer",
+        "description": "analyzers.ForecastingReadinessAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.ForecastingReadinessAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "EnergyValueAnalyzer",
+        "importPath": "analyzers.EnergyValueAnalyzer",
+        "description": "analyzers.EnergyValueAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.EnergyValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DifferencingAnalysisAnalyzer",
+        "importPath": "analyzers.DifferencingAnalysisAnalyzer",
+        "description": "analyzers.DifferencingAnalysisAnalyzer",
+        "isExtraImport": true,
+        "detail": "analyzers.DifferencingAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MetadataReport",
+        "importPath": "MetadataReport",
+        "description": "MetadataReport",
+        "isExtraImport": true,
+        "detail": "MetadataReport",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "TimeSeriesQualityAnalyzer",
+        "importPath": "TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "description": "TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "isExtraImport": true,
+        "detail": "TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "_Known",
+        "kind": 6,
+        "importPath": "implementation.client.node_modules.flatted.python.flatted",
+        "description": "implementation.client.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _Known:\n    def __init__(self):\n        self.key = []\n        self.value = []\nclass _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i",
+        "detail": "implementation.client.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "_String",
+        "kind": 6,
+        "importPath": "implementation.client.node_modules.flatted.python.flatted",
+        "description": "implementation.client.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i\ndef _object_keys(value):\n    for key in value:\n        yield key\ndef _is_array(value):",
+        "detail": "implementation.client.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "parse",
+        "kind": 2,
+        "importPath": "implementation.client.node_modules.flatted.python.flatted",
+        "description": "implementation.client.node_modules.flatted.python.flatted",
+        "peekOfCode": "def parse(value, *args, **kwargs):\n    json = _json.loads(value, *args, **kwargs)\n    wrapped = []\n    for value in json:\n        wrapped.append(_wrap(value))\n    input = []\n    for value in wrapped:\n        if isinstance(value, _String):\n            input.append(value.value)\n        else:",
+        "detail": "implementation.client.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "stringify",
+        "kind": 2,
+        "importPath": "implementation.client.node_modules.flatted.python.flatted",
+        "description": "implementation.client.node_modules.flatted.python.flatted",
+        "peekOfCode": "def stringify(value, *args, **kwargs):\n    known = _Known()\n    input = []\n    output = []\n    i = int(_index(known, input, value))\n    while i < len(input):\n        output.append(_transform(known, input, input[i]))\n        i += 1\n    return _json.dumps(output, *args, **kwargs)",
+        "detail": "implementation.client.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "cmd_doc",
+        "kind": 5,
+        "importPath": "implementation.server..venv.Scripts.runxlrd",
+        "description": "implementation.server..venv.Scripts.runxlrd",
+        "peekOfCode": "cmd_doc = \"\"\"\nCommands:\n2rows           Print the contents of first and last row in each sheet\n3rows           Print the contents of first, second and last row in each sheet\nbench           Same as \"show\", but doesn't print -- for profiling\nbiff_count[1]   Print a count of each type of BIFF record in the file\nbiff_dump[1]    Print a dump (char and hex) of the BIFF records in the file\nfonts           hdr + print a dump of all font objects\nhdr             Mini-overview of file (no per-sheet information)\nhotshot         Do a hotshot profile run e.g. ... -f1 hotshot bench bigfile*.xls",
+        "detail": "implementation.server..venv.Scripts.runxlrd",
+        "documentation": {}
+    },
+    {
+        "label": "options",
+        "kind": 5,
+        "importPath": "implementation.server..venv.Scripts.runxlrd",
+        "description": "implementation.server..venv.Scripts.runxlrd",
+        "peekOfCode": "options = None\nif __name__ == \"__main__\":\n    import xlrd\n    import sys\n    import time\n    import glob\n    import traceback\n    import gc\n    from xlrd.timemachine import xrange, REPR\n    class LogHandler(object):",
+        "detail": "implementation.server..venv.Scripts.runxlrd",
+        "documentation": {}
+    },
+    {
+        "label": "clean_duplicates",
+        "kind": 2,
+        "importPath": "implementation.server.algorithm.preprocess.dataClearning.clean_duplicates",
+        "description": "implementation.server.algorithm.preprocess.dataClearning.clean_duplicates",
+        "peekOfCode": "def clean_duplicates(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Removes duplicate rows based on 'Date' column.\n    Keeps the last occurrence of each Date.\n    Parameters:\n        df (pd.DataFrame): Input dataframe with 'Date' column.\n    Returns:\n        pd.DataFrame: Deduplicated dataframe.\n    \"\"\"\n    # Ensure Date is treated consistently (important for silent duplicate formats)",
+        "detail": "implementation.server.algorithm.preprocess.dataClearning.clean_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "enforce_daily_continuity",
+        "kind": 2,
+        "importPath": "implementation.server.algorithm.preprocess.dataClearning.enforce_daily_continuity",
+        "description": "implementation.server.algorithm.preprocess.dataClearning.enforce_daily_continuity",
+        "peekOfCode": "def enforce_daily_continuity(df: pd.DataFrame) -> pd.DataFrame:\n    df = df.copy()\n    df[\"Date\"] = pd.to_datetime(df[\"Date\"]).dt.normalize()\n    df = df.drop_duplicates(subset=\"Date\", keep=\"last\")\n    # Extract year range\n    start_year = df[\"Date\"].dt.year.min()\n    end_year = df[\"Date\"].dt.year.max()\n    # Force full calendar expansion across years\n    full_range = pd.date_range(\n        start=f\"{start_year}-01-01\", end=f\"{end_year}-12-31\", freq=\"D\"",
+        "detail": "implementation.server.algorithm.preprocess.dataClearning.enforce_daily_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "fill_missing_values",
+        "kind": 2,
+        "importPath": "implementation.server.algorithm.preprocess.dataClearning.fill_missing_values",
+        "description": "implementation.server.algorithm.preprocess.dataClearning.fill_missing_values",
+        "peekOfCode": "def fill_missing_values(df: pd.DataFrame) -> pd.DataFrame:\n    df = df.copy()\n    df[\"Date\"] = pd.to_datetime(df[\"Date\"])\n    df = df.sort_values(\"Date\")\n    # 1. local smoothing\n    df[\"Daily_kWh\"] = df[\"Daily_kWh\"].fillna(\n        df[\"Daily_kWh\"].rolling(7, min_periods=1).mean()\n    )\n    # 2. weekday correction (structure pattern)\n    df[\"weekday\"] = df[\"Date\"].dt.dayofweek",
+        "detail": "implementation.server.algorithm.preprocess.dataClearning.fill_missing_values",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_pipeline",
+        "kind": 2,
+        "importPath": "implementation.server.algorithm.preprocess.dataClearning.preprocess_pipeline",
+        "description": "implementation.server.algorithm.preprocess.dataClearning.preprocess_pipeline",
+        "peekOfCode": "def preprocess_pipeline(df):\n    # Step 1: clean duplicates\n    df = clean_duplicates(df)\n    # Step 2: enforce continuous timeline\n    df = enforce_daily_continuity(df)\n    # Step 3: inspect yearly splits (optional)\n    yearly = split_by_year(df)\n    # Step 4: validate structure\n    validate_continuity(df)\n    # Step 5: fill missing values",
+        "detail": "implementation.server.algorithm.preprocess.dataClearning.preprocess_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "QualityDeltaAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.preprocess.dataClearning.QualityDeltaAnalyzer",
+        "description": "implementation.server.algorithm.preprocess.dataClearning.QualityDeltaAnalyzer",
+        "peekOfCode": "class QualityDeltaAnalyzer:\n    @staticmethod\n    def compare(raw_report, clean_report):\n        return {\n            \"missing_reduction\": raw_report.missing_values.total_missing\n            - clean_report.missing_values.total_missing,\n            \"duplicate_reduction\": raw_report.duplicates.duplicate_count\n            - clean_report.duplicates.duplicate_count,\n            \"iqr_change\": clean_report.iqr.outlier_count,\n        }",
+        "detail": "implementation.server.algorithm.preprocess.dataClearning.QualityDeltaAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "split_by_year",
+        "kind": 2,
+        "importPath": "implementation.server.algorithm.preprocess.dataClearning.split_by_year",
+        "description": "implementation.server.algorithm.preprocess.dataClearning.split_by_year",
+        "peekOfCode": "def split_by_year(df):\n    df[\"Year\"] = df[\"Date\"].dt.year\n    return {year: group.copy() for year, group in df.groupby(\"Year\")}",
+        "detail": "implementation.server.algorithm.preprocess.dataClearning.split_by_year",
+        "documentation": {}
+    },
+    {
+        "label": "validate_continuity",
+        "kind": 2,
+        "importPath": "implementation.server.algorithm.preprocess.dataClearning.validate_continuity",
+        "description": "implementation.server.algorithm.preprocess.dataClearning.validate_continuity",
+        "peekOfCode": "def validate_continuity(df):\n    expected_days = (df.index.max() - df.index.min()).days + 1\n    actual_days = len(df)\n    print(\"Expected days:\", expected_days)\n    print(\"Actual days:\", actual_days)\n    print(\"Missing entries:\", df[\"Daily_kWh\"].isna().sum())",
+        "detail": "implementation.server.algorithm.preprocess.dataClearning.validate_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "IQRCleaner",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.preprocess.outlierProcessing.IQRCleaner",
+        "description": "implementation.server.algorithm.preprocess.outlierProcessing.IQRCleaner",
+        "peekOfCode": "class IQRCleaner:\n    @staticmethod\n    def clean(series: pd.Series, strategy: str = \"local_median\", window: int = 3):\n        cleaned = series.copy()\n        q1 = cleaned.quantile(0.25)\n        q3 = cleaned.quantile(0.75)\n        iqr = q3 - q1\n        lower_bound = max(0, q1 - 1.5 * iqr)\n        upper_bound = q3 + 1.5 * iqr\n        outliers = (cleaned < 0) | (cleaned > upper_bound)",
+        "detail": "implementation.server.algorithm.preprocess.outlierProcessing.IQRCleaner",
+        "documentation": {}
+    },
+    {
+        "label": "ReplacementEngine",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "description": "implementation.server.algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "peekOfCode": "class ReplacementEngine:\n    \"\"\"\n    Centralized replacement strategies for outlier correction.\n    Used by:\n    - IQR detection\n    - Z-score detection\n    - Any future anomaly detector\n    \"\"\"\n    @staticmethod\n    def local_median(",
+        "detail": "implementation.server.algorithm.preprocess.outlierProcessing.ReplacementEngine",
+        "documentation": {}
+    },
+    {
+        "label": "ZScoreCleaner",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.preprocess.outlierProcessing.ZScoreCleaner",
+        "description": "implementation.server.algorithm.preprocess.outlierProcessing.ZScoreCleaner",
+        "peekOfCode": "class ZScoreCleaner:\n    @staticmethod\n    def clean(\n        series: pd.Series,\n        threshold: float = 3.0,\n        strategy: str = \"local_median\",\n        window: int = 3,\n    ):\n        cleaned = series.copy()\n        mean = cleaned.mean()",
+        "detail": "implementation.server.algorithm.preprocess.outlierProcessing.ZScoreCleaner",
+        "documentation": {}
+    },
+    {
+        "label": "AnnualBreakdownAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.AnnualBreakdownAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.AnnualBreakdownAnalyzer",
+        "peekOfCode": "class AnnualBreakdownAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col, value_col):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        df[\"year\"] = df[datetime_col].dt.year\n        grouped = df.groupby(\"year\")[value_col]\n        result = {}\n        for year, series in grouped:\n            result[int(year)] = {",
+        "detail": "implementation.server.algorithm.report.analyzers.AnnualBreakdownAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetOverviewAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.DatasetOverviewAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.DatasetOverviewAnalyzer",
+        "peekOfCode": "class DatasetOverviewAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\"):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        start_date = df[datetime_col].min()\n        end_date = df[datetime_col].max()\n        duration_days = (end_date - start_date).days + 1\n        duration_years = round(duration_days / 365.25, 2)\n        return {",
+        "detail": "implementation.server.algorithm.report.analyzers.DatasetOverviewAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DateCoverageAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.DateCoverageAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.DateCoverageAnalyzer",
+        "peekOfCode": "class DateCoverageAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\", minimum_expected_records=365):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        start_date = df[datetime_col].min()\n        end_date = df[datetime_col].max()\n        expected_records = len(pd.date_range(start=start_date, end=end_date, freq=\"D\"))\n        actual_records = len(df)\n        missing_records = expected_records - actual_records",
+        "detail": "implementation.server.algorithm.report.analyzers.DateCoverageAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DifferencingAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.DifferencingAnalysisAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.DifferencingAnalysisAnalyzer",
+        "peekOfCode": "class DifferencingAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col=\"Daily_kWh\"):\n        series = df[value_col].dropna()\n        result = {}\n        # Original Series\n        adf = adfuller(series)\n        original_stationary = adf[1] < 0.05\n        result[\"original_series\"] = {\n            \"adf_statistic\": round(float(adf[0]), 6),",
+        "detail": "implementation.server.algorithm.report.analyzers.DifferencingAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DistributionAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.DistributionAnalysisAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.DistributionAnalysisAnalyzer",
+        "peekOfCode": "class DistributionAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        return {\n            \"skewness\": round(float(skew(series)), 4),\n            \"kurtosis\": round(float(kurtosis(series)), 4),\n            \"is_right_skewed\": skew(series) > 0,\n            \"is_left_skewed\": skew(series) < 0,\n        }",
+        "detail": "implementation.server.algorithm.report.analyzers.DistributionAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.DuplicateAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.DuplicateAnalyzer",
+        "peekOfCode": "class DuplicateAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\"):\n        duplicate_rows = int(df.duplicated().sum())\n        duplicate_dates = int(df[datetime_col].duplicated().sum())\n        duplicate_timestamps = (\n            df[df[datetime_col].duplicated()][datetime_col].astype(str).tolist()\n        )\n        return {\n            \"duplicate_rows\": duplicate_rows,",
+        "detail": "implementation.server.algorithm.report.analyzers.DuplicateAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "EnergyValueAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.EnergyValueAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.EnergyValueAnalyzer",
+        "peekOfCode": "class EnergyValueAnalyzer:\n    @staticmethod\n    def analyze(df, value_col=\"Daily_kWh\"):\n        negative_count = int((df[value_col] < 0).sum())\n        zero_count = int((df[value_col] == 0).sum())\n        return {\n            \"negative_values_count\": negative_count,\n            \"zero_values_count\": zero_count,\n            \"has_negative_values\": negative_count > 0,\n            \"has_zero_values\": zero_count > 0,",
+        "detail": "implementation.server.algorithm.report.analyzers.EnergyValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "ForecastingReadinessAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.ForecastingReadinessAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.ForecastingReadinessAnalyzer",
+        "peekOfCode": "class ForecastingReadinessAnalyzer:\n    @staticmethod\n    def analyze(\n        date_coverage,\n        frequency_analysis,\n        missing_values,\n        duplicates,\n        outlier_analysis,\n        stationarity_analysis,\n    ):",
+        "detail": "implementation.server.algorithm.report.analyzers.ForecastingReadinessAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "FrequencyAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.FrequencyAnalysisAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.FrequencyAnalysisAnalyzer",
+        "peekOfCode": "class FrequencyAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\"):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        df = df.sort_values(datetime_col)\n        full_range = pd.date_range(\n            start=df[datetime_col].min(), end=df[datetime_col].max(), freq=\"D\"\n        )\n        existing_dates = set(df[datetime_col])",
+        "detail": "implementation.server.algorithm.report.analyzers.FrequencyAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MissingValueAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.MissingValueAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.MissingValueAnalyzer",
+        "peekOfCode": "class MissingValueAnalyzer:\n    @staticmethod\n    def analyze(df):\n        total_cells = df.shape[0] * df.shape[1]\n        total_missing = int(df.isnull().sum().sum())\n        missing_percentage = (\n            round((total_missing / total_cells) * 100, 2) if total_cells else 0\n        )\n        affected_rows = int(df.isnull().any(axis=1).sum())\n        affected_row_percentage = (",
+        "detail": "implementation.server.algorithm.report.analyzers.MissingValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "OutlierAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.OutlierAnalysisAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.OutlierAnalysisAnalyzer",
+        "peekOfCode": "class OutlierAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        q1 = series.quantile(0.25)\n        q3 = series.quantile(0.75)\n        iqr = q3 - q1\n        lower_bound = q1 - (1.5 * iqr)\n        upper_bound = q3 + (1.5 * iqr)\n        iqr_outliers = series[(series < lower_bound) | (series > upper_bound)]",
+        "detail": "implementation.server.algorithm.report.analyzers.OutlierAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "SeasonalityAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.SeasonalityAnalysisAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.SeasonalityAnalysisAnalyzer",
+        "peekOfCode": "class SeasonalityAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col, value_col):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        df[\"month\"] = df[datetime_col].dt.month\n        monthly_avg = df.groupby(\"month\")[value_col].mean()\n        peak_month = int(monthly_avg.idxmax())\n        low_month = int(monthly_avg.idxmin())\n        variation = ((monthly_avg.max() - monthly_avg.min()) / monthly_avg.mean()) * 100",
+        "detail": "implementation.server.algorithm.report.analyzers.SeasonalityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StationarityAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.StationarityAnalysisAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.StationarityAnalysisAnalyzer",
+        "peekOfCode": "class StationarityAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        result = adfuller(series)\n        adf_stat = result[0]\n        p_value = result[1]\n        critical_values = result[4]\n        is_stationary = p_value < 0.05\n        return {",
+        "detail": "implementation.server.algorithm.report.analyzers.StationarityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StatisticalSummaryAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.StatisticalSummaryAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.StatisticalSummaryAnalyzer",
+        "peekOfCode": "class StatisticalSummaryAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        return {\n            \"count\": int(series.count()),\n            \"mean\": round(float(series.mean()), 4),\n            \"median\": round(float(series.median()), 4),\n            \"std\": round(float(series.std()), 4),\n            \"variance\": round(float(series.var()), 4),",
+        "detail": "implementation.server.algorithm.report.analyzers.StatisticalSummaryAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "TrendAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.analyzers.TrendAnalysisAnalyzer",
+        "description": "implementation.server.algorithm.report.analyzers.TrendAnalysisAnalyzer",
+        "peekOfCode": "class TrendAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col, value_col):\n        df = df.copy()\n        df[datetime_col] = __import__(\"pandas\").to_datetime(df[datetime_col])\n        df = df.sort_values(datetime_col)\n        # convert time into numeric index\n        x = np.arange(len(df))\n        y = df[value_col].values\n        slope, intercept, r_value, p_value, std_err = linregress(x, y)",
+        "detail": "implementation.server.algorithm.report.analyzers.TrendAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "TimeSeriesQualityAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "description": "implementation.server.algorithm.report.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "peekOfCode": "class TimeSeriesQualityAnalyzer:\n    @staticmethod\n    def extract(\n        df, datetime_col=\"Date\", value_col=\"Daily_kWh\", minimum_expected_records=365\n    ):\n        dataset_overview = DatasetOverviewAnalyzer.analyze(df, datetime_col)\n        date_coverage = DateCoverageAnalyzer.analyze(\n            df, datetime_col, minimum_expected_records\n        )\n        frequency_analysis = FrequencyAnalysisAnalyzer.analyze(df, datetime_col)",
+        "detail": "implementation.server.algorithm.report.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MetadataReport",
+        "kind": 6,
+        "importPath": "implementation.server.algorithm.report.MetadataReport",
+        "description": "implementation.server.algorithm.report.MetadataReport",
+        "peekOfCode": "class MetadataReport:\n    dataset_overview: dict\n    date_coverage: dict\n    frequency_analysis: dict\n    missing_values: dict\n    duplicates: dict\n    statistical_summary: dict\n    distribution_analysis: dict\n    energy_value_analysis: dict\n    outlier_analysis: dict",
+        "detail": "implementation.server.algorithm.report.MetadataReport",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "implementation.server.apps.accounts.migrations.0001_initial",
+        "description": "implementation.server.apps.accounts.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Account',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "implementation.server.apps.accounts.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "implementation.server.apps.accounts.migrations.0002_remove_account_company_remove_account_created_at_and_more",
+        "description": "implementation.server.apps.accounts.migrations.0002_remove_account_company_remove_account_created_at_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='account',\n            name='company',\n        ),\n        migrations.RemoveField(",
+        "detail": "implementation.server.apps.accounts.migrations.0002_remove_account_company_remove_account_created_at_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "implementation.server.apps.accounts.migrations.0003_auto_20260606_0740",
+        "description": "implementation.server.apps.accounts.migrations.0003_auto_20260606_0740",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"accounts\", \"0002_remove_account_company_remove_account_created_at_and_more\"),\n        (\"auth\", \"__latest__\"),\n    ]\n    operations = [\n        migrations.RunPython(create_default_admin),\n    ]",
+        "detail": "implementation.server.apps.accounts.migrations.0003_auto_20260606_0740",
+        "documentation": {}
+    },
+    {
+        "label": "create_default_admin",
+        "kind": 2,
+        "importPath": "implementation.server.apps.accounts.migrations.0003_auto_20260606_0740",
+        "description": "implementation.server.apps.accounts.migrations.0003_auto_20260606_0740",
+        "peekOfCode": "def create_default_admin(apps, schema_editor):\n    User = apps.get_model(\"auth\", \"User\")\n    Account = apps.get_model(\"accounts\", \"Account\")\n    if not User.objects.filter(email=\"admin@example.com\").exists():\n        user = User.objects.create_superuser(\n            email=\"admin@example.com\", password=\"admin123\"\n        )\n        Account.objects.create(user=user, role=\"superadmin\")\nclass Migration(migrations.Migration):\n    dependencies = [",
+        "detail": "implementation.server.apps.accounts.migrations.0003_auto_20260606_0740",
+        "documentation": {}
+    },
+    {
+        "label": "AccountsConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.accounts.apps",
+        "description": "implementation.server.apps.accounts.apps",
+        "peekOfCode": "class AccountsConfig(AppConfig):\n    name = \"apps.accounts\"",
+        "detail": "implementation.server.apps.accounts.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Account",
+        "kind": 6,
+        "importPath": "implementation.server.apps.accounts.models",
+        "description": "implementation.server.apps.accounts.models",
+        "peekOfCode": "class Account(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    role = models.CharField(max_length=50)\n    def __str__(self):\n        return self.user.email",
+        "detail": "implementation.server.apps.accounts.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.accounts.urls",
+        "description": "implementation.server.apps.accounts.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"login/\", LoginView.as_view()),\n    path(\"register/\", RegisterView.as_view()),\n    # path(\"profile/\", ProfileView.as_view()),\n]",
+        "detail": "implementation.server.apps.accounts.urls",
+        "documentation": {}
+    },
+    {
+        "label": "LoginView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.accounts.views",
+        "description": "implementation.server.apps.accounts.views",
+        "peekOfCode": "class LoginView(APIView):\n    def post(self, request):\n        email = request.data.get(\"email\")\n        password = request.data.get(\"password\")\n        user = authenticate(email=email, password=password)\n        print(user)\n        if user is None:\n            return Response(\n                {\"error\": \"Invalid credentials\"}, status=status.HTTP_401_UNAUTHORIZED\n            )",
+        "detail": "implementation.server.apps.accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.accounts.views",
+        "description": "implementation.server.apps.accounts.views",
+        "peekOfCode": "class RegisterView(APIView):\n    # permission_classes = [IsAdminUser]\n    # CREATE\n    def post(self, request):\n        data = request.data\n        print(data)\n        if Account.objects.filter(email=data.get(\"email\")).exists():\n            return Response({\"error\": \"User already exists\"}, status=400)\n        # account = Account.objects.create(\n        #     email=data.get(\"email\"),",
+        "detail": "implementation.server.apps.accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "AuditConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.audit.apps",
+        "description": "implementation.server.apps.audit.apps",
+        "peekOfCode": "class AuditConfig(AppConfig):\n    name = \"apps.audit\"",
+        "detail": "implementation.server.apps.audit.apps",
+        "documentation": {}
+    },
+    {
+        "label": "CoreConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.core.apps",
+        "description": "implementation.server.apps.core.apps",
+        "peekOfCode": "class CoreConfig(AppConfig):\n    name = \"apps.core\"",
+        "detail": "implementation.server.apps.core.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.core.urls",
+        "description": "implementation.server.apps.core.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"health/\", HealthView.as_view()),\n    path(\"status/\", StatusView.as_view()),\n]",
+        "detail": "implementation.server.apps.core.urls",
+        "documentation": {}
+    },
+    {
+        "label": "HealthView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.core.views",
+        "description": "implementation.server.apps.core.views",
+        "peekOfCode": "class HealthView(APIView):\n    def get(self, request):\n        return Response(request.data)\nclass StatusView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.core.views",
+        "documentation": {}
+    },
+    {
+        "label": "StatusView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.core.views",
+        "description": "implementation.server.apps.core.views",
+        "peekOfCode": "class StatusView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.core.views",
+        "documentation": {}
+    },
+    {
+        "label": "DashboardConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.dashboard.apps",
+        "description": "implementation.server.apps.dashboard.apps",
+        "peekOfCode": "class DashboardConfig(AppConfig):\n    name = \"apps.dashboard\"",
+        "detail": "implementation.server.apps.dashboard.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.dashboard.urls",
+        "description": "implementation.server.apps.dashboard.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"overview/\", OverviewView.as_view()),\n    path(\"analytics/\", AnalyticsView.as_view()),\n]",
+        "detail": "implementation.server.apps.dashboard.urls",
+        "documentation": {}
+    },
+    {
+        "label": "OverviewView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.dashboard.views",
+        "description": "implementation.server.apps.dashboard.views",
+        "peekOfCode": "class OverviewView(APIView):\n    def get(self, request):\n        return Response(request.data)\nclass AnalyticsView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.dashboard.views",
+        "documentation": {}
+    },
+    {
+        "label": "AnalyticsView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.dashboard.views",
+        "description": "implementation.server.apps.dashboard.views",
+        "peekOfCode": "class AnalyticsView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.dashboard.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "implementation.server.apps.datasets.migrations.0001_initial",
+        "description": "implementation.server.apps.datasets.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Dataset',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=255)),",
+        "detail": "implementation.server.apps.datasets.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "implementation.server.apps.datasets.migrations.0002_alter_dataset_options_remove_dataset_size_and_more",
+        "description": "implementation.server.apps.datasets.migrations.0002_alter_dataset_options_remove_dataset_size_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('datasets', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name='dataset',\n            options={'ordering': ['created_at']},\n        ),\n        migrations.RemoveField(",
+        "detail": "implementation.server.apps.datasets.migrations.0002_alter_dataset_options_remove_dataset_size_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetsConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.datasets.apps",
+        "description": "implementation.server.apps.datasets.apps",
+        "peekOfCode": "class DatasetsConfig(AppConfig):\n    name = \"apps.datasets\"",
+        "detail": "implementation.server.apps.datasets.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "kind": 6,
+        "importPath": "implementation.server.apps.datasets.models",
+        "description": "implementation.server.apps.datasets.models",
+        "peekOfCode": "class Dataset(models.Model):\n    \"\"\"\n    Unified dataset entity.\n    Replaces Dataset model entirely.\n    Represents:\n    RAW → CLEANED → OUTLIER → STATIONARY → FORECAST\n    \"\"\"\n    STAGE_CHOICES = [\n        (\"RAW\", \"Raw\"),\n        (\"CLEANED\", \"Cleaned\"),",
+        "detail": "implementation.server.apps.datasets.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.datasets.urls",
+        "description": "implementation.server.apps.datasets.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"upload/\", UploadView.as_view()),\n    path(\"report/\", DatasetReportView.as_view()),\n]",
+        "detail": "implementation.server.apps.datasets.urls",
+        "documentation": {}
+    },
+    {
+        "label": "UploadView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.datasets.views",
+        "description": "implementation.server.apps.datasets.views",
+        "peekOfCode": "class UploadView(APIView):\n    \"\"\"\n    Upload dataset and create RAW pipeline node.\n    \"\"\"\n    ALLOWED_EXTENSIONS = {\".csv\", \".xls\", \".xlsx\"}\n    def post(self, request):\n        uploaded_file = request.FILES.get(\"file\")\n        if not uploaded_file:\n            return Response(\n                {",
+        "detail": "implementation.server.apps.datasets.views",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetReportView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.datasets.views",
+        "description": "implementation.server.apps.datasets.views",
+        "peekOfCode": "class DatasetReportView(APIView):\n    \"\"\"\n    Generate dataset quality report for a pipeline node.\n    \"\"\"\n    def post(self, request):\n        node_id = request.data.get(\"dataset_id\")\n        if not node_id:\n            return Response(\n                {\n                    \"success\": False,",
+        "detail": "implementation.server.apps.datasets.views",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.evaluation.apps",
+        "description": "implementation.server.apps.evaluation.apps",
+        "peekOfCode": "class EvaluationConfig(AppConfig):\n    name = \"apps.evaluation\"",
+        "detail": "implementation.server.apps.evaluation.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.evaluation.urls",
+        "description": "implementation.server.apps.evaluation.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"run/\", RunView.as_view()),\n    path(\"metrics/\", MetricsView.as_view()),\n]",
+        "detail": "implementation.server.apps.evaluation.urls",
+        "documentation": {}
+    },
+    {
+        "label": "RunView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.evaluation.views",
+        "description": "implementation.server.apps.evaluation.views",
+        "peekOfCode": "class RunView(APIView):\n    def post(self, request):\n        return Response(request.data)\nclass MetricsView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.evaluation.views",
+        "documentation": {}
+    },
+    {
+        "label": "MetricsView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.evaluation.views",
+        "description": "implementation.server.apps.evaluation.views",
+        "peekOfCode": "class MetricsView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.evaluation.views",
+        "documentation": {}
+    },
+    {
+        "label": "ForecastingConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.forecasting.apps",
+        "description": "implementation.server.apps.forecasting.apps",
+        "peekOfCode": "class ForecastingConfig(AppConfig):\n    name = \"apps.forecasting\"",
+        "detail": "implementation.server.apps.forecasting.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.forecasting.urls",
+        "description": "implementation.server.apps.forecasting.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"predict/\", PredictView.as_view()),\n    path(\"batch_predict/\", BatchPredictView.as_view()),\n]",
+        "detail": "implementation.server.apps.forecasting.urls",
+        "documentation": {}
+    },
+    {
+        "label": "PredictView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.forecasting.views",
+        "description": "implementation.server.apps.forecasting.views",
+        "peekOfCode": "class PredictView(APIView):\n    def post(self, request):\n        return Response(request.data)\nclass BatchPredictView(APIView):\n    def post(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.forecasting.views",
+        "documentation": {}
+    },
+    {
+        "label": "BatchPredictView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.forecasting.views",
+        "description": "implementation.server.apps.forecasting.views",
+        "peekOfCode": "class BatchPredictView(APIView):\n    def post(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.forecasting.views",
+        "documentation": {}
+    },
+    {
+        "label": "ModelsRegistryConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.models_registry.apps",
+        "description": "implementation.server.apps.models_registry.apps",
+        "peekOfCode": "class ModelsRegistryConfig(AppConfig):\n    name = \"apps.models_registry\"",
+        "detail": "implementation.server.apps.models_registry.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.models_registry.urls",
+        "description": "implementation.server.apps.models_registry.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"register/\", RegisterView.as_view()),\n    path(\"list/\", ListView.as_view()),\n    path(\"detail/\", DetailView.as_view()),\n]",
+        "detail": "implementation.server.apps.models_registry.urls",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.models_registry.views",
+        "description": "implementation.server.apps.models_registry.views",
+        "peekOfCode": "class RegisterView(APIView):\n    def post(self, request):\n        return Response(\n            {\n                \"message\": \"request received\",\n                \"data\": request.data,\n                \"headers\": dict(request.headers),\n            }\n        )\nclass ListView(APIView):",
+        "detail": "implementation.server.apps.models_registry.views",
+        "documentation": {}
+    },
+    {
+        "label": "ListView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.models_registry.views",
+        "description": "implementation.server.apps.models_registry.views",
+        "peekOfCode": "class ListView(APIView):\n    def get(self, request):\n        return Response(\n            {\n                \"message\": \"request received\",\n                \"data\": request.data,\n                \"headers\": dict(request.headers),\n            }\n        )\nclass DetailView(APIView):",
+        "detail": "implementation.server.apps.models_registry.views",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.models_registry.views",
+        "description": "implementation.server.apps.models_registry.views",
+        "peekOfCode": "class DetailView(APIView):\n    def get(self, request):\n        return Response(\n            {\n                \"message\": \"request received\",\n                \"data\": request.data,\n                \"headers\": dict(request.headers),\n            }\n        )",
+        "detail": "implementation.server.apps.models_registry.views",
+        "documentation": {}
+    },
+    {
+        "label": "NotificationsConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.notifications.apps",
+        "description": "implementation.server.apps.notifications.apps",
+        "peekOfCode": "class NotificationsConfig(AppConfig):\n    name = \"apps.notifications\"",
+        "detail": "implementation.server.apps.notifications.apps",
+        "documentation": {}
+    },
+    {
+        "label": "ParametersConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.parameters.apps",
+        "description": "implementation.server.apps.parameters.apps",
+        "peekOfCode": "class ParametersConfig(AppConfig):\n    name = \"apps.parameters\"",
+        "detail": "implementation.server.apps.parameters.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.parameters.urls",
+        "description": "implementation.server.apps.parameters.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"create/\", CreateView.as_view()),\n    path(\"list/\", ListView.as_view()),\n    path(\"update/\", UpdateView.as_view()),\n]",
+        "detail": "implementation.server.apps.parameters.urls",
+        "documentation": {}
+    },
+    {
+        "label": "CreateView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.parameters.views",
+        "description": "implementation.server.apps.parameters.views",
+        "peekOfCode": "class CreateView(APIView):\n    def post(self, request):\n        return Response(\n            {\n                \"message\": \"request received\",\n                \"data\": request.data,\n                \"headers\": dict(request.headers),\n            }\n        )\nclass ListView(APIView):",
+        "detail": "implementation.server.apps.parameters.views",
+        "documentation": {}
+    },
+    {
+        "label": "ListView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.parameters.views",
+        "description": "implementation.server.apps.parameters.views",
+        "peekOfCode": "class ListView(APIView):\n    def get(self, request):\n        return Response(\n            {\n                \"message\": \"request received\",\n                \"data\": request.data,\n                \"headers\": dict(request.headers),\n            }\n        )\nclass UpdateView(APIView):",
+        "detail": "implementation.server.apps.parameters.views",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.parameters.views",
+        "description": "implementation.server.apps.parameters.views",
+        "peekOfCode": "class UpdateView(APIView):\n    def put(self, request):\n        return Response(\n            {\n                \"message\": \"request received\",\n                \"data\": request.data,\n                \"headers\": dict(request.headers),\n            }\n        )",
+        "detail": "implementation.server.apps.parameters.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "implementation.server.apps.preprocess.migrations.0001_initial",
+        "description": "implementation.server.apps.preprocess.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('datasets', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='PreprocessDataset',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "implementation.server.apps.preprocess.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "CleanDatasetView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.preprocess.views.clean",
+        "description": "implementation.server.apps.preprocess.views.clean",
+        "peekOfCode": "class CleanDatasetView(APIView):\n    \"\"\"\n    Stage 1: CLEANING PIPELINE NODE CREATION\n    Each execution produces:\n    - new Dataset row\n    - linked dependency to previous dataset node\n    - same run_id propagation\n    \"\"\"\n    DEPENDENCIES = {\n        \"enforce_daily_continuity\": [\"fill_missing_values\"],",
+        "detail": "implementation.server.apps.preprocess.views.clean",
+        "documentation": {}
+    },
+    {
+        "label": "OutlierDetectionView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.preprocess.views.outliers",
+        "description": "implementation.server.apps.preprocess.views.outliers",
+        "peekOfCode": "class OutlierDetectionView(APIView):\n    \"\"\"\n    Outlier Detection Endpoint\n    Supported Methods:\n    - iqr\n    - zscore\n    Request Body:\n    {\n        \"dataset_id\": 1,\n        \"outlier\": {}",
+        "detail": "implementation.server.apps.preprocess.views.outliers",
+        "documentation": {}
+    },
+    {
+        "label": "StationarityView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.preprocess.views.stationarity",
+        "description": "implementation.server.apps.preprocess.views.stationarity",
+        "peekOfCode": "class StationarityView(APIView):\n    def post(self, request):\n        return Response(\n            {\n                \"success\": True,\n                \"message\": \"StationarityView received request.\",\n                \"data\": {\"dataset_id\": None, \"status\": \"not_implemented\"},\n            },\n            status=status.HTTP_200_OK,\n        )",
+        "detail": "implementation.server.apps.preprocess.views.stationarity",
+        "documentation": {}
+    },
+    {
+        "label": "PreprocessConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.preprocess.apps",
+        "description": "implementation.server.apps.preprocess.apps",
+        "peekOfCode": "class PreprocessConfig(AppConfig):\n    name = \"apps.preprocess\"",
+        "detail": "implementation.server.apps.preprocess.apps",
+        "documentation": {}
+    },
+    {
+        "label": "PreprocessDataset",
+        "kind": 6,
+        "importPath": "implementation.server.apps.preprocess.models",
+        "description": "implementation.server.apps.preprocess.models",
+        "peekOfCode": "class PreprocessDataset(models.Model):\n    \"\"\"\n    Represents a single preprocessing stage.\n    Example chain:\n    Raw Dataset (#34)\n            │\n            ▼\n    PreprocessDataset #1 (CLEANING)\n            │\n            ▼",
+        "detail": "implementation.server.apps.preprocess.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.preprocess.urls",
+        "description": "implementation.server.apps.preprocess.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"clean/\", CleanDatasetView.as_view()),\n    path(\"outliers/\", OutlierDetectionView.as_view()),\n    path(\"stationarity/\", StationarityView.as_view()),\n]",
+        "detail": "implementation.server.apps.preprocess.urls",
+        "documentation": {}
+    },
+    {
+        "label": "ReportsConfig",
+        "kind": 6,
+        "importPath": "implementation.server.apps.reports.apps",
+        "description": "implementation.server.apps.reports.apps",
+        "peekOfCode": "class ReportsConfig(AppConfig):\n    name = \"apps.reports\"",
+        "detail": "implementation.server.apps.reports.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.apps.reports.urls",
+        "description": "implementation.server.apps.reports.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"generate/\", GenerateView.as_view()),\n    path(\"export/\", ExportView.as_view()),\n]",
+        "detail": "implementation.server.apps.reports.urls",
+        "documentation": {}
+    },
+    {
+        "label": "GenerateView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.reports.views",
+        "description": "implementation.server.apps.reports.views",
+        "peekOfCode": "class GenerateView(APIView):\n    def post(self, request):\n        return Response(request.data)\nclass ExportView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.reports.views",
+        "documentation": {}
+    },
+    {
+        "label": "ExportView",
+        "kind": 6,
+        "importPath": "implementation.server.apps.reports.views",
+        "description": "implementation.server.apps.reports.views",
+        "peekOfCode": "class ExportView(APIView):\n    def get(self, request):\n        return Response(request.data)",
+        "detail": "implementation.server.apps.reports.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "implementation.server.config.asgi",
+        "description": "implementation.server.config.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "implementation.server.config.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = \"django-insecure-m!hwex@i)8432#lt+5ae=rm&fj5&ji*4$j7r!hwys_1a#oi8n9\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "SECRET_KEY = \"django-insecure-m!hwex@i)8432#lt+5ae=rm&fj5&ji*4$j7r!hwys_1a#oi8n9\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    # APPS",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    # APPS\n    \"apps.accounts.apps.AccountsConfig\",\n    \"apps.core.apps.CoreConfig\",",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    \"django.middleware.security.SecurityMiddleware\",\n    \"django.contrib.sessions.middleware.SessionMiddleware\",\n    \"django.middleware.common.CommonMiddleware\",\n    \"django.middleware.csrf.CsrfViewMiddleware\",\n    \"django.contrib.auth.middleware.AuthenticationMiddleware\",\n    \"django.contrib.messages.middleware.MessageMiddleware\",\n    \"django.middleware.clickjacking.XFrameOptionsMiddleware\",\n]\nROOT_URLCONF = \"config.urls\"",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "ROOT_URLCONF = \"config.urls\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.request\",\n                \"django.contrib.auth.context_processors.auth\",",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.request\",\n                \"django.contrib.auth.context_processors.auth\",\n                \"django.contrib.messages.context_processors.messages\",",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "WSGI_APPLICATION = \"config.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/6.0/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Password validation",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        \"NAME\": \"django.contrib.auth.password_validation.UserAttributeSimilarityValidator\",\n    },\n    {\n        \"NAME\": \"django.contrib.auth.password_validation.MinimumLengthValidator\",\n    },\n    {\n        \"NAME\": \"django.contrib.auth.password_validation.CommonPasswordValidator\",\n    },",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = \"static/\"",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = \"static/\"",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = \"static/\"",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = \"static/\"",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "implementation.server.config.settings",
+        "description": "implementation.server.config.settings",
+        "peekOfCode": "STATIC_URL = \"static/\"",
+        "detail": "implementation.server.config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "implementation.server.config.urls",
+        "description": "implementation.server.config.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"api/accounts/\", include(\"apps.accounts.urls\")),\n    path(\"api/core/\", include(\"apps.core.urls\")),\n    path(\"api/datasets/\", include(\"apps.datasets.urls\")),\n    path(\"api/parameters/\", include(\"apps.parameters.urls\")),\n    path(\"api/models_registry/\", include(\"apps.models_registry.urls\")),\n    path(\"api/forecasting/\", include(\"apps.forecasting.urls\")),\n    path(\"api/evaluation/\", include(\"apps.evaluation.urls\")),\n    path(\"api/dashboard/\", include(\"apps.dashboard.urls\")),",
+        "detail": "implementation.server.config.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "implementation.server.config.wsgi",
+        "description": "implementation.server.config.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "implementation.server.config.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "FileValidationError",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.data_loader",
+        "description": "implementation.server.python.metadata.data_loader",
+        "peekOfCode": "class FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")",
+        "detail": "implementation.server.python.metadata.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "kind": 2,
+        "importPath": "implementation.server.python.metadata.data_loader",
+        "description": "implementation.server.python.metadata.data_loader",
+        "peekOfCode": "def load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")\n    try:\n        if extension == \".csv\":",
+        "detail": "implementation.server.python.metadata.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_EXTENSIONS",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.data_loader",
+        "description": "implementation.server.python.metadata.data_loader",
+        "peekOfCode": "SUPPORTED_EXTENSIONS = {\n    \".csv\",\n    \".xlsx\",\n    \".xls\",\n    \".ods\",\n}\nclass FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)",
+        "detail": "implementation.server.python.metadata.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "DataMetaExtractor",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.data_meta_extractor",
+        "description": "implementation.server.python.metadata.data_meta_extractor",
+        "peekOfCode": "class DataMetaExtractor:\n    @staticmethod\n    def _get_file_metadata(filepath: str) -> dict:\n        path = Path(filepath)\n        if not path.exists():\n            raise FileNotFoundError(f\"File not found: {filepath}\")\n        stat = path.stat()\n        return {\n            \"file_name\": path.name,\n            \"file_extension\": path.suffix,",
+        "detail": "implementation.server.python.metadata.data_meta_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "DataValidationError",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.data_validator",
+        "description": "implementation.server.python.metadata.data_validator",
+        "peekOfCode": "class DataValidationError(Exception):\n    pass\nclass DataValidator:\n    @staticmethod\n    def validate_time_series(df: pd.DataFrame, date_column: str) -> dict:\n        if date_column not in df.columns:\n            raise DataValidationError(f\"Missing date column: {date_column}\")\n        df = df.copy()\n        df[date_column] = pd.to_datetime(df[date_column], errors=\"coerce\")\n        if df[date_column].isnull().any():",
+        "detail": "implementation.server.python.metadata.data_validator",
+        "documentation": {}
+    },
+    {
+        "label": "DataValidator",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.data_validator",
+        "description": "implementation.server.python.metadata.data_validator",
+        "peekOfCode": "class DataValidator:\n    @staticmethod\n    def validate_time_series(df: pd.DataFrame, date_column: str) -> dict:\n        if date_column not in df.columns:\n            raise DataValidationError(f\"Missing date column: {date_column}\")\n        df = df.copy()\n        df[date_column] = pd.to_datetime(df[date_column], errors=\"coerce\")\n        if df[date_column].isnull().any():\n            raise DataValidationError(\"Invalid date values detected\")\n        start_date = df[date_column].min()",
+        "detail": "implementation.server.python.metadata.data_validator",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateDateHandler",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.duplicate_handler",
+        "description": "implementation.server.python.metadata.duplicate_handler",
+        "peekOfCode": "class DuplicateDateHandler:\n    \"\"\"\n    Handles duplicate Date entries in time-series datasets.\n    \"\"\"\n    @staticmethod\n    def check_duplicates(df: pd.DataFrame, date_column: str = \"Date\") -> int:\n        \"\"\"\n        Returns number of duplicate dates (excluding first occurrence logic).\n        \"\"\"\n        if date_column not in df.columns:",
+        "detail": "implementation.server.python.metadata.duplicate_handler",
+        "documentation": {}
+    },
+    {
+        "label": "generate_filename",
+        "kind": 2,
+        "importPath": "implementation.server.python.metadata.filename_generator",
+        "description": "implementation.server.python.metadata.filename_generator",
+        "peekOfCode": "def generate_filename(name: str) -> str:\n    \"\"\"\n    Generates a timestamped raw dataset filename.\n    Format:\n    raw_<name>_YYYY-MM-DD_HH-MM-SS.csv\n    \"\"\"\n    ts = datetime.utcnow().strftime(\"%Y-%m-%d_%H-%M-%S\")\n    return f\"{name}_{ts}.csv\"",
+        "detail": "implementation.server.python.metadata.filename_generator",
+        "documentation": {}
+    },
+    {
+        "label": "FileSaveError",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.file_saver",
+        "description": "implementation.server.python.metadata.file_saver",
+        "peekOfCode": "class FileSaveError(Exception):\n    pass\ndef save_file(source_file_path: str, target_folder: str, new_name: str = None) -> str:\n    \"\"\"\n    Save (copy) a file into a target folder.\n    Creates the folder if it does not exist.\n    Args:\n        source_file_path (str): Path to the source file\n        target_folder (str): Destination folder path\n        new_name (str, optional): Rename file on save",
+        "detail": "implementation.server.python.metadata.file_saver",
+        "documentation": {}
+    },
+    {
+        "label": "save_file",
+        "kind": 2,
+        "importPath": "implementation.server.python.metadata.file_saver",
+        "description": "implementation.server.python.metadata.file_saver",
+        "peekOfCode": "def save_file(source_file_path: str, target_folder: str, new_name: str = None) -> str:\n    \"\"\"\n    Save (copy) a file into a target folder.\n    Creates the folder if it does not exist.\n    Args:\n        source_file_path (str): Path to the source file\n        target_folder (str): Destination folder path\n        new_name (str, optional): Rename file on save\n    Returns:\n        str: Full path of the saved file",
+        "detail": "implementation.server.python.metadata.file_saver",
+        "documentation": {}
+    },
+    {
+        "label": "file_path",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "file_path = r\"D:\\Work\\EnergyForecastPipeline\\03-implementation\\server\\python\\metadata\\yearly_data\\2008.csv\"\ntarget_folder = r\"D:\\Work\\EnergyForecastPipeline\\03-implementation\\server\\python\\metadata\\yearly_data\"\n# ---- load data ----\ndataset = load_dataset(file_path)\ndf = dataset[\"dataframe\"]\nvalidation = DataValidator.validate_time_series(df, \"Date\")\nprint(validation)\n# ---- metadata ----\nmetadata = DataMetaExtractor.extract_from_df(df, filepath=file_path)\n# ---- duplicate check ----",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "target_folder",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "target_folder = r\"D:\\Work\\EnergyForecastPipeline\\03-implementation\\server\\python\\metadata\\yearly_data\"\n# ---- load data ----\ndataset = load_dataset(file_path)\ndf = dataset[\"dataframe\"]\nvalidation = DataValidator.validate_time_series(df, \"Date\")\nprint(validation)\n# ---- metadata ----\nmetadata = DataMetaExtractor.extract_from_df(df, filepath=file_path)\n# ---- duplicate check ----\ndup_count = DuplicateDateHandler.check_duplicates(df)",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "dataset",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "dataset = load_dataset(file_path)\ndf = dataset[\"dataframe\"]\nvalidation = DataValidator.validate_time_series(df, \"Date\")\nprint(validation)\n# ---- metadata ----\nmetadata = DataMetaExtractor.extract_from_df(df, filepath=file_path)\n# ---- duplicate check ----\ndup_count = DuplicateDateHandler.check_duplicates(df)\nprint(\"Duplicates BEFORE:\", dup_count)\n# ---- clean duplicates (THIS is the real transformation) ----",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "df = dataset[\"dataframe\"]\nvalidation = DataValidator.validate_time_series(df, \"Date\")\nprint(validation)\n# ---- metadata ----\nmetadata = DataMetaExtractor.extract_from_df(df, filepath=file_path)\n# ---- duplicate check ----\ndup_count = DuplicateDateHandler.check_duplicates(df)\nprint(\"Duplicates BEFORE:\", dup_count)\n# ---- clean duplicates (THIS is the real transformation) ----\ndf_clean = DuplicateDateHandler.resolve_duplicates(df, keep=\"last\")",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "validation",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "validation = DataValidator.validate_time_series(df, \"Date\")\nprint(validation)\n# ---- metadata ----\nmetadata = DataMetaExtractor.extract_from_df(df, filepath=file_path)\n# ---- duplicate check ----\ndup_count = DuplicateDateHandler.check_duplicates(df)\nprint(\"Duplicates BEFORE:\", dup_count)\n# ---- clean duplicates (THIS is the real transformation) ----\ndf_clean = DuplicateDateHandler.resolve_duplicates(df, keep=\"last\")\ndup_after = DuplicateDateHandler.check_duplicates(df_clean)",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "metadata",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "metadata = DataMetaExtractor.extract_from_df(df, filepath=file_path)\n# ---- duplicate check ----\ndup_count = DuplicateDateHandler.check_duplicates(df)\nprint(\"Duplicates BEFORE:\", dup_count)\n# ---- clean duplicates (THIS is the real transformation) ----\ndf_clean = DuplicateDateHandler.resolve_duplicates(df, keep=\"last\")\ndup_after = DuplicateDateHandler.check_duplicates(df_clean)\nprint(\"Duplicates AFTER:\", dup_after)\n# ---- generate filename (FIXED: use base name, not full filename) ----\nbase_name = metadata[\"file_meta\"][\"file_name\"].replace(\".csv\", \"\")",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "dup_count",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "dup_count = DuplicateDateHandler.check_duplicates(df)\nprint(\"Duplicates BEFORE:\", dup_count)\n# ---- clean duplicates (THIS is the real transformation) ----\ndf_clean = DuplicateDateHandler.resolve_duplicates(df, keep=\"last\")\ndup_after = DuplicateDateHandler.check_duplicates(df_clean)\nprint(\"Duplicates AFTER:\", dup_after)\n# ---- generate filename (FIXED: use base name, not full filename) ----\nbase_name = metadata[\"file_meta\"][\"file_name\"].replace(\".csv\", \"\")\nfilename = generate_filename(f\"{base_name}_clean\")\n# ---- save CLEAN DATA (this is the missing step) ----",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "df_clean",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "df_clean = DuplicateDateHandler.resolve_duplicates(df, keep=\"last\")\ndup_after = DuplicateDateHandler.check_duplicates(df_clean)\nprint(\"Duplicates AFTER:\", dup_after)\n# ---- generate filename (FIXED: use base name, not full filename) ----\nbase_name = metadata[\"file_meta\"][\"file_name\"].replace(\".csv\", \"\")\nfilename = generate_filename(f\"{base_name}_clean\")\n# ---- save CLEAN DATA (this is the missing step) ----\nsaved_path = os.path.join(target_folder, filename)\ndf_clean.to_csv(saved_path, index=False)\nprint(\"Saved cleaned file at:\", saved_path)",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "dup_after",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "dup_after = DuplicateDateHandler.check_duplicates(df_clean)\nprint(\"Duplicates AFTER:\", dup_after)\n# ---- generate filename (FIXED: use base name, not full filename) ----\nbase_name = metadata[\"file_meta\"][\"file_name\"].replace(\".csv\", \"\")\nfilename = generate_filename(f\"{base_name}_clean\")\n# ---- save CLEAN DATA (this is the missing step) ----\nsaved_path = os.path.join(target_folder, filename)\ndf_clean.to_csv(saved_path, index=False)\nprint(\"Saved cleaned file at:\", saved_path)",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "base_name",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "base_name = metadata[\"file_meta\"][\"file_name\"].replace(\".csv\", \"\")\nfilename = generate_filename(f\"{base_name}_clean\")\n# ---- save CLEAN DATA (this is the missing step) ----\nsaved_path = os.path.join(target_folder, filename)\ndf_clean.to_csv(saved_path, index=False)\nprint(\"Saved cleaned file at:\", saved_path)",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "filename",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "filename = generate_filename(f\"{base_name}_clean\")\n# ---- save CLEAN DATA (this is the missing step) ----\nsaved_path = os.path.join(target_folder, filename)\ndf_clean.to_csv(saved_path, index=False)\nprint(\"Saved cleaned file at:\", saved_path)",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "saved_path",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main",
+        "description": "implementation.server.python.metadata.main",
+        "peekOfCode": "saved_path = os.path.join(target_folder, filename)\ndf_clean.to_csv(saved_path, index=False)\nprint(\"Saved cleaned file at:\", saved_path)",
+        "detail": "implementation.server.python.metadata.main",
+        "documentation": {}
+    },
+    {
+        "label": "file_path",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main01",
+        "description": "implementation.server.python.metadata.main01",
+        "peekOfCode": "file_path = r\"D:\\Work\\EnergyForecastPipeline\\03-implementation\\server\\python\\metadata\\yearly_data\\2008.csv\"\ndf = pd.read_csv(file_path)\nsummary = YearProfile.summarize(df)\nYearProfile.print_summary(summary)",
+        "detail": "implementation.server.python.metadata.main01",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main01",
+        "description": "implementation.server.python.metadata.main01",
+        "peekOfCode": "df = pd.read_csv(file_path)\nsummary = YearProfile.summarize(df)\nYearProfile.print_summary(summary)",
+        "detail": "implementation.server.python.metadata.main01",
+        "documentation": {}
+    },
+    {
+        "label": "summary",
+        "kind": 5,
+        "importPath": "implementation.server.python.metadata.main01",
+        "description": "implementation.server.python.metadata.main01",
+        "peekOfCode": "summary = YearProfile.summarize(df)\nYearProfile.print_summary(summary)",
+        "detail": "implementation.server.python.metadata.main01",
+        "documentation": {}
+    },
+    {
+        "label": "YearProfile",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.year_profile",
+        "description": "implementation.server.python.metadata.year_profile",
+        "peekOfCode": "class YearProfile:\n    MONTHS = [\n        \"January\",\n        \"February\",\n        \"March\",\n        \"April\",\n        \"May\",\n        \"June\",\n        \"July\",\n        \"August\",",
+        "detail": "implementation.server.python.metadata.year_profile",
+        "documentation": {}
+    },
+    {
+        "label": "YearSplitter",
+        "kind": 6,
+        "importPath": "implementation.server.python.metadata.year_splitter",
+        "description": "implementation.server.python.metadata.year_splitter",
+        "peekOfCode": "class YearSplitter:\n    @staticmethod\n    def split_to_yearly_csv(\n        file_path: str, output_dir: str, date_column: str = \"Date\"\n    ) -> dict:\n        input_path = Path(file_path)\n        out_dir = Path(output_dir)\n        if not input_path.exists():\n            raise FileNotFoundError(f\"File not found: {file_path}\")\n        # create output directory if it doesn't exist",
+        "detail": "implementation.server.python.metadata.year_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "AnnualBreakdownAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.AnnualBreakdownAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.AnnualBreakdownAnalyzer",
+        "peekOfCode": "class AnnualBreakdownAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col, value_col):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        df[\"year\"] = df[datetime_col].dt.year\n        grouped = df.groupby(\"year\")[value_col]\n        result = {}\n        for year, series in grouped:\n            result[int(year)] = {",
+        "detail": "implementation.server.python.TLO.analyzers.AnnualBreakdownAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetOverviewAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.DatasetOverviewAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.DatasetOverviewAnalyzer",
+        "peekOfCode": "class DatasetOverviewAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\"):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        start_date = df[datetime_col].min()\n        end_date = df[datetime_col].max()\n        duration_days = (end_date - start_date).days + 1\n        duration_years = round(duration_days / 365.25, 2)\n        return {",
+        "detail": "implementation.server.python.TLO.analyzers.DatasetOverviewAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DateCoverageAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.DateCoverageAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.DateCoverageAnalyzer",
+        "peekOfCode": "class DateCoverageAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\", minimum_expected_records=365):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        start_date = df[datetime_col].min()\n        end_date = df[datetime_col].max()\n        expected_records = len(pd.date_range(start=start_date, end=end_date, freq=\"D\"))\n        actual_records = len(df)\n        missing_records = expected_records - actual_records",
+        "detail": "implementation.server.python.TLO.analyzers.DateCoverageAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DifferencingAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.DifferencingAnalysisAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.DifferencingAnalysisAnalyzer",
+        "peekOfCode": "class DifferencingAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col=\"Daily_kWh\"):\n        series = df[value_col].dropna()\n        result = {}\n        # Original Series\n        adf = adfuller(series)\n        original_stationary = adf[1] < 0.05\n        result[\"original_series\"] = {\n            \"adf_statistic\": round(float(adf[0]), 6),",
+        "detail": "implementation.server.python.TLO.analyzers.DifferencingAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DistributionAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.DistributionAnalysisAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.DistributionAnalysisAnalyzer",
+        "peekOfCode": "class DistributionAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        return {\n            \"skewness\": round(float(skew(series)), 4),\n            \"kurtosis\": round(float(kurtosis(series)), 4),\n            \"is_right_skewed\": skew(series) > 0,\n            \"is_left_skewed\": skew(series) < 0,\n        }",
+        "detail": "implementation.server.python.TLO.analyzers.DistributionAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "DuplicateAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.DuplicateAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.DuplicateAnalyzer",
+        "peekOfCode": "class DuplicateAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\"):\n        duplicate_rows = int(df.duplicated().sum())\n        duplicate_dates = int(df[datetime_col].duplicated().sum())\n        duplicate_timestamps = (\n            df[df[datetime_col].duplicated()][datetime_col].astype(str).tolist()\n        )\n        return {\n            \"duplicate_rows\": duplicate_rows,",
+        "detail": "implementation.server.python.TLO.analyzers.DuplicateAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "EnergyValueAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.EnergyValueAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.EnergyValueAnalyzer",
+        "peekOfCode": "class EnergyValueAnalyzer:\n    @staticmethod\n    def analyze(df, value_col=\"Daily_kWh\"):\n        negative_count = int((df[value_col] < 0).sum())\n        zero_count = int((df[value_col] == 0).sum())\n        return {\n            \"negative_values_count\": negative_count,\n            \"zero_values_count\": zero_count,\n            \"has_negative_values\": negative_count > 0,\n            \"has_zero_values\": zero_count > 0,",
+        "detail": "implementation.server.python.TLO.analyzers.EnergyValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "ForecastingReadinessAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.ForecastingReadinessAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.ForecastingReadinessAnalyzer",
+        "peekOfCode": "class ForecastingReadinessAnalyzer:\n    @staticmethod\n    def analyze(\n        date_coverage,\n        frequency_analysis,\n        missing_values,\n        duplicates,\n        outlier_analysis,\n        stationarity_analysis,\n    ):",
+        "detail": "implementation.server.python.TLO.analyzers.ForecastingReadinessAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "FrequencyAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.FrequencyAnalysisAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.FrequencyAnalysisAnalyzer",
+        "peekOfCode": "class FrequencyAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col=\"Date\"):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        df = df.sort_values(datetime_col)\n        full_range = pd.date_range(\n            start=df[datetime_col].min(), end=df[datetime_col].max(), freq=\"D\"\n        )\n        existing_dates = set(df[datetime_col])",
+        "detail": "implementation.server.python.TLO.analyzers.FrequencyAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "MissingValueAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.MissingValueAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.MissingValueAnalyzer",
+        "peekOfCode": "class MissingValueAnalyzer:\n    @staticmethod\n    def analyze(df):\n        total_cells = df.shape[0] * df.shape[1]\n        total_missing = int(df.isnull().sum().sum())\n        missing_percentage = (\n            round((total_missing / total_cells) * 100, 2) if total_cells else 0\n        )\n        affected_rows = int(df.isnull().any(axis=1).sum())\n        affected_row_percentage = (",
+        "detail": "implementation.server.python.TLO.analyzers.MissingValueAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "OutlierAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.OutlierAnalysisAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.OutlierAnalysisAnalyzer",
+        "peekOfCode": "class OutlierAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        q1 = series.quantile(0.25)\n        q3 = series.quantile(0.75)\n        iqr = q3 - q1\n        lower_bound = q1 - (1.5 * iqr)\n        upper_bound = q3 + (1.5 * iqr)\n        iqr_outliers = series[(series < lower_bound) | (series > upper_bound)]",
+        "detail": "implementation.server.python.TLO.analyzers.OutlierAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "SeasonalityAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.SeasonalityAnalysisAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.SeasonalityAnalysisAnalyzer",
+        "peekOfCode": "class SeasonalityAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col, value_col):\n        df = df.copy()\n        df[datetime_col] = pd.to_datetime(df[datetime_col])\n        df[\"month\"] = df[datetime_col].dt.month\n        monthly_avg = df.groupby(\"month\")[value_col].mean()\n        peak_month = int(monthly_avg.idxmax())\n        low_month = int(monthly_avg.idxmin())\n        variation = ((monthly_avg.max() - monthly_avg.min()) / monthly_avg.mean()) * 100",
+        "detail": "implementation.server.python.TLO.analyzers.SeasonalityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StationarityAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.StationarityAnalysisAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.StationarityAnalysisAnalyzer",
+        "peekOfCode": "class StationarityAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        result = adfuller(series)\n        adf_stat = result[0]\n        p_value = result[1]\n        critical_values = result[4]\n        is_stationary = p_value < 0.05\n        return {",
+        "detail": "implementation.server.python.TLO.analyzers.StationarityAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "StatisticalSummaryAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.StatisticalSummaryAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.StatisticalSummaryAnalyzer",
+        "peekOfCode": "class StatisticalSummaryAnalyzer:\n    @staticmethod\n    def analyze(df, value_col):\n        series = df[value_col].dropna()\n        return {\n            \"count\": int(series.count()),\n            \"mean\": round(float(series.mean()), 4),\n            \"median\": round(float(series.median()), 4),\n            \"std\": round(float(series.std()), 4),\n            \"variance\": round(float(series.var()), 4),",
+        "detail": "implementation.server.python.TLO.analyzers.StatisticalSummaryAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "TrendAnalysisAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.analyzers.TrendAnalysisAnalyzer",
+        "description": "implementation.server.python.TLO.analyzers.TrendAnalysisAnalyzer",
+        "peekOfCode": "class TrendAnalysisAnalyzer:\n    @staticmethod\n    def analyze(df, datetime_col, value_col):\n        df = df.copy()\n        df[datetime_col] = __import__(\"pandas\").to_datetime(df[datetime_col])\n        df = df.sort_values(datetime_col)\n        # convert time into numeric index\n        x = np.arange(len(df))\n        y = df[value_col].values\n        slope, intercept, r_value, p_value, std_err = linregress(x, y)",
+        "detail": "implementation.server.python.TLO.analyzers.TrendAnalysisAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "clean_duplicates",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.clean_duplicates",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.clean_duplicates",
+        "peekOfCode": "def clean_duplicates(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Removes duplicate rows based on 'Date' column.\n    Keeps the last occurrence of each Date.\n    Parameters:\n        df (pd.DataFrame): Input dataframe with 'Date' column.\n    Returns:\n        pd.DataFrame: Deduplicated dataframe.\n    \"\"\"\n    # Ensure Date is treated consistently (important for silent duplicate formats)",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.clean_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetLifecycleRunner",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.dsds",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.dsds",
+        "peekOfCode": "class DatasetLifecycleRunner:\n    @staticmethod\n    def run(df, filepath=None):\n        raw_report = DataMetaExtractor.extract(df, filepath=filepath, stage=\"pre\")\n        preprocess_result = preprocessing_pipeline.run(df)\n        clean_df = preprocess_result.df\n        clean_report = DataMetaExtractor.extract(\n            clean_df, filepath=filepath, stage=\"post\"\n        )\n        return {",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.dsds",
+        "documentation": {}
+    },
+    {
+        "label": "enforce_daily_continuity",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "peekOfCode": "def enforce_daily_continuity(df: pd.DataFrame) -> pd.DataFrame:\n    df = df.copy()\n    df[\"Date\"] = pd.to_datetime(df[\"Date\"]).dt.normalize()\n    df = df.drop_duplicates(subset=\"Date\", keep=\"last\")\n    # Extract year range\n    start_year = df[\"Date\"].dt.year.min()\n    end_year = df[\"Date\"].dt.year.max()\n    # Force full calendar expansion across years\n    full_range = pd.date_range(\n        start=f\"{start_year}-01-01\", end=f\"{end_year}-12-31\", freq=\"D\"",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.enforce_daily_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "fill_missing_values",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.fill_missing_values",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.fill_missing_values",
+        "peekOfCode": "def fill_missing_values(df: pd.DataFrame) -> pd.DataFrame:\n    df = df.copy()\n    df[\"Date\"] = pd.to_datetime(df[\"Date\"])\n    df = df.sort_values(\"Date\")\n    # 1. local smoothing\n    df[\"Daily_kWh\"] = df[\"Daily_kWh\"].fillna(\n        df[\"Daily_kWh\"].rolling(7, min_periods=1).mean()\n    )\n    # 2. weekday correction (structure pattern)\n    df[\"weekday\"] = df[\"Date\"].dt.dayofweek",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.fill_missing_values",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_pipeline",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.preprocess_pipeline",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.preprocess_pipeline",
+        "peekOfCode": "def preprocess_pipeline(df):\n    # Step 1: clean duplicates\n    df = clean_duplicates(df)\n    # Step 2: enforce continuous timeline\n    df = enforce_daily_continuity(df)\n    # Step 3: inspect yearly splits (optional)\n    yearly = split_by_year(df)\n    # Step 4: validate structure\n    validate_continuity(df)\n    # Step 5: fill missing values",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.preprocess_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "QualityDeltaAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.QualityDeltaAnalyzer",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.QualityDeltaAnalyzer",
+        "peekOfCode": "class QualityDeltaAnalyzer:\n    @staticmethod\n    def compare(raw_report, clean_report):\n        return {\n            \"missing_reduction\": raw_report.missing_values.total_missing\n            - clean_report.missing_values.total_missing,\n            \"duplicate_reduction\": raw_report.duplicates.duplicate_count\n            - clean_report.duplicates.duplicate_count,\n            \"iqr_change\": clean_report.iqr.outlier_count,\n        }",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.QualityDeltaAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "split_by_year",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.split_by_year",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.split_by_year",
+        "peekOfCode": "def split_by_year(df):\n    df[\"Year\"] = df[\"Date\"].dt.year\n    return {year: group.copy() for year, group in df.groupby(\"Year\")}",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.split_by_year",
+        "documentation": {}
+    },
+    {
+        "label": "validate_continuity",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.PreprocessingPipeline.validate_continuity",
+        "description": "implementation.server.python.TLO.PreprocessingPipeline.validate_continuity",
+        "peekOfCode": "def validate_continuity(df):\n    expected_days = (df.index.max() - df.index.min()).days + 1\n    actual_days = len(df)\n    print(\"Expected days:\", expected_days)\n    print(\"Actual days:\", actual_days)\n    print(\"Missing entries:\", df[\"Daily_kWh\"].isna().sum())",
+        "detail": "implementation.server.python.TLO.PreprocessingPipeline.validate_continuity",
+        "documentation": {}
+    },
+    {
+        "label": "FileValidationError",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.SARIMA.data_loader",
+        "description": "implementation.server.python.TLO.SARIMA.data_loader",
+        "peekOfCode": "class FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")",
+        "detail": "implementation.server.python.TLO.SARIMA.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.SARIMA.data_loader",
+        "description": "implementation.server.python.TLO.SARIMA.data_loader",
+        "peekOfCode": "def load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")\n    try:\n        if extension == \".csv\":",
+        "detail": "implementation.server.python.TLO.SARIMA.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_EXTENSIONS",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.data_loader",
+        "description": "implementation.server.python.TLO.SARIMA.data_loader",
+        "peekOfCode": "SUPPORTED_EXTENSIONS = {\n    \".csv\",\n    \".xlsx\",\n    \".xls\",\n    \".ods\",\n}\nclass FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)",
+        "detail": "implementation.server.python.TLO.SARIMA.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "handle_new_best",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "def handle_new_best(result):\n    print(\n        f\"New Best AIC={result['aic']:.3f} \"\n        f\"Order={result['order']} \"\n        f\"Seasonal={result['seasonal_order']}\"\n    )\ndef handle_progress(current, total):\n    print(f\"Progress: {current}/{total}\")\nresult = optimizer.optimize(\n    series, on_new_best=handle_new_best, on_progress=handle_progress",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "handle_progress",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "def handle_progress(current, total):\n    print(f\"Progress: {current}/{total}\")\nresult = optimizer.optimize(\n    series, on_new_best=handle_new_best, on_progress=handle_progress\n)\nprint(result[\"best_order\"])\nprint(result[\"best_seasonal_order\"])\nprint(result[\"best_aic\"])\ntrainer = SARIMATrainer()\nfinal_model = trainer.fit(",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "file_path",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "file_path = r\"D:\\Work\\EnergyForecastPipeline\\03-implementation\\server\\python\\TLO\\yearly_data\\2010.csv\"\ndataset = load_dataset(file_path)\ndf = dataset[\"dataframe\"]\nseries = df[\"Daily_kWh\"].dropna()\noptimizer = SARIMAOptimizer(\n    p=range(0, 4),\n    q=range(0, 4),\n    P=range(0, 2),\n    Q=range(0, 2),\n    seasonal_periods=(30,),",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "dataset",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "dataset = load_dataset(file_path)\ndf = dataset[\"dataframe\"]\nseries = df[\"Daily_kWh\"].dropna()\noptimizer = SARIMAOptimizer(\n    p=range(0, 4),\n    q=range(0, 4),\n    P=range(0, 2),\n    Q=range(0, 2),\n    seasonal_periods=(30,),\n    max_d=2,",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "df = dataset[\"dataframe\"]\nseries = df[\"Daily_kWh\"].dropna()\noptimizer = SARIMAOptimizer(\n    p=range(0, 4),\n    q=range(0, 4),\n    P=range(0, 2),\n    Q=range(0, 2),\n    seasonal_periods=(30,),\n    max_d=2,\n    max_D=1,",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "series",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "series = df[\"Daily_kWh\"].dropna()\noptimizer = SARIMAOptimizer(\n    p=range(0, 4),\n    q=range(0, 4),\n    P=range(0, 2),\n    Q=range(0, 2),\n    seasonal_periods=(30,),\n    max_d=2,\n    max_D=1,\n    alpha=0.05,",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "optimizer",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "optimizer = SARIMAOptimizer(\n    p=range(0, 4),\n    q=range(0, 4),\n    P=range(0, 2),\n    Q=range(0, 2),\n    seasonal_periods=(30,),\n    max_d=2,\n    max_D=1,\n    alpha=0.05,\n)",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "result = optimizer.optimize(\n    series, on_new_best=handle_new_best, on_progress=handle_progress\n)\nprint(result[\"best_order\"])\nprint(result[\"best_seasonal_order\"])\nprint(result[\"best_aic\"])\ntrainer = SARIMATrainer()\nfinal_model = trainer.fit(\n    series,\n    order=result[\"best_order\"],",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "trainer",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "trainer = SARIMATrainer()\nfinal_model = trainer.fit(\n    series,\n    order=result[\"best_order\"],\n    seasonal_order=result[\"best_seasonal_order\"],\n)\nforecast = final_model.forecast(steps=30)\nprint(forecast)\n# print(result[\"best_model\"])",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "final_model",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "final_model = trainer.fit(\n    series,\n    order=result[\"best_order\"],\n    seasonal_order=result[\"best_seasonal_order\"],\n)\nforecast = final_model.forecast(steps=30)\nprint(forecast)\n# print(result[\"best_model\"])",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "forecast",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.SARIMA.main",
+        "description": "implementation.server.python.TLO.SARIMA.main",
+        "peekOfCode": "forecast = final_model.forecast(steps=30)\nprint(forecast)\n# print(result[\"best_model\"])",
+        "detail": "implementation.server.python.TLO.SARIMA.main",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAOptimizer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.SARIMA.old",
+        "description": "implementation.server.python.TLO.SARIMA.old",
+        "peekOfCode": "class SARIMAOptimizer:\n    def optimize(self, series, on_new_best=None, on_progress=None):\n        series = pd.Series(series).astype(float).dropna()\n        d = self._ndiffs(series)\n        best_aic = float(\"inf\")\n        best_params = None\n        total = (\n            len(self.p)\n            * len(self.q)\n            * len(self.P)",
+        "detail": "implementation.server.python.TLO.SARIMA.old",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAModel",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.SARIMA.SARIMA",
+        "description": "implementation.server.python.TLO.SARIMA.SARIMA",
+        "peekOfCode": "class SARIMAModel:\n    \"\"\"\n    Pure SARIMA execution layer.\n    Assumes data is already validated and parameters are provided externally.\n    \"\"\"\n    def __init__(self, order=(1, 0, 1), seasonal_order=(1, 0, 1, 7)):\n        self.order = order\n        self.seasonal_order = seasonal_order\n        self.model = None\n        self.result = None",
+        "detail": "implementation.server.python.TLO.SARIMA.SARIMA",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMAOptimizer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.SARIMA.SARIMAOptimizer",
+        "description": "implementation.server.python.TLO.SARIMA.SARIMAOptimizer",
+        "peekOfCode": "class SARIMAOptimizer:\n    def __init__(\n        self,\n        p=range(0, 4),\n        q=range(0, 4),\n        P=range(0, 2),\n        Q=range(0, 2),\n        seasonal_periods=(7, 30),\n        max_d=2,\n        max_D=1,",
+        "detail": "implementation.server.python.TLO.SARIMA.SARIMAOptimizer",
+        "documentation": {}
+    },
+    {
+        "label": "SARIMATrainer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.SARIMA.SARIMATrainer",
+        "description": "implementation.server.python.TLO.SARIMA.SARIMATrainer",
+        "peekOfCode": "class SARIMATrainer:\n    @staticmethod\n    def fit(series, order, seasonal_order):\n        model = SARIMAX(\n            series,\n            order=order,\n            seasonal_order=seasonal_order,\n            enforce_stationarity=False,\n            enforce_invertibility=False,\n        )",
+        "detail": "implementation.server.python.TLO.SARIMA.SARIMATrainer",
+        "documentation": {}
+    },
+    {
+        "label": "TimeSeriesQualityAnalyzer",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "description": "implementation.server.python.TLO.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "peekOfCode": "class TimeSeriesQualityAnalyzer:\n    @staticmethod\n    def extract(\n        df, datetime_col=\"Date\", value_col=\"Daily_kWh\", minimum_expected_records=365\n    ):\n        dataset_overview = DatasetOverviewAnalyzer.analyze(df, datetime_col)\n        date_coverage = DateCoverageAnalyzer.analyze(\n            df, datetime_col, minimum_expected_records\n        )\n        frequency_analysis = FrequencyAnalysisAnalyzer.analyze(df, datetime_col)",
+        "detail": "implementation.server.python.TLO.TimeSeriesQualityAnalyzer.TimeSeriesQualityAnalyzer",
+        "documentation": {}
+    },
+    {
+        "label": "run_adf",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "def run_adf(series: pd.Series):\n    result = adfuller(series)\n    print(\"\\nADF TEST RESULTS\")\n    print(\"----------------------------\")\n    print(f\"ADF Statistic : {result[0]}\")\n    print(f\"p-value       : {result[1]}\")\n    print(\"Critical Values:\")\n    for key, value in result[4].items():\n        print(f\"  {key}: {value}\")\n    if result[1] <= 0.05:",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "FILE_PATH",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "FILE_PATH = r\"D:\\Work\\EnergyForecastPipeline\\03-implementation\\server\\python\\TLO\\yearly_data\\2008.csv\"\nROLLING_WINDOW = 30\n# ----------------------------\n# LOAD DATA\n# ----------------------------\ndataset = load_dataset(FILE_PATH)\ndf = dataset[\"dataframe\"]\n# Ensure proper time series format\ndf[\"Date\"] = pd.to_datetime(df[\"Date\"])\ndf = df.sort_values(\"Date\")",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "ROLLING_WINDOW",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "ROLLING_WINDOW = 30\n# ----------------------------\n# LOAD DATA\n# ----------------------------\ndataset = load_dataset(FILE_PATH)\ndf = dataset[\"dataframe\"]\n# Ensure proper time series format\ndf[\"Date\"] = pd.to_datetime(df[\"Date\"])\ndf = df.sort_values(\"Date\")\nseries = df[\"Daily_kWh\"].astype(float)",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "dataset",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "dataset = load_dataset(FILE_PATH)\ndf = dataset[\"dataframe\"]\n# Ensure proper time series format\ndf[\"Date\"] = pd.to_datetime(df[\"Date\"])\ndf = df.sort_values(\"Date\")\nseries = df[\"Daily_kWh\"].astype(float)\nseries = series.dropna()\n# ----------------------------\n# ADF TEST FUNCTION\n# ----------------------------",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "df = dataset[\"dataframe\"]\n# Ensure proper time series format\ndf[\"Date\"] = pd.to_datetime(df[\"Date\"])\ndf = df.sort_values(\"Date\")\nseries = df[\"Daily_kWh\"].astype(float)\nseries = series.dropna()\n# ----------------------------\n# ADF TEST FUNCTION\n# ----------------------------\ndef run_adf(series: pd.Series):",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "df[\"Date\"]",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "df[\"Date\"] = pd.to_datetime(df[\"Date\"])\ndf = df.sort_values(\"Date\")\nseries = df[\"Daily_kWh\"].astype(float)\nseries = series.dropna()\n# ----------------------------\n# ADF TEST FUNCTION\n# ----------------------------\ndef run_adf(series: pd.Series):\n    result = adfuller(series)\n    print(\"\\nADF TEST RESULTS\")",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "df = df.sort_values(\"Date\")\nseries = df[\"Daily_kWh\"].astype(float)\nseries = series.dropna()\n# ----------------------------\n# ADF TEST FUNCTION\n# ----------------------------\ndef run_adf(series: pd.Series):\n    result = adfuller(series)\n    print(\"\\nADF TEST RESULTS\")\n    print(\"----------------------------\")",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "series",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "series = df[\"Daily_kWh\"].astype(float)\nseries = series.dropna()\n# ----------------------------\n# ADF TEST FUNCTION\n# ----------------------------\ndef run_adf(series: pd.Series):\n    result = adfuller(series)\n    print(\"\\nADF TEST RESULTS\")\n    print(\"----------------------------\")\n    print(f\"ADF Statistic : {result[0]}\")",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "series",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "series = series.dropna()\n# ----------------------------\n# ADF TEST FUNCTION\n# ----------------------------\ndef run_adf(series: pd.Series):\n    result = adfuller(series)\n    print(\"\\nADF TEST RESULTS\")\n    print(\"----------------------------\")\n    print(f\"ADF Statistic : {result[0]}\")\n    print(f\"p-value       : {result[1]}\")",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "rolling_mean",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "rolling_mean = series.rolling(window=ROLLING_WINDOW).mean()\nrolling_std = series.rolling(window=ROLLING_WINDOW).std()\nplt.figure(figsize=(12, 6))\nplt.plot(series, label=\"Original Series\")\nplt.plot(rolling_mean, label=\"Rolling Mean\")\nplt.plot(rolling_std, label=\"Rolling Std\")\nplt.title(\"Rolling Statistics (Stationarity Check)\")\nplt.legend()\nplt.grid(True)\nplt.show()",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "rolling_std",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.ADF",
+        "description": "implementation.server.python.TLO.ADF",
+        "peekOfCode": "rolling_std = series.rolling(window=ROLLING_WINDOW).std()\nplt.figure(figsize=(12, 6))\nplt.plot(series, label=\"Original Series\")\nplt.plot(rolling_mean, label=\"Rolling Mean\")\nplt.plot(rolling_std, label=\"Rolling Std\")\nplt.title(\"Rolling Statistics (Stationarity Check)\")\nplt.legend()\nplt.grid(True)\nplt.show()",
+        "detail": "implementation.server.python.TLO.ADF",
+        "documentation": {}
+    },
+    {
+        "label": "FileValidationError",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.data_loader",
+        "description": "implementation.server.python.TLO.data_loader",
+        "peekOfCode": "class FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")",
+        "detail": "implementation.server.python.TLO.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "kind": 2,
+        "importPath": "implementation.server.python.TLO.data_loader",
+        "description": "implementation.server.python.TLO.data_loader",
+        "peekOfCode": "def load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")\n    try:\n        if extension == \".csv\":",
+        "detail": "implementation.server.python.TLO.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_EXTENSIONS",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.data_loader",
+        "description": "implementation.server.python.TLO.data_loader",
+        "peekOfCode": "SUPPORTED_EXTENSIONS = {\n    \".csv\",\n    \".xlsx\",\n    \".xls\",\n    \".ods\",\n}\nclass FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)",
+        "detail": "implementation.server.python.TLO.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "file_path",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.main",
+        "description": "implementation.server.python.TLO.main",
+        "peekOfCode": "file_path = r\"D:\\Work\\EnergyForecastPipeline\\03-implementation\\server\\python\\TLO\\yearly_data\\2010.csv\"\ndataset = load_dataset(file_path)\ndf = dataset[\"dataframe\"]\n# Before preprocessing\nraw_report = TimeSeriesQualityAnalyzer.extract(df)\nimport json\nfrom dataclasses import asdict\nprint(json.dumps(asdict(raw_report), indent=2, default=str))\n# df = clean_duplicates(df)\n# df = enforce_daily_continuity(df)  # or use interpolation instead",
+        "detail": "implementation.server.python.TLO.main",
+        "documentation": {}
+    },
+    {
+        "label": "dataset",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.main",
+        "description": "implementation.server.python.TLO.main",
+        "peekOfCode": "dataset = load_dataset(file_path)\ndf = dataset[\"dataframe\"]\n# Before preprocessing\nraw_report = TimeSeriesQualityAnalyzer.extract(df)\nimport json\nfrom dataclasses import asdict\nprint(json.dumps(asdict(raw_report), indent=2, default=str))\n# df = clean_duplicates(df)\n# df = enforce_daily_continuity(df)  # or use interpolation instead\n# df = fill_missing_values(df)",
+        "detail": "implementation.server.python.TLO.main",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.main",
+        "description": "implementation.server.python.TLO.main",
+        "peekOfCode": "df = dataset[\"dataframe\"]\n# Before preprocessing\nraw_report = TimeSeriesQualityAnalyzer.extract(df)\nimport json\nfrom dataclasses import asdict\nprint(json.dumps(asdict(raw_report), indent=2, default=str))\n# df = clean_duplicates(df)\n# df = enforce_daily_continuity(df)  # or use interpolation instead\n# df = fill_missing_values(df)\n# df.to_csv(file_path, index=False)",
+        "detail": "implementation.server.python.TLO.main",
+        "documentation": {}
+    },
+    {
+        "label": "raw_report",
+        "kind": 5,
+        "importPath": "implementation.server.python.TLO.main",
+        "description": "implementation.server.python.TLO.main",
+        "peekOfCode": "raw_report = TimeSeriesQualityAnalyzer.extract(df)\nimport json\nfrom dataclasses import asdict\nprint(json.dumps(asdict(raw_report), indent=2, default=str))\n# df = clean_duplicates(df)\n# df = enforce_daily_continuity(df)  # or use interpolation instead\n# df = fill_missing_values(df)\n# df.to_csv(file_path, index=False)\n# with open(\"metadata_report.json\", \"w\") as f:\n#     json.dump(asdict(raw_report), f, indent=2, default=str)",
+        "detail": "implementation.server.python.TLO.main",
+        "documentation": {}
+    },
+    {
+        "label": "MetadataReport",
+        "kind": 6,
+        "importPath": "implementation.server.python.TLO.MetadataReport",
+        "description": "implementation.server.python.TLO.MetadataReport",
+        "peekOfCode": "class MetadataReport:\n    dataset_overview: dict\n    date_coverage: dict\n    frequency_analysis: dict\n    missing_values: dict\n    duplicates: dict\n    statistical_summary: dict\n    distribution_analysis: dict\n    energy_value_analysis: dict\n    outlier_analysis: dict",
+        "detail": "implementation.server.python.TLO.MetadataReport",
+        "documentation": {}
+    },
+    {
+        "label": "FileValidationError",
+        "kind": 6,
+        "importPath": "implementation.server.utils.data_loader",
+        "description": "implementation.server.utils.data_loader",
+        "peekOfCode": "class FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    # print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")",
+        "detail": "implementation.server.utils.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "kind": 2,
+        "importPath": "implementation.server.utils.data_loader",
+        "description": "implementation.server.utils.data_loader",
+        "peekOfCode": "def load_dataset(filepath: str) -> dict:\n    path = Path(filepath)\n    # print(f\"Loading dataset from: {path}\")\n    if not path.exists():\n        raise FileNotFoundError(f\"File not found: {filepath}\")\n    extension = path.suffix.lower()\n    if extension not in SUPPORTED_EXTENSIONS:\n        raise FileValidationError(f\"Unsupported file type: {extension}\")\n    try:\n        if extension == \".csv\":",
+        "detail": "implementation.server.utils.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_EXTENSIONS",
+        "kind": 5,
+        "importPath": "implementation.server.utils.data_loader",
+        "description": "implementation.server.utils.data_loader",
+        "peekOfCode": "SUPPORTED_EXTENSIONS = {\n    \".csv\",\n    \".xlsx\",\n    \".xls\",\n    \".ods\",\n}\nclass FileValidationError(Exception):\n    pass\ndef load_dataset(filepath: str) -> dict:\n    path = Path(filepath)",
+        "detail": "implementation.server.utils.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "implementation.server.manage",
+        "description": "implementation.server.manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "implementation.server.manage",
+        "documentation": {}
+    }
+]
