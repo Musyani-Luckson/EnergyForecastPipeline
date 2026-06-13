@@ -1,0 +1,193 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+
+abstract class User <<entity>> {
+  -id: String
+  -username: String
+  -passwordHash: String
+  +authenticate(): boolean
+  +authorize(action: String): boolean
+}
+
+class Administrator <<entity>> {
+  -adminLevel: String
+  +manageAccess(): void
+  +configureParameters(): void
+}
+
+class FacilityManager <<entity>> {
+  -facilityId: String
+  +uploadData(): void
+  +viewDashboard(): void
+  +exportReport(): void
+}
+
+class Session <<entity>> {
+  -sessionId: String
+  -isActive: boolean
+  -userId: String
+  +start(): void
+  +end(): void
+  +getUser(): User
+}
+
+class AuthenticationService <<control>> {
+  -sessionTimeout: int
+  +signIn(): Session
+  +signOut(): void
+  +validateCredentials(): boolean
+}
+
+class AccessController <<control>> {
+  +createUser(): void
+  +updatePermissions(): void
+  +revokeAccess(): void
+}
+
+class EnergyDataset <<entity>> {
+  -datasetId: String
+  -rawData: String
+  -processedData: String
+  -status: String
+  +validateData(): boolean
+}
+
+class DataIntakeService <<control>> {
+  +receiveUpload(): void
+  +validateAndPersist(): void
+  +preprocess(): void
+}
+
+class ForecastEngine <<control>> {
+  +runForecast(): void
+  +applyConfig(): void
+}
+
+class ForecastResult <<entity>> {
+  -resultId: String
+  -values: String
+  -metrics: String
+  +computeMetrics(): void
+}
+
+class AccuracyEvaluator <<control>> {
+  +evaluate(): void
+}
+
+class DashboardView <<boundary>> {
+  +renderDashboard(): void
+  +fetchResults(): ForecastResult
+}
+
+class ReportGenerator <<control>> {
+  +generateReport(): void
+}
+
+class ForecastConfiguration <<entity>> {
+  -configId: String
+  -parameters: String
+  +updateParameters(): void
+}
+
+class DatabaseConnector <<control>> {
+  +save(): void
+  +load(): void
+  +update(): void
+  +delete(): void
+}
+
+User <|-- Administrator
+User <|-- FacilityManager
+
+AuthenticationService --> User
+AuthenticationService --> Session
+AuthenticationService --> DatabaseConnector
+
+AccessController --> User
+AccessController --> Session
+AccessController --> DatabaseConnector
+
+DataIntakeService --> EnergyDataset
+DataIntakeService --> Session
+DataIntakeService --> DatabaseConnector
+
+ForecastEngine --> EnergyDataset
+ForecastEngine --> ForecastResult
+ForecastEngine --> ForecastConfiguration
+ForecastEngine --> DatabaseConnector
+
+AccuracyEvaluator --> ForecastResult
+AccuracyEvaluator --> EnergyDataset
+AccuracyEvaluator --> DatabaseConnector
+
+DashboardView --> ForecastResult
+
+ReportGenerator --> ForecastResult
+
+Session --> User
+
+ForecastConfiguration --> Session
+
+DatabaseConnector --> User
+DatabaseConnector --> EnergyDataset
+DatabaseConnector --> ForecastResult
+DatabaseConnector --> ForecastConfiguration
+@enduml
+
+
+
+
+
+
+
+
+..........................
+
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam linetype ortho
+
+actor "Facility Manager" as FM
+actor "System Administrator" as SA
+
+rectangle "Energy Forecast System" {
+
+  (Sign in) as UC1
+  (Upload Data) as UC2
+  (Run Preprocessing) as UC3
+  (Run Forecast) as UC4
+  (View Dashboard) as UC5
+  (Evaluate Accuracy) as UC6
+  (Export Report) as UC7
+  (Sign out) as UC8
+
+  (Manage User Access) as UC9
+  (Configure Parameters) as UC10
+}
+
+' Facility Manager interactions
+FM -- UC1
+FM -- UC2
+FM -- UC3
+FM -- UC4
+FM -- UC5
+FM -- UC6
+FM -- UC7
+FM -- UC8
+
+' System Administrator interactions
+SA -- UC1
+SA -- UC9
+SA -- UC10
+SA -- UC8
+
+@enduml
+
+
+
+
+
+.......................................
