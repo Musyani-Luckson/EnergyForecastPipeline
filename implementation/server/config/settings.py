@@ -16,12 +16,31 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load a local .env file so development picks up DB creds and settings
+# without exporting them by hand. Selected by DJANGO_ENV (default
+# "development"). load_dotenv does NOT override real environment
+# variables, so hosting platforms (Render) that inject their own env
+# always win, and their .env files need not exist there.
+try:
+    from dotenv import load_dotenv
+
+    _env_name = os.environ.get("DJANGO_ENV", "development")
+    for _dotenv in (BASE_DIR / f".env.{_env_name}", BASE_DIR / ".env"):
+        if _dotenv.exists():
+            load_dotenv(_dotenv)
+            break
+except ImportError:
+    pass
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-m!hwex@i)8432#lt+5ae=rm&fj5&ji*4$j7r!hwys_1a#oi8n9"
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-m!hwex@i)8432#lt+5ae=rm&fj5&ji*4$j7r!hwys_1a#oi8n9",
+)
 
 #
 #
