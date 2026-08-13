@@ -4,7 +4,8 @@ type ErrorType =
   | "PERMISSION_ERROR"
   | "NOT_FOUND"
   | "SERVER_ERROR"
-  | "NETWORK_ERROR";
+  | "NETWORK_ERROR"
+  | "";
 
 export interface ApiErrorResponse {
   success: false;

@@ -1,58 +1,53 @@
 import axios from "axios";
-import type { AuthResponse, LoginRequest } from "../types/auth";
-import api from "./index";
+import type { LoginRequest } from "../types/auth";
+import baseApi, { setAccessToken } from "./index";
 
-// Mock API calls for authentication
-const mockAuthResponse: AuthResponse = {
-  success: true,
-  token: "mock-jwt-token-123456",
-  user: {
-    userID: "usr_001",
-    email: "manager@example.com",
-    username: "manager",
-    firstname: "John",
-    lastname: "Doe",
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    role: "FACILITY_MANAGER",
-  },
-};
-
-// Signin
 export const signin = async (data: LoginRequest) => {
   try {
-    const response = await api().post("/api/account/login/", data);
+    const response = await baseApi.post("/api/accounts/login/", data);
+    setAccessToken(response.data.tokens.access);
     return response;
-  } catch (error: unknown) {
+  } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      return error.response;
+      throw error.response.data;
     }
     throw error;
   }
 };
 
-// Logout
-export const logout = async (): Promise<void> => {
+export const logout = async () => {
   try {
-    await api().post("/api/account/logout/");
-    localStorage.removeItem("token");
-  } catch (error: unknown) {
+    await baseApi.post("/api/accounts/logout/");
+    setAccessToken(null);
+  } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      throw error;
+      throw error.response.data;
     }
     throw error;
   }
 };
 
-// Get current signed-in user
+export const refreshToken = async () => {
+  try {
+    const response = await baseApi.post("/api/accounts/refresh/");
+    setAccessToken(response.data.tokens.access);
+    return response;
+  } catch (error) {
+    if (axios.isAxiosError(error) && error.response) {
+      throw error.response.data;
+    }
+    throw error;
+  }
+};
+
 export const getCurrentUser = async () => {
   try {
-    // const response = await api().get("/api/account/is-logged-in/");
-    // console.log(response);
-    return mockAuthResponse;
-  } catch (error: unknown) {
+    const response = await baseApi.get("/api/accounts/me/");
+
+    return response;
+  } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      return error.response;
+      throw error.response.data;
     }
     throw error;
   }

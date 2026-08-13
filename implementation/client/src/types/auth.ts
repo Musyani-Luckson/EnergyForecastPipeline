@@ -1,22 +1,25 @@
-export interface LoginRequest {
+export type Role = "admin" | "manager" | "user";
+
+export interface User {
+  id: number;
   username: string;
+  email: string;
+  first_name: string;
+  last_name: string;
+  role: Role;
+  is_superuser: boolean;
+  is_staff: boolean;
+}
+
+export interface LoginRequest {
+  email: string;
   password: string;
 }
 
-export interface User {
-  userID: string;
-  email: string;
-  username: string;
-  firstname: string;
-  lastname: string;
-  createdAt: string;
-  updatedAt: string;
-  role: "FACILITY_MANAGER" | "ADMIN" | "USER";
-}
-
+/** Shape returned by /login/, /refresh/ and /me/ (build_auth_response). */
 export interface AuthResponse {
   success: boolean;
-  token?: string;
+  message: string;
   user: User;
-  header?: string;
+  tokens?: { access: string };
 }

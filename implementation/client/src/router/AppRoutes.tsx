@@ -1,31 +1,42 @@
-import { Routes, Route } from "react-router-dom";
-import Layout from "../pages/layout/Layout";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import PublicRoute from "../pages/auth/PublicRoutes";
 import PrivateRoute from "../pages/auth/PrivateRotes";
+import Layout from "../pages/layout/Layout";
 import SigninPage from "../pages/auth/SigninPage";
-import Overview from "../pages/overview/Overview";
-import NewForecast from "../pages/newForecast/NewForecast";
-import Forecasts from "../pages/forecasts/Forecasts";
-// import Views from "../pages/views";
+import Dashboard from "../pages/dashboard/Dashboard";
+import Datasets from "../pages/datasets/Datasets";
+import DatasetDetails from "../pages/datasets/DatasetDetails";
+import DatasetWorkflow from "../pages/datasets/DatasetWorkflow";
+import ForecastPage from "../pages/dashboard/ForecastPage";
+import Users from "../pages/users/Users";
+import Settings from "../pages/settings/Settings";
+import NotFoundPage from "../pages/NotFoundPage";
 
 function AppRoutes() {
   return (
-    <Routes>
-      {/* Public routes */}
-      <Route element={<PublicRoute />}>
-        <Route path="/signin" element={<SigninPage />} />
-      </Route>
-
-      {/* Main Layout */}
-      <Route element={<Layout />}>
-        {/* Private routes */}
-        <Route element={<PrivateRoute />}>
-          <Route path="/" element={<Overview />} />
-          <Route path="/new-forecast" element={<NewForecast />} />
-          <Route path="/forecasts" element={<Forecasts />} />
+    <BrowserRouter>
+      <Routes>
+        {/* Public — redirects to "/" once authenticated */}
+        <Route element={<PublicRoute />}>
+          <Route path="/signin" element={<SigninPage />} />
         </Route>
-      </Route>
-    </Routes>
+
+        {/* Protected — requires authentication (session verified first) */}
+        <Route element={<PrivateRoute />}>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/datasets" element={<Datasets />} />
+            <Route path="/datasets/:runId" element={<DatasetDetails />} />
+            <Route path="/datasets/:runId/versions/:versionId" element={<DatasetWorkflow />} />
+            <Route path="/datasets/:runId/forecast" element={<ForecastPage />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/settings" element={<Settings />} />
+            {/* Unknown authenticated routes */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
