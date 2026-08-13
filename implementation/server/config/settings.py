@@ -153,6 +153,16 @@ def _db_env(key, default):
     return os.environ.get(f"DB_{key}") or os.environ.get(f"ENERGY_DB_{key}", default)
 
 
+# Most hosted MySQL providers (Aiven, PlanetScale, ...) require TLS.
+# DB_SSL_CA -> verify against a CA bundle; DB_SSL=true -> require TLS
+# without CA verification.
+_db_options = {"charset": "utf8mb4"}
+_db_ssl_ca = os.environ.get("DB_SSL_CA")
+if _db_ssl_ca:
+    _db_options["ssl"] = {"ca": _db_ssl_ca}
+elif os.environ.get("DB_SSL", "false").lower() in ("1", "true", "yes", "on"):
+    _db_options["ssl_mode"] = "REQUIRED"
+
 DATABASES = {
     "default": {
         "ENGINE": _db_env("ENGINE", "django.db.backends.mysql"),
@@ -161,9 +171,7 @@ DATABASES = {
         "PASSWORD": _db_env("PASSWORD", "12345678"),
         "HOST": _db_env("HOST", "127.0.0.1"),
         "PORT": _db_env("PORT", "3306"),
-        "OPTIONS": {
-            "charset": "utf8mb4",
-        },
+        "OPTIONS": _db_options,
     }
 }
 
