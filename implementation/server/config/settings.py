@@ -47,11 +47,26 @@ REST_FRAMEWORK = {
 #
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Off by default; set DEBUG=true in the local env for development.
+DEBUG = os.environ.get("DEBUG", "false").lower() in ("1", "true", "yes", "on")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+# Comma-separated in the env; Render's hostname is injected automatically.
+ALLOWED_HOSTS = [
+    h.strip()
+    for h in os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+    if h.strip()
+]
+_render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if _render_host:
+    ALLOWED_HOSTS.append(_render_host)
 
-CORS_ALLOWED_ORIGINS = [
+# The deployed frontend origin(s), comma-separated, plus the dev servers.
+_frontend_origins = [
+    o.strip()
+    for o in os.environ.get("FRONTEND_ORIGINS", "").split(",")
+    if o.strip()
+]
+CORS_ALLOWED_ORIGINS = _frontend_origins + [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",
@@ -59,11 +74,13 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_TRUSTED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = _frontend_origins + [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",
 ]
+if _render_host:
+    CSRF_TRUSTED_ORIGINS.append(f"https://{_render_host}")
 
 # CORS_ALLOW_HEADERS = list(default_headers)
 
@@ -98,6 +115,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     #
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -130,14 +148,19 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# Accept both DB_* and ENERGY_DB_* env names; fall back to local dev defaults.
+def _db_env(key, default):
+    return os.environ.get(f"DB_{key}") or os.environ.get(f"ENERGY_DB_{key}", default)
+
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ.get("ENERGY_DB_NAME", "energy_forecast"),
-        "USER": os.environ.get("ENERGY_DB_USER", "root"),
-        "PASSWORD": os.environ.get("ENERGY_DB_PASSWORD", "12345678"),
-        "HOST": os.environ.get("ENERGY_DB_HOST", "127.0.0.1"),
-        "PORT": os.environ.get("ENERGY_DB_PORT", "3306"),
+        "ENGINE": _db_env("ENGINE", "django.db.backends.mysql"),
+        "NAME": _db_env("NAME", "energy_forecast"),
+        "USER": _db_env("USER", "root"),
+        "PASSWORD": _db_env("PASSWORD", "12345678"),
+        "HOST": _db_env("HOST", "127.0.0.1"),
+        "PORT": _db_env("PORT", "3306"),
         "OPTIONS": {
             "charset": "utf8mb4",
         },
@@ -184,6 +207,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# WhiteNoise serves collected static files in production (DEBUG=False).
+STORAGES = {
+    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    },
+}
 
 # Media files (uploaded datasets, exported reports).
 # MEDIA_ROOT is BASE_DIR so the existing datasets/ and reports/
