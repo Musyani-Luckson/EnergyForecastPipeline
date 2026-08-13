@@ -56,7 +56,10 @@ export function useAuth(): AuthHookValue {
   const { state, dispatch } = useAuthContext();
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    dispatch({ type: "AUTH_REQUEST" });
+    // Clear any stale error, but do NOT touch the global `isLoading` flag:
+    // that drives the route-guard "Verifying session…" screen, which is for
+    // session bootstrap only. In-flight login state is local to the form.
+    dispatch({ type: "CLEAR_ERROR" });
     try {
       // apiLogin stores the access token in memory (api/index) on success.
       const res = await apiLogin({ email, password });

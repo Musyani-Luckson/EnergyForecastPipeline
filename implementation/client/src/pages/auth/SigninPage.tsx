@@ -64,13 +64,19 @@ function PasswordInput({
 }
 
 export default function SigninPage() {
-  const { isLoading, error, login } = useAuth();
+  const { error, login } = useAuth();
   const [email, setEmail] = useState("admin@energy.local");
   const [password, setPassword] = useState("Admin12345");
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    void login(email, password);
+    if (submitting) return;
+    setSubmitting(true);
+    const ok = await login(email, password);
+    // On success the route guard redirects away and this unmounts; only
+    // re-enable the form when the attempt failed.
+    if (!ok) setSubmitting(false);
   };
 
   const errorMessage = error;
@@ -197,7 +203,7 @@ export default function SigninPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                disabled={isLoading}
+                disabled={submitting}
                 autoComplete="email"
                 required
                 className="w-full pl-4 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/25 focus:border-blue-400 disabled:bg-slate-50 disabled:text-slate-400 transition"
@@ -217,17 +223,17 @@ export default function SigninPage() {
               <PasswordInput
                 value={password}
                 onChange={setPassword}
-                disabled={isLoading}
+                disabled={submitting}
               />
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              disabled={isLoading || !email || !password}
-              className="w-full mt-1 flex items-center justify-center gap-2 rounded-xl bg-blue-700 hover:bg-blue-800 disabled:bg-blue-300 text-white py-3 text-sm font-semibold transition-all duration-150 shadow-sm shadow-blue-200"
+              disabled={submitting || !email || !password}
+              className="w-full mt-1 flex items-center justify-center gap-2 rounded-xl bg-blue-700 hover:bg-blue-800 disabled:bg-blue-300 disabled:cursor-not-allowed text-white py-3 text-sm font-semibold transition-all duration-150 shadow-sm shadow-blue-200"
             >
-              {isLoading ? (
+              {submitting ? (
                 <>
                   <Loader2 size={15} className="animate-spin" />
                   Signing in…
