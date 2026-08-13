@@ -1,39 +1,27 @@
+import time
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from datetime import datetime, timezone
-
-from django.core.files.base import ContentFile
-from django.core.files.storage import default_storage
-
-from apps.datasets.models import Dataset
-
-from utils.data_loader import load_dataset
+from apps.processing.models import DatasetVersion, PreprocessingLog, Stage
+from apps.processing.services import load_version_df, next_version, VALUE_COLUMN
 
 from algorithm.preprocess.dataClearning.clean_duplicates import clean_duplicates
 from algorithm.preprocess.dataClearning.enforce_daily_continuity import (
     enforce_daily_continuity,
 )
-from algorithm.preprocess.dataClearning.fill_missing_values import (
-    fill_missing_values,
-)
+from algorithm.preprocess.dataClearning.fill_missing_values import fill_missing_values
 
 
 class CleanDatasetView(APIView):
     """
-    Stage 1: CLEANING PIPELINE NODE CREATION
-
-    Each execution produces:
-    - new Dataset row
-    - linked dependency to previous dataset node
-    - same run_id propagation
+    Stage: CLEANED. Applies the requested cleaning steps to a source
+    DatasetVersion, writes a new CLEANED DatasetVersion, and records a
+    PreprocessingLog with the cleaning statistics.
     """
 
-    DEPENDENCIES = {
-        "enforce_daily_continuity": ["fill_missing_values"],
-    }
-
+    DEPENDENCIES = {"enforce_daily_continuity": ["fill_missing_values"]}
     SUPPORTED_ACTIONS = {
         "remove_duplicates",
         "enforce_daily_continuity",
@@ -41,33 +29,30 @@ class CleanDatasetView(APIView):
     }
 
     def post(self, request):
-
-        dataset_id = request.data.get("dataset_id")
+        version_id = request.data.get("dataset_id")
         cleaning = request.data.get("cleaning", {})
 
-        if not dataset_id:
+        if not version_id:
             return Response(
                 {"success": False, "message": "dataset_id is required."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-
         if not isinstance(cleaning, dict):
             return Response(
                 {"success": False, "message": "cleaning must be an object."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        # -----------------------------
-        # Load source node
-        # -----------------------------
-        source = Dataset.objects.get(id=dataset_id)
-        df = load_dataset(source.file_path)["dataframe"]
+        try:
+            source = DatasetVersion.objects.get(id=version_id)
+        except DatasetVersion.DoesNotExist:
+            return Response(
+                {"success": False, "message": f"Dataset version {version_id} not found."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
 
-        # -----------------------------
-        # Resolve actions
-        # -----------------------------
+        # Resolve requested actions + dependency auto-enable.
         resolved = {a: False for a in self.SUPPORTED_ACTIONS}
-
         for action, enabled in cleaning.items():
             if action not in self.SUPPORTED_ACTIONS:
                 return Response(
@@ -77,21 +62,25 @@ class CleanDatasetView(APIView):
             resolved[action] = bool(enabled)
 
         dependency_notes = []
-
-        for action, enabled in resolved.items():
+        for action, enabled in list(resolved.items()):
             if enabled:
                 for dep in self.DEPENDENCIES.get(action, []):
                     if not resolved[dep]:
                         resolved[dep] = True
                         dependency_notes.append(f"{dep} auto-enabled due to {action}")
 
-        # -----------------------------
-        # Apply pipeline
-        # -----------------------------
+        started = time.perf_counter()
+        df = load_version_df(source)
+
+        # ── apply pipeline, tracking stats ──
         applied = []
+        duplicate_rows_removed = 0
+        missing_values_fixed = 0
 
         if resolved["remove_duplicates"]:
+            before = len(df)
             df = clean_duplicates(df)
+            duplicate_rows_removed = max(0, before - len(df))
             applied.append("remove_duplicates")
 
         if resolved["enforce_daily_continuity"]:
@@ -99,61 +88,44 @@ class CleanDatasetView(APIView):
             applied.append("enforce_daily_continuity")
 
         if resolved["fill_missing_values"]:
+            missing_before = (
+                int(df[VALUE_COLUMN].isna().sum()) if VALUE_COLUMN in df.columns else 0
+            )
             df = fill_missing_values(df)
+            missing_after = (
+                int(df[VALUE_COLUMN].isna().sum()) if VALUE_COLUMN in df.columns else 0
+            )
+            missing_values_fixed = max(0, missing_before - missing_after)
             applied.append("fill_missing_values")
 
-        # -----------------------------
-        # Save new dataset file
-        # -----------------------------
-        timestamp = (
-            datetime.now(timezone.utc)
-            .isoformat()
-            .replace("+00:00", "Z")
-            .replace(":", "-")
+        elapsed_ms = int((time.perf_counter() - started) * 1000)
+
+        cleaned_version = next_version(source, Stage.CLEANED, df, "cleaned")
+
+        PreprocessingLog.objects.create(
+            processing_job=cleaned_version.processing_job,
+            dataset_version=cleaned_version,
+            stage=Stage.CLEANED,
+            status=PreprocessingLog.Status.SUCCESS,
+            processing_time_ms=elapsed_ms,
+            missing_values_fixed=missing_values_fixed,
+            duplicate_rows_removed=duplicate_rows_removed,
+            notes="; ".join(dependency_notes),
         )
 
-        output_path = f"datasets/cleaned/{timestamp}_{source.name}"
-
-        csv_buffer = df.to_csv(index=False).encode("utf-8")
-
-        stored_path = default_storage.save(
-            output_path,
-            ContentFile(csv_buffer),
-        )
-
-        # -----------------------------
-        # Create NEW dataset node (NO MUTATION)
-        # -----------------------------
-        cleaned_node = Dataset.objects.create(
-            run_id=source.run_id,  # propagate pipeline group
-            name=source.name,
-            file_path=stored_path,
-            file_size=len(csv_buffer),
-            stage="CLEANED",
-            dependency=source,
-            instructions=resolved,
-            metadata={
-                "applied_steps": applied,
-                "dependency_notes": dependency_notes,
-                "rows": len(df),
-                "columns": list(df.columns),
-            },
-        )
-
-        # -----------------------------
-        # RESPONSE
-        # -----------------------------
         return Response(
             {
                 "success": True,
                 "message": "Cleaning stage completed.",
                 "data": {
                     "source_id": source.id,
-                    "cleaned_id": cleaned_node.id,
-                    "run_id": str(source.run_id),
-                    "stage": cleaned_node.stage,
-                    "file_path": stored_path,
+                    "cleaned_id": cleaned_version.id,
+                    "run_id": str(cleaned_version.processing_job_id),
+                    "stage": "CLEANED",
+                    "file_path": cleaned_version.file_path,
                     "applied_steps": applied,
+                    "duplicate_rows_removed": duplicate_rows_removed,
+                    "missing_values_fixed": missing_values_fixed,
                 },
             },
             status=status.HTTP_200_OK,

@@ -1,96 +1,46 @@
-import uuid
+"""Dataset domain: one record per uploaded source dataset."""
+from __future__ import annotations
+
+from django.conf import settings
 from django.db import models
 
 
 class Dataset(models.Model):
-    """
-    Unified dataset entity.
+    """A single dataset uploaded by a user; the pipeline's entry point."""
 
-    Replaces Dataset model entirely.
+    class Status(models.TextChoices):
+        UPLOADED = "uploaded", "Uploaded"
+        PROCESSING = "processing", "Processing"
+        COMPLETED = "completed", "Completed"
+        FAILED = "failed", "Failed"
+        ARCHIVED = "archived", "Archived"
 
-    Represents:
-    RAW → CLEANED → OUTLIER → STATIONARY → FORECAST
-    """
-
-    STAGE_CHOICES = [
-        ("RAW", "Raw"),
-        ("CLEANED", "Cleaned"),
-        ("OUTLIER", "Outlier"),
-        ("STATIONARY", "Stationary"),
-        ("FORECAST", "Forecast"),
-    ]
-
-    # -----------------------------
-    # Experiment / Pipeline group
-    # -----------------------------
-    run_id = models.UUIDField(
-        default=uuid.uuid4,
-        editable=False,
-        db_index=True,
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="datasets",
     )
-
-    # -----------------------------
-    # Identity
-    # -----------------------------
-    name = models.CharField(max_length=255)
-
-    file_path = models.TextField()
-
-    file_size = models.BigIntegerField(null=True, blank=True)
-
-    # -----------------------------
-    # Stage definition
-    # -----------------------------
-    stage = models.CharField(
+    dataset_name = models.CharField(max_length=255)
+    original_filename = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    status = models.CharField(
         max_length=20,
-        choices=STAGE_CHOICES,
-        default="RAW",
+        choices=Status.choices,
+        default=Status.UPLOADED,
         db_index=True,
     )
-
-    # -----------------------------
-    # Lineage (self-contained DAG)
-    # -----------------------------
-    has_dependency = models.BooleanField(default=False)
-
-    dependency = models.ForeignKey(
-        "self",
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="children",
-    )
-
-    # -----------------------------
-    # Processing config
-    # -----------------------------
-    instructions = models.JSONField(default=dict, blank=True)
-
-    # -----------------------------
-    # Computed outputs / analytics
-    # -----------------------------
-    metadata = models.JSONField(default=dict, blank=True)
-
-    # -----------------------------
-    # Lifecycle control
-    # -----------------------------
-    is_active = models.BooleanField(default=True)
-
+    current_version = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table = "dataset_metadata"
-        ordering = ["created_at"]
+        verbose_name = "Dataset"
+        verbose_name_plural = "Datasets"
+        ordering = ["-created_at"]
         indexes = [
-            models.Index(fields=["run_id"]),
-            models.Index(fields=["stage"]),
-            models.Index(fields=["dependency"]),
+            models.Index(fields=["user", "status"], name="dataset_user_status_idx"),
+            models.Index(fields=["created_at"], name="dataset_created_idx"),
         ]
 
-    def save(self, *args, **kwargs):
-        self.has_dependency = self.dependency is not None
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return f"{self.name} | {self.stage} | {self.run_id}"
+    def __str__(self) -> str:
+        return f"{self.dataset_name} (v{self.current_version})"

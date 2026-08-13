@@ -1,7 +1,21 @@
 from django.urls import path
-from .views import PredictView, BatchPredictView
+
+from .views.stationarity import StationarityView
+from .views.differencing import DifferencingView
+from .views.save import SaveView
+from .views.run import (
+    RunForecastView,
+    RunStatusView,
+    ResultListView,
+    ForecastSeriesView,
+)
 
 urlpatterns = [
-    path("predict/", PredictView.as_view()),
-    path("batch_predict/", BatchPredictView.as_view()),
+    path("stationarity/", StationarityView.as_view()),
+    path("differencing/", DifferencingView.as_view()),
+    path("save/", SaveView.as_view()),
+    path("run/", RunForecastView.as_view()),
+    path("status/", RunStatusView.as_view()),
+    path("results/", ResultListView.as_view()),
+    path("series/", ForecastSeriesView.as_view()),
 ]

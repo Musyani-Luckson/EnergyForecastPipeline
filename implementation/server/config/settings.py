@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,11 +23,49 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-m!hwex@i)8432#lt+5ae=rm&fj5&ji*4$j7r!hwys_1a#oi8n9"
 
+#
+#
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": True,
+}
+#
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    # Free up the `format` query param for our report export
+    # (?format=pdf|csv). DRF otherwise reserves it for content
+    # negotiation and 404s on unknown formats.
+    "URL_FORMAT_OVERRIDE": None,
+}
+#
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
+]
+
+# CORS_ALLOW_HEADERS = list(default_headers)
 
 # Application definition
 
@@ -41,18 +80,23 @@ INSTALLED_APPS = [
     "apps.accounts.apps.AccountsConfig",
     "apps.core.apps.CoreConfig",
     "apps.datasets.apps.DatasetsConfig",
-    "apps.parameters.apps.ParametersConfig",
-    "apps.models_registry.apps.ModelsRegistryConfig",
+    "apps.processing.apps.ProcessingConfig",
     "apps.forecasting.apps.ForecastingConfig",
     "apps.evaluation.apps.EvaluationConfig",
     "apps.dashboard.apps.DashboardConfig",
     "apps.reports.apps.ReportsConfig",
     "apps.preprocess.apps.PreprocessConfig",
+    #
+    "rest_framework",
+    "rest_framework_simplejwt.token_blacklist",
+    "corsheaders",
     #     "apps.notifications.apps.NotificationsConfig",
     #     "apps.audit.apps.AuditConfig",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    #
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -60,6 +104,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    #
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -87,10 +132,21 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.environ.get("ENERGY_DB_NAME", "energy_forecast"),
+        "USER": os.environ.get("ENERGY_DB_USER", "root"),
+        "PASSWORD": os.environ.get("ENERGY_DB_PASSWORD", "12345678"),
+        "HOST": os.environ.get("ENERGY_DB_HOST", "127.0.0.1"),
+        "PORT": os.environ.get("ENERGY_DB_PORT", "3306"),
+        "OPTIONS": {
+            "charset": "utf8mb4",
+        },
     }
 }
+
+
+# Custom email-authenticated user model.
+AUTH_USER_MODEL = "accounts.User"
 
 
 # Password validation
@@ -128,3 +184,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+# Media files (uploaded datasets, exported reports).
+# MEDIA_ROOT is BASE_DIR so the existing datasets/ and reports/
+# storage paths resolve consistently; only the reports/ subtree
+# is web-served (see config/urls.py), never the project root.
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR

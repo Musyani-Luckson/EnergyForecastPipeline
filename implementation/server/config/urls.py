@@ -15,21 +15,31 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from django.views.static import serve
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/accounts/", include("apps.accounts.urls")),
     path("api/core/", include("apps.core.urls")),
     path("api/datasets/", include("apps.datasets.urls")),
-    path("api/parameters/", include("apps.parameters.urls")),
-    path("api/models_registry/", include("apps.models_registry.urls")),
+    path("api/preprocess/", include("apps.preprocess.urls")),
     path("api/forecasting/", include("apps.forecasting.urls")),
     path("api/evaluation/", include("apps.evaluation.urls")),
     path("api/dashboard/", include("apps.dashboard.urls")),
     path("api/reports/", include("apps.reports.urls")),
-    path("api/preprocess/", include("apps.preprocess.urls")),
-    # path("api/notifications/", include("apps.notifications.urls")),
-    # path("api/audit/", include("apps.audit.urls")),
 ]
+
+if settings.DEBUG:
+    # Serve exported reports (and only reports) for download in dev.
+    # Scoped to the reports/ subtree so project source and the
+    # database under BASE_DIR are never web-exposed.
+    urlpatterns += [
+        path(
+            "media/reports/<path:path>",
+            serve,
+            {"document_root": settings.MEDIA_ROOT / "reports"},
+        ),
+    ]
