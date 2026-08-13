@@ -149,8 +149,19 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 # Accept both DB_* and ENERGY_DB_* env names; fall back to local dev defaults.
+# Map our canonical keys to Clever Cloud's MYSQL_ADDON_* names.
+_ADDON_ALIAS = {"NAME": "DB", "USER": "USER", "PASSWORD": "PASSWORD",
+                "HOST": "HOST", "PORT": "PORT"}
+
+
 def _db_env(key, default):
-    return os.environ.get(f"DB_{key}") or os.environ.get(f"ENERGY_DB_{key}", default)
+    # Precedence: DB_* -> ENERGY_DB_* -> MYSQL_ADDON_* (Clever Cloud) -> default.
+    return (
+        os.environ.get(f"DB_{key}")
+        or os.environ.get(f"ENERGY_DB_{key}")
+        or os.environ.get(f"MYSQL_ADDON_{_ADDON_ALIAS.get(key, key)}")
+        or default
+    )
 
 
 # Most hosted MySQL providers (Aiven, PlanetScale, ...) require TLS.
