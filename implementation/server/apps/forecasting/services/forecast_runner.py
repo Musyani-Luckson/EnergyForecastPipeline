@@ -50,7 +50,13 @@ class ForecastRunner:
         job.current_stage = Stage.FORECAST
         job.started_at = timezone.now()
         job.error_message = ""
-        job.save(update_fields=["status", "current_stage", "started_at", "error_message", "updated_at"])
+        job.progress_phase = "starting"
+        job.progress_done = 0
+        job.progress_total = 0
+        job.save(update_fields=[
+            "status", "current_stage", "started_at", "error_message",
+            "progress_phase", "progress_done", "progress_total", "updated_at",
+        ])
 
         if background:
             threading.Thread(
@@ -61,6 +67,41 @@ class ForecastRunner:
             job.refresh_from_db()
 
         return job
+
+    @staticmethod
+    def _progress_writer(job: ProcessingJob):
+        """
+        Build the callback the engine reports through, persisting the
+        phase and step counts on the job so the status endpoint can
+        serve live progress during a run.
+
+        Writes are throttled to whole percentage points (and always to
+        the final step) so a 144-candidate search issues a bounded
+        number of updates rather than one per candidate.
+        """
+        state = {"percent": -1}
+
+        def report(phase, done=None, total=None):
+            done = int(done or 0)
+            total = int(total or 0)
+
+            percent = int(done / total * 100) if total else -1
+            # Phase changes and the last step always write; otherwise only
+            # when the whole-percent figure actually moves.
+            if phase == job.progress_phase and percent == state["percent"] and done != total:
+                return
+            state["percent"] = percent
+
+            job.progress_phase = phase
+            job.progress_done = done
+            job.progress_total = total
+            job.save(
+                update_fields=[
+                    "progress_phase", "progress_done", "progress_total", "updated_at",
+                ]
+            )
+
+        return report
 
     @classmethod
     def _execute(cls, source_version_id: int) -> None:
@@ -78,7 +119,9 @@ class ForecastRunner:
         try:
             series = load_version_series(source)
             engine = ForecastEngine()  # contract defaults (30-day, s auto, 95% CI)
-            result = engine.run_forecast(series)
+            result = engine.run_forecast(
+                series, progress_callback=cls._progress_writer(job)
+            )
             elapsed_ms = int((time.perf_counter() - started) * 1000)
             cls._persist(source, job, series, result, elapsed_ms)
         except Exception as exc:
@@ -149,6 +192,11 @@ class ForecastRunner:
             job.current_stage = Stage.FORECAST
             job.completed_at = timezone.now()
             job.execution_time_ms = elapsed_ms
-            job.save(update_fields=["status", "current_stage", "completed_at", "execution_time_ms", "updated_at"])
+            job.progress_phase = "complete"
+            job.progress_done = job.progress_total
+            job.save(update_fields=[
+                "status", "current_stage", "completed_at", "execution_time_ms",
+                "progress_phase", "progress_done", "updated_at",
+            ])
 
         return forecast

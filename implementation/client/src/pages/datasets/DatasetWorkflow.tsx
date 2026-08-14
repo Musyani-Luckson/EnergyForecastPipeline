@@ -7,6 +7,7 @@ import {
   cleanDataset, detectOutliers, runDifferencing, startForecast, getForecastStatus,
   fetchForecastSummaries, fetchForecastSeries, fetchVersionSeries,
   type ForecastSeries, type ForecastSummary as Forecast,
+  type ForecastProgress as ForecastProgressData, type SelectedModel,
   type StageKey, type VersionNode, type VersionSeries,
 } from "../../api/datasetsAPI";
 import { HISTORY_STAGES } from "@/pages/dashboard/layers";
@@ -18,6 +19,7 @@ import {
 import StageStepper from "./components/StageStepper";
 import StagePurposeHeader from "./components/StagePurposeHeader";
 import QualityReport from "./components/QualityReport";
+import ForecastProgress from "./components/ForecastProgress";
 import { QualityReportView } from "@/pages/report";
 import NextStepCard from "./components/NextStepCard";
 import { ForecastDashboard } from "@/pages/dashboard";
@@ -52,6 +54,9 @@ export default function DatasetWorkflow() {
   const [advancing, setAdvancing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [forecast, setForecast] = useState<Forecast | null>(null);
+  /** Live grid-search progress, polled while the run executes. */
+  const [progress, setProgress] = useState<ForecastProgressData | null>(null);
+  const [selectedModel, setSelectedModel] = useState<SelectedModel | null>(null);
   const [forecastSeries, setForecastSeries] = useState<ForecastSeries | null>(null);
   const [stageSeries, setStageSeries] = useState<VersionSeries[]>([]);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -80,9 +85,16 @@ export default function DatasetWorkflow() {
 
   const beginForecastPolling = (forecastId: number) => {
     setForecast(null);
+    setProgress(null);
+    setSelectedModel(null);
     pollRef.current = setInterval(async () => {
       try {
         const info = await getForecastStatus(forecastId);
+        // Progress first: it must keep updating on every tick, including the
+        // one that reports completion.
+        setProgress(info.progress);
+        if (info.selected_model) setSelectedModel(info.selected_model);
+
         if (info.status === "FAILED") {
           if (pollRef.current) clearInterval(pollRef.current);
           setError(info.error ?? "Forecast failed.");
@@ -349,11 +361,7 @@ export default function DatasetWorkflow() {
             onBack={() => navigate(`/datasets/${runId}`)}
           />
         ) : (
-          <div className="flex flex-col items-center justify-center py-20 gap-3 text-slate-500">
-            <Loader2 size={24} className="animate-spin text-blue-600" />
-            <p className="text-sm font-medium">Running SARIMA forecast…</p>
-            <p className="text-xs text-slate-400">Grid search over SARIMA orders — this can take a few minutes.</p>
-          </div>
+          <ForecastProgress progress={progress} selected={selectedModel} />
         )
       ) : (
         <>

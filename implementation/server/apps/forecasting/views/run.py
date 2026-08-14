@@ -102,6 +102,22 @@ class RunStatusView(APIView):
 
         forecast = Forecast.objects.filter(processing_job=job).order_by("-created_at").first()
 
+        total = job.progress_total or 0
+        done = job.progress_done or 0
+
+        # The order chosen by the grid search, available once a Forecast
+        # exists so the client can report what the search settled on.
+        selected_model = (
+            {
+                "order": list(forecast.order),
+                "seasonal_order": list(forecast.seasonal_order),
+                "aic": forecast.aic,
+                "bic": forecast.bic,
+            }
+            if forecast
+            else None
+        )
+
         return Response(
             {
                 "success": True,
@@ -110,7 +126,16 @@ class RunStatusView(APIView):
                     "forecast_id": job.id,
                     "run_id": str(job.id),
                     "status": STATUS_MAP.get(job.status, job.status),
-                    "progress": {"phase": job.current_stage},
+                    "progress": {
+                        # `phase` stays the pipeline stage for backward
+                        # compatibility; `step` names the engine phase.
+                        "phase": job.current_stage,
+                        "step": job.progress_phase or None,
+                        "done": done,
+                        "total": total,
+                        "percent": int(done / total * 100) if total else None,
+                    },
+                    "selected_model": selected_model,
                     "error": job.error_message or None,
                     "result_id": forecast.id if forecast else None,
                 },

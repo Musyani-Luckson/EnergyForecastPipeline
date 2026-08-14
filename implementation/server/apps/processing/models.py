@@ -47,6 +47,14 @@ class ProcessingJob(models.Model):
     completed_at = models.DateTimeField(null=True, blank=True)
     execution_time_ms = models.PositiveIntegerField(null=True, blank=True)
     error_message = models.TextField(blank=True)
+
+    # Live progress of the running phase, so a long grid search can be
+    # reported to the client while it executes rather than only on
+    # completion. Scalar run state belonging to the job itself — the
+    # counts are transient and are not derivable from any other table.
+    progress_phase = models.CharField(max_length=32, blank=True)
+    progress_done = models.PositiveIntegerField(default=0)
+    progress_total = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

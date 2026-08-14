@@ -243,9 +243,30 @@ export interface ForecastSeries {
   forecast_period: { start: string | null; end: string | null };
 }
 
+export interface ForecastProgress {
+  /** Pipeline stage (kept for backward compatibility). */
+  phase: string;
+  /** Engine phase: "starting" | "differencing" | "optimizing" | "forecasting" | "complete". */
+  step: string | null;
+  /** Candidates evaluated so far, and the total to evaluate. */
+  done: number;
+  total: number;
+  /** Whole-percent completion, or null before the total is known. */
+  percent: number | null;
+}
+
+/** The order the grid search settled on; present once the model is fitted. */
+export interface SelectedModel {
+  order: number[];
+  seasonal_order: number[];
+  aic: number | null;
+  bic: number | null;
+}
+
 export interface ForecastStatus {
   status: "PENDING" | "RUNNING" | "COMPLETED" | "FAILED";
-  progress: { phase: string } | null;
+  progress: ForecastProgress | null;
+  selected_model: SelectedModel | null;
   error: string | null;
   result_id: number | null;
 }

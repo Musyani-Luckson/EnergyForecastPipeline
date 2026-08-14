@@ -8,7 +8,7 @@ from algorithm.forecastEngine.differencing.DifferencingEngine import Differencin
 from algorithm.forecastEngine.SARIMA.SARIMAEngine import SARIMAEngine
 from algorithm.forecastEngine.ForecastEngine import ForecastEngine
 
-from apps.forecasting.services.forecast_runner import detect_peaks
+from apps.forecasting.services.forecast_runner import detect_peaks, ForecastRunner
 
 
 def seasonal_series(n=60, seed=42) -> pd.Series:
@@ -84,3 +84,127 @@ class PeakDetectionTests(TestCase):
 
     def test_flat_series_has_no_peaks(self):
         self.assertEqual(detect_peaks([5.0] * 10), [])
+
+
+class ForecastProgressTests(TestCase):
+    """The engine's progress callback must reach the job record."""
+
+    def _job(self):
+        from apps.accounts.models import User
+        from apps.datasets.models import Dataset
+        from apps.processing.models import ProcessingJob
+
+        user = User.objects.create_user(email="p@e.local", password="x")
+        dataset = Dataset.objects.create(
+            user=user, dataset_name="d.csv", original_filename="d.csv"
+        )
+        return ProcessingJob.objects.create(dataset=dataset, job_name="d.csv pipeline")
+
+    def test_writer_persists_phase_and_counts(self):
+        job = self._job()
+        report = ForecastRunner._progress_writer(job)
+
+        report("optimizing", 72, 144)
+        job.refresh_from_db()
+
+        self.assertEqual(job.progress_phase, "optimizing")
+        self.assertEqual(job.progress_done, 72)
+        self.assertEqual(job.progress_total, 144)
+
+    def test_writer_throttles_within_a_whole_percent(self):
+        """Steps landing on the same whole percent issue one write, not many."""
+        job = self._job()
+        report = ForecastRunner._progress_writer(job)
+
+        report("optimizing", 1, 1000)         # 0% -> writes
+        report("optimizing", 2, 1000)         # still 0% -> suppressed
+        report("optimizing", 9, 1000)         # still 0% -> suppressed
+        job.refresh_from_db()
+        self.assertEqual(job.progress_done, 1)
+
+        report("optimizing", 130, 1000)       # 13% -> writes
+        job.refresh_from_db()
+        self.assertEqual(job.progress_done, 130)
+
+    def test_final_step_always_written(self):
+        job = self._job()
+        report = ForecastRunner._progress_writer(job)
+
+        report("optimizing", 143, 144)
+        report("optimizing", 144, 144)        # last step must never be dropped
+        job.refresh_from_db()
+        self.assertEqual(job.progress_done, 144)
+
+    def test_phase_change_always_written(self):
+        job = self._job()
+        report = ForecastRunner._progress_writer(job)
+
+        report("differencing", 0, 0)
+        job.refresh_from_db()
+        self.assertEqual(job.progress_phase, "differencing")
+
+        report("forecasting", 0, 0)
+        job.refresh_from_db()
+        self.assertEqual(job.progress_phase, "forecasting")
+
+
+class RunStatusPayloadTests(TestCase):
+    """The status endpoint must expose live counts and the selected order."""
+
+    def test_status_reports_progress_and_selected_model(self):
+        from rest_framework.test import APIRequestFactory, force_authenticate
+        from apps.accounts.models import User
+        from apps.datasets.models import Dataset
+        from apps.processing.models import ProcessingJob, DatasetVersion, Stage
+        from apps.forecasting.models import Forecast
+        from apps.forecasting.views.run import RunStatusView
+
+        user = User.objects.create_user(email="s@e.local", password="x")
+        dataset = Dataset.objects.create(
+            user=user, dataset_name="d.csv", original_filename="d.csv"
+        )
+        job = ProcessingJob.objects.create(
+            dataset=dataset, job_name="d.csv pipeline",
+            status=ProcessingJob.Status.RUNNING,
+            progress_phase="optimizing", progress_done=72, progress_total=144,
+        )
+        version = DatasetVersion.objects.create(
+            processing_job=job, dataset=dataset, version_number=1,
+            stage=Stage.OUTLIERS, file_path="x.csv", record_count=1, checksum="c",
+        )
+        Forecast.objects.create(
+            processing_job=job, dataset=dataset, stationary_dataset_version=version,
+            p=1, d=1, q=1, seasonal_p=0, seasonal_d=0, seasonal_q=1,
+            seasonal_period=7, aic=123.45, bic=130.0, forecast_horizon=30,
+        )
+
+        request = APIRequestFactory().get("/api/forecasting/status/", {"forecast_id": job.id})
+        force_authenticate(request, user=user)
+        data = RunStatusView.as_view()(request).data["data"]
+
+        self.assertEqual(data["progress"]["step"], "optimizing")
+        self.assertEqual(data["progress"]["done"], 72)
+        self.assertEqual(data["progress"]["total"], 144)
+        self.assertEqual(data["progress"]["percent"], 50)
+        self.assertEqual(data["selected_model"]["order"], [1, 1, 1])
+        self.assertEqual(data["selected_model"]["seasonal_order"], [0, 0, 1, 7])
+
+    def test_percent_is_null_before_total_known(self):
+        from rest_framework.test import APIRequestFactory, force_authenticate
+        from apps.accounts.models import User
+        from apps.datasets.models import Dataset
+        from apps.processing.models import ProcessingJob
+        from apps.forecasting.views.run import RunStatusView
+
+        user = User.objects.create_user(email="s2@e.local", password="x")
+        dataset = Dataset.objects.create(
+            user=user, dataset_name="d.csv", original_filename="d.csv"
+        )
+        job = ProcessingJob.objects.create(dataset=dataset, job_name="p")
+
+        request = APIRequestFactory().get("/api/forecasting/status/", {"forecast_id": job.id})
+        force_authenticate(request, user=user)
+        data = RunStatusView.as_view()(request).data["data"]
+
+        self.assertIsNone(data["progress"]["percent"])
+        self.assertIsNone(data["selected_model"])
