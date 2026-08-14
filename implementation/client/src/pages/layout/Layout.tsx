@@ -147,7 +147,9 @@ export default function Layout() {
       {/* ── Main area ── */}
       <div className="flex flex-1 flex-col min-w-0">
         {/* Mobile topbar */}
-        <header className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200 shrink-0">
+        {/* Safe-area insets keep the bar clear of notches and rounded corners
+            when installed and running standalone. */}
+        <header className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200 shrink-0 pt-[max(0.75rem,env(safe-area-inset-top))] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
           <button onClick={() => setMobileOpen(true)} className="text-gray-500 hover:text-gray-900">
             <Menu className="h-5 w-5" />
           </button>

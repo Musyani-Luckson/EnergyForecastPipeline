@@ -2,9 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/android-chrome-512x512.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forecasting App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>BEFDSS — Building Energy Forecasting and Decision-Support System</title>
+    <meta
+      name="description"
+      content="Building energy demand forecasting, anomaly detection and decision support using IQR preprocessing and grid-search optimised SARIMA models."
+    />
+
+    <!-- Colours the browser and OS chrome to match the application's navigation. -->
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Favicons. The .ico carries the 16/32 px sizes for browser tabs. -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- iOS does not read the manifest: it needs its own icon and display hints. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- "default" keeps the status bar opaque so the light mobile header is not
+         drawn underneath it; a translucent bar would render white on white. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="BEFDSS" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="BEFDSS" />
   </head>
   <body>
     <div id="root"></div>
