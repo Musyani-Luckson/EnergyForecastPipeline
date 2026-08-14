@@ -1,3 +1,4 @@
+import time
 import numpy as np
 import pandas as pd
 
@@ -111,18 +112,19 @@ class ForecastProgressTests(TestCase):
         self.assertEqual(job.progress_done, 72)
         self.assertEqual(job.progress_total, 144)
 
-    def test_writer_throttles_within_a_whole_percent(self):
-        """Steps landing on the same whole percent issue one write, not many."""
+    def test_writer_throttles_on_elapsed_time(self):
+        """Rapid consecutive steps collapse into a single write."""
         job = self._job()
         report = ForecastRunner._progress_writer(job)
 
-        report("optimizing", 1, 1000)         # 0% -> writes
-        report("optimizing", 2, 1000)         # still 0% -> suppressed
-        report("optimizing", 9, 1000)         # still 0% -> suppressed
+        report("optimizing", 1, 1000)         # phase change -> writes
+        report("optimizing", 2, 1000)         # within the interval -> suppressed
+        report("optimizing", 9, 1000)         # within the interval -> suppressed
         job.refresh_from_db()
         self.assertEqual(job.progress_done, 1)
 
-        report("optimizing", 130, 1000)       # 13% -> writes
+        time.sleep(ForecastRunner.PROGRESS_INTERVAL_S + 0.05)
+        report("optimizing", 130, 1000)       # interval elapsed -> writes
         job.refresh_from_db()
         self.assertEqual(job.progress_done, 130)
 
@@ -208,3 +210,65 @@ class RunStatusPayloadTests(TestCase):
 
         self.assertIsNone(data["progress"]["percent"])
         self.assertIsNone(data["selected_model"])
+
+
+class CandidateFeedTests(TestCase):
+    """The candidate being fitted and the running leader must be persisted."""
+
+    def _job(self):
+        from apps.accounts.models import User
+        from apps.datasets.models import Dataset
+        from apps.processing.models import ProcessingJob
+
+        user = User.objects.create_user(email="c@e.local", password="x")
+        dataset = Dataset.objects.create(
+            user=user, dataset_name="d.csv", original_filename="d.csv"
+        )
+        return ProcessingJob.objects.create(dataset=dataset, job_name="d.csv pipeline")
+
+    def test_candidate_and_leader_are_recorded(self):
+        job = self._job()
+        report = ForecastRunner._progress_writer(job)
+
+        report(
+            "optimizing", 4, 8,
+            {"order": [1, 1, 1], "seasonal_order": [1, 0, 0, 7], "aic": 534.25},
+            {"order": [0, 1, 1], "seasonal_order": [1, 0, 0, 7], "aic": 530.54},
+        )
+        job.refresh_from_db()
+
+        self.assertEqual(job.progress_candidate, "1,1,1,1,0,0,7")
+        self.assertEqual(job.progress_best, "0,1,1,1,0,0,7")
+        self.assertAlmostEqual(job.progress_best_aic, 530.54)
+
+    def test_failed_candidate_still_reported(self):
+        """A candidate that would not converge is still shown as attempted."""
+        job = self._job()
+        report = ForecastRunner._progress_writer(job)
+
+        report("optimizing", 1, 8, {"order": [3, 1, 3], "seasonal_order": [2, 0, 2, 7],
+                                    "error": "did not converge"}, None)
+        job.refresh_from_db()
+
+        self.assertEqual(job.progress_candidate, "3,1,3,2,0,2,7")
+        self.assertEqual(job.progress_best, "")
+
+    def test_status_expands_compact_orders(self):
+        from rest_framework.test import APIRequestFactory, force_authenticate
+        from apps.forecasting.views.run import RunStatusView
+
+        job = self._job()
+        job.progress_phase = "optimizing"
+        job.progress_done, job.progress_total = 4, 8
+        job.progress_candidate = "1,1,1,1,0,0,7"
+        job.progress_best = "0,1,1,1,0,0,7"
+        job.progress_best_aic = 530.54
+        job.save()
+
+        request = APIRequestFactory().get("/api/forecasting/status/", {"forecast_id": job.id})
+        force_authenticate(request, user=job.dataset.user)
+        progress = RunStatusView.as_view()(request).data["data"]["progress"]
+
+        self.assertEqual(progress["candidate"], {"order": [1, 1, 1], "seasonal_order": [1, 0, 0, 7]})
+        self.assertEqual(progress["best"]["order"], [0, 1, 1])
+        self.assertAlmostEqual(progress["best"]["aic"], 530.54)

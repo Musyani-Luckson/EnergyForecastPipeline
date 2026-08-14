@@ -53,9 +53,13 @@ class ForecastRunner:
         job.progress_phase = "starting"
         job.progress_done = 0
         job.progress_total = 0
+        job.progress_candidate = ""
+        job.progress_best = ""
+        job.progress_best_aic = None
         job.save(update_fields=[
             "status", "current_stage", "started_at", "error_message",
-            "progress_phase", "progress_done", "progress_total", "updated_at",
+            "progress_phase", "progress_done", "progress_total",
+            "progress_candidate", "progress_best", "progress_best_aic", "updated_at",
         ])
 
         if background:
@@ -68,38 +72,59 @@ class ForecastRunner:
 
         return job
 
+    # Minimum interval between progress writes, in seconds. The client
+    # polls far slower than the search fits models, so writing more often
+    # than this cannot reach the interface — it only costs UPDATEs.
+    PROGRESS_INTERVAL_S = 0.4
+
     @staticmethod
-    def _progress_writer(job: ProcessingJob):
+    def _order_key(candidate) -> str:
+        """Compact 'p,d,q,P,D,Q,s' encoding of a candidate's orders."""
+        if not candidate:
+            return ""
+        return ",".join(
+            str(int(v))
+            for v in list(candidate.get("order", [])) + list(candidate.get("seasonal_order", []))
+        )
+
+    @classmethod
+    def _progress_writer(cls, job: ProcessingJob):
         """
         Build the callback the engine reports through, persisting the
-        phase and step counts on the job so the status endpoint can
-        serve live progress during a run.
+        phase, step counts, the candidate being fitted and the running
+        leader, so the status endpoint can serve live progress.
 
-        Writes are throttled to whole percentage points (and always to
-        the final step) so a 144-candidate search issues a bounded
-        number of updates rather than one per candidate.
+        Writes are throttled on elapsed time rather than step count, so
+        the cost stays bounded however large the search space is, while
+        the feed stays fresher than the client's poll interval. Phase
+        changes and the final step always write.
         """
-        state = {"percent": -1}
+        state = {"at": 0.0}
 
-        def report(phase, done=None, total=None):
+        def report(phase, done=None, total=None, evaluated=None, best=None):
             done = int(done or 0)
             total = int(total or 0)
 
-            percent = int(done / total * 100) if total else -1
-            # Phase changes and the last step always write; otherwise only
-            # when the whole-percent figure actually moves.
-            if phase == job.progress_phase and percent == state["percent"] and done != total:
+            now = time.monotonic()
+            forced = phase != job.progress_phase or (total and done == total)
+            if not forced and now - state["at"] < cls.PROGRESS_INTERVAL_S:
                 return
-            state["percent"] = percent
+            state["at"] = now
 
+            fields = ["progress_phase", "progress_done", "progress_total", "updated_at"]
             job.progress_phase = phase
             job.progress_done = done
             job.progress_total = total
-            job.save(
-                update_fields=[
-                    "progress_phase", "progress_done", "progress_total", "updated_at",
-                ]
-            )
+
+            if evaluated is not None:
+                job.progress_candidate = cls._order_key(evaluated)
+                fields.append("progress_candidate")
+            if best is not None:
+                job.progress_best = cls._order_key(best)
+                job.progress_best_aic = best.get("aic")
+                fields += ["progress_best", "progress_best_aic"]
+
+            job.save(update_fields=fields)
 
         return report
 

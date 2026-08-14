@@ -123,15 +123,16 @@ class ForecastEngine:
         so results are fully reproducible.
 
         progress_callback, if given, is called as
-        progress_callback(phase, done, total); done/total are
-        None for phases without step counts.
+        progress_callback(phase, done, total, evaluated, best);
+        done/total are None for phases without step counts, and
+        evaluated/best are populated only during the grid search.
         """
         if series is None or len(series) == 0:
             raise ValueError("Series is empty.")
 
-        def report(phase, done=None, total=None):
+        def report(phase, done=None, total=None, evaluated=None, best=None):
             if progress_callback:
-                progress_callback(phase, done, total)
+                progress_callback(phase, done, total, evaluated, best)
 
         config = self.configuration
 
@@ -171,8 +172,8 @@ class ForecastEngine:
             q_range=config["q_range"],
             P_range=config["P_range"],
             Q_range=config["Q_range"],
-            progress_callback=lambda done, total: report(
-                "optimizing", done, total
+            progress_callback=lambda done, total, evaluated, best: report(
+                "optimizing", done, total, evaluated, best
             ),
         )
 

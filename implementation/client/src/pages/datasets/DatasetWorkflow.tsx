@@ -19,7 +19,7 @@ import {
 import StageStepper from "./components/StageStepper";
 import StagePurposeHeader from "./components/StagePurposeHeader";
 import QualityReport from "./components/QualityReport";
-import ForecastProgress from "./components/ForecastProgress";
+import ForecastProgress, { formatOrder, type FittedEntry } from "./components/ForecastProgress";
 import { QualityReportView } from "@/pages/report";
 import NextStepCard from "./components/NextStepCard";
 import { ForecastDashboard } from "@/pages/dashboard";
@@ -57,6 +57,8 @@ export default function DatasetWorkflow() {
   /** Live grid-search progress, polled while the run executes. */
   const [progress, setProgress] = useState<ForecastProgressData | null>(null);
   const [selectedModel, setSelectedModel] = useState<SelectedModel | null>(null);
+  /** Candidates observed while polling, oldest first. */
+  const [fitted, setFitted] = useState<FittedEntry[]>([]);
   const [forecastSeries, setForecastSeries] = useState<ForecastSeries | null>(null);
   const [stageSeries, setStageSeries] = useState<VersionSeries[]>([]);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -87,6 +89,7 @@ export default function DatasetWorkflow() {
     setForecast(null);
     setProgress(null);
     setSelectedModel(null);
+    setFitted([]);
     pollRef.current = setInterval(async () => {
       try {
         const info = await getForecastStatus(forecastId);
@@ -94,6 +97,28 @@ export default function DatasetWorkflow() {
         // one that reports completion.
         setProgress(info.progress);
         if (info.selected_model) setSelectedModel(info.selected_model);
+
+        // Build the feed from successive polls. Polling samples the search
+        // rather than catching every fit, so entries are appended only when
+        // the candidate actually changed; a candidate is flagged as a new
+        // leader when it is also the one the search is currently ranking best.
+        const candidate = info.progress?.candidate ?? null;
+        if (candidate) {
+          const label = formatOrder(candidate);
+          const best = info.progress?.best ?? null;
+          const isLeader = !!best && formatOrder(best) === label;
+          setFitted((prev) => {
+            if (prev.length && prev[prev.length - 1].label === label) return prev;
+            const entry: FittedEntry = {
+              key: `${label}-${prev.length}`,
+              label,
+              aic: isLeader ? (best!.aic ?? null) : null,
+            };
+            // Bounded: the component shows the newest few, and an unbounded
+            // list would grow for the whole run.
+            return [...prev, entry].slice(-24);
+          });
+        }
 
         if (info.status === "FAILED") {
           if (pollRef.current) clearInterval(pollRef.current);
@@ -361,7 +386,7 @@ export default function DatasetWorkflow() {
             onBack={() => navigate(`/datasets/${runId}`)}
           />
         ) : (
-          <ForecastProgress progress={progress} selected={selectedModel} />
+          <ForecastProgress progress={progress} selected={selectedModel} fitted={fitted} />
         )
       ) : (
         <>

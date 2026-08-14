@@ -243,6 +243,12 @@ export interface ForecastSeries {
   forecast_period: { start: string | null; end: string | null };
 }
 
+/** A SARIMA order pair, as reported during the search. */
+export interface CandidateOrder {
+  order: number[];
+  seasonal_order: number[];
+}
+
 export interface ForecastProgress {
   /** Pipeline stage (kept for backward compatibility). */
   phase: string;
@@ -253,6 +259,10 @@ export interface ForecastProgress {
   total: number;
   /** Whole-percent completion, or null before the total is known. */
   percent: number | null;
+  /** The order being fitted at this moment. */
+  candidate: CandidateOrder | null;
+  /** The lowest-AIC order seen so far in this search. */
+  best: (CandidateOrder & { aic: number | null }) | null;
 }
 
 /** The order the grid search settled on; present once the model is fitted. */

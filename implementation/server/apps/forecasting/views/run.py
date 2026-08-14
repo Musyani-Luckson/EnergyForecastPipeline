@@ -105,6 +105,18 @@ class RunStatusView(APIView):
         total = job.progress_total or 0
         done = job.progress_done or 0
 
+        def orders(key: str):
+            """Expand a compact 'p,d,q,P,D,Q,s' progress scalar."""
+            parts = [int(v) for v in key.split(",") if v != ""] if key else []
+            if len(parts) != 7:
+                return None
+            return {"order": parts[:3], "seasonal_order": parts[3:]}
+
+        candidate = orders(job.progress_candidate)
+        running_best = orders(job.progress_best)
+        if running_best is not None:
+            running_best["aic"] = job.progress_best_aic
+
         # The order chosen by the grid search, available once a Forecast
         # exists so the client can report what the search settled on.
         selected_model = (
@@ -134,6 +146,10 @@ class RunStatusView(APIView):
                         "done": done,
                         "total": total,
                         "percent": int(done / total * 100) if total else None,
+                        # The order being fitted right now, and the
+                        # lowest-AIC order seen so far in this search.
+                        "candidate": candidate,
+                        "best": running_best,
                     },
                     "selected_model": selected_model,
                     "error": job.error_message or None,

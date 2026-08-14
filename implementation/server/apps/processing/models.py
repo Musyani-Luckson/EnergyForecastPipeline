@@ -55,6 +55,14 @@ class ProcessingJob(models.Model):
     progress_phase = models.CharField(max_length=32, blank=True)
     progress_done = models.PositiveIntegerField(default=0)
     progress_total = models.PositiveIntegerField(default=0)
+
+    # The candidate order currently being fitted and the running leader,
+    # held as compact "p,d,q,P,D,Q,s" scalars. Transient search state only:
+    # the authoritative parameters of the chosen model are the columns on
+    # Forecast, which these are discarded in favour of once the run ends.
+    progress_candidate = models.CharField(max_length=40, blank=True)
+    progress_best = models.CharField(max_length=40, blank=True)
+    progress_best_aic = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

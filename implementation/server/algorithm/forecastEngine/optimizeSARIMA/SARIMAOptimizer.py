@@ -44,8 +44,11 @@ class SARIMAOptimizer:
         d and D are fixed inputs — they come from the
         differencing analysis, not from the search.
 
-        progress_callback, if given, is called as
-        progress_callback(done, total) after each candidate.
+        progress_callback, if given, is called after each candidate as
+        progress_callback(done, total, evaluated, best_so_far), where
+        `evaluated` is the candidate just fitted (carrying either its
+        AIC/BIC or the error that rejected it) and `best_so_far` is the
+        lowest-AIC candidate seen up to that point.
         """
         if series is None or len(series) == 0:
             raise ValueError("Series is empty.")
@@ -72,25 +75,27 @@ class SARIMAOptimizer:
             try:
                 results = SARIMAEngine.fit(series, order, seasonal_order)
             except Exception as exc:
-                failures.append(
-                    {
-                        "order": list(order),
-                        "seasonal_order": list(seasonal_order),
-                        "error": str(exc),
-                    }
-                )
+                evaluated = {
+                    "order": list(order),
+                    "seasonal_order": list(seasonal_order),
+                    "error": str(exc),
+                }
+                failures.append(evaluated)
             else:
-                candidates.append(
-                    {
-                        "order": list(order),
-                        "seasonal_order": list(seasonal_order),
-                        "aic": float(results.aic),
-                        "bic": float(results.bic),
-                    }
-                )
+                evaluated = {
+                    "order": list(order),
+                    "seasonal_order": list(seasonal_order),
+                    "aic": float(results.aic),
+                    "bic": float(results.bic),
+                }
+                candidates.append(evaluated)
+
+            # The running leader, so an observer can see the search
+            # converging rather than only its final answer.
+            best_so_far = min(candidates, key=lambda c: c["aic"]) if candidates else None
 
             if progress_callback:
-                progress_callback(index, total)
+                progress_callback(index, total, evaluated, best_so_far)
 
         if not candidates:
             raise ValueError(
