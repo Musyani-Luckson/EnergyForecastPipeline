@@ -8,7 +8,7 @@ import { int, shortDate } from "./format";
 
 const PREVIEW_LIMIT = 10;
 
-/** Section 5 — repeated rows and repeated timestamps. */
+/** Section 5 - repeated rows and repeated timestamps. */
 export default function DuplicateAnalysis({ data }: { data: DuplicatesData }) {
   const clean = data.duplicate_rows === 0 && data.duplicate_dates === 0;
   const preview = data.duplicate_timestamps.slice(0, PREVIEW_LIMIT);

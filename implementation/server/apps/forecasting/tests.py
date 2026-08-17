@@ -339,7 +339,7 @@ class DifferencedReportTests(TestCase):
         import pandas as pd
         from algorithm.report.analyzers.EnergyValueAnalyzer import EnergyValueAnalyzer
 
-        # Changes: down 30, up 20, down 10 — ordinary demand movement.
+        # Changes: down 30, up 20, down 10 - ordinary demand movement.
         df = pd.DataFrame({"Daily_kWh_diff": [-30.0, 20.0, -10.0]})
 
         differenced = EnergyValueAnalyzer.analyze(

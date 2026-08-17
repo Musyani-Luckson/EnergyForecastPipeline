@@ -5,7 +5,7 @@ import { STAGE_ORDER, currentStage, datasetName, latestUpdate, uploadDate } from
  * Cross-dataset state, derived from the pipeline runs.
  *
  * The pipeline endpoint is the authority on where each dataset actually got to
- * — the overview endpoint's `versions_by_stage` counts *versions*, so a run
+ * - the overview endpoint's `versions_by_stage` counts *versions*, so a run
  * that reached OUTLIERS contributes to three stage buckets at once and can't
  * answer "how many datasets are stuck before forecasting".
  */
@@ -28,7 +28,7 @@ export interface Portfolio {
   inProgress: number;
   /** Runs by the furthest stage they reached. */
   byStage: Record<StageKey, number>;
-  /** Reached a checkpoint but never forecast — the actionable backlog. */
+  /** Reached a checkpoint but never forecast - the actionable backlog. */
   stalled: RunSummary[];
   /** Completion as a percentage of all runs. */
   completionPercent: number;
@@ -87,11 +87,11 @@ export function nextActionFor(stage: StageKey): string {
   }
 }
 
-/** "3 days ago" — relative time reads better than a date in an activity list. */
+/** "3 days ago" - relative time reads better than a date in an activity list. */
 export function relativeTime(iso: string | null): string {
-  if (!iso) return "—";
+  if (!iso) return "-";
   const then = new Date(iso).getTime();
-  if (Number.isNaN(then)) return "—";
+  if (Number.isNaN(then)) return "-";
 
   const seconds = Math.round((Date.now() - then) / 1000);
   if (seconds < 60) return "just now";

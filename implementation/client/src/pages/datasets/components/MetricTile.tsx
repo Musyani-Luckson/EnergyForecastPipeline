@@ -8,7 +8,7 @@ interface MetricTileProps {
   label: string;
   value: ReactNode;
   tone?: string;
-  /** Raw numeric value at this checkpoint — required for a delta chip. */
+  /** Raw numeric value at this checkpoint - required for a delta chip. */
   current?: number;
   /** Same metric at the previous checkpoint. */
   previous?: number;

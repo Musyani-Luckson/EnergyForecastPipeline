@@ -7,11 +7,11 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Section, Stat } from "./Section";
 import { int, pct } from "./format";
 
-/** Section 4 — how much data is absent, and which columns carry it. */
+/** Section 4 - how much data is absent, and which columns carry it. */
 export default function MissingValues({ data }: { data: MissingValuesData }) {
   const clean = data.total_missing === 0;
 
-  // Share of cells present vs missing — the donut is drawn from real counts.
+  // Share of cells present vs missing - the donut is drawn from real counts.
   const present = Math.max(0, 100 - data.missing_percentage);
   const chartData = [
     { name: "Present", value: present, fill: "#10b981" },

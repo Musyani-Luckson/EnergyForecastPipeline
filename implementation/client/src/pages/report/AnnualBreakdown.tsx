@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Section } from "./Section";
 import { int, num } from "./format";
 
-/** Section 12 — year-by-year consumption, so multi-year drift is visible. */
+/** Section 12 - year-by-year consumption, so multi-year drift is visible. */
 export default function AnnualBreakdown({ data }: { data: AnnualBreakdownData }) {
   const years = useMemo(
     () =>

@@ -16,19 +16,25 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public — redirects to "/" once authenticated */}
+        {/* Public: redirects to "/" once authenticated */}
         <Route element={<PublicRoute />}>
           <Route path="/signin" element={<SigninPage />} />
         </Route>
 
-        {/* Protected — requires authentication (session verified first) */}
+        {/* Protected: requires authentication (session verified first) */}
         <Route element={<PrivateRoute />}>
           <Route element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/datasets" element={<Datasets />} />
             <Route path="/datasets/:runId" element={<DatasetDetails />} />
-            <Route path="/datasets/:runId/versions/:versionId" element={<DatasetWorkflow />} />
-            <Route path="/datasets/:runId/forecast" element={<ForecastPage />} />
+            <Route
+              path="/datasets/:runId/versions/:versionId"
+              element={<DatasetWorkflow />}
+            />
+            <Route
+              path="/datasets/:runId/forecast"
+              element={<ForecastPage />}
+            />
             <Route path="/users" element={<Users />} />
             <Route path="/settings" element={<Settings />} />
             {/* Unknown authenticated routes */}

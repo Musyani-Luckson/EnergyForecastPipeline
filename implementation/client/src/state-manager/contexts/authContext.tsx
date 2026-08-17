@@ -14,7 +14,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // The access token lives in memory only, so it is gone after a refresh. The
   // httpOnly refresh cookie survives, so we call /refresh/ (which reads the
   // cookie, with no auth header) to mint a new access token and rehydrate the
-  // user. `isLoading` stays true throughout — the route guards render a loader
+  // user. `isLoading` stays true throughout - the route guards render a loader
   // during this window, so the login page never flashes.
   useEffect(() => {
     let active = true;

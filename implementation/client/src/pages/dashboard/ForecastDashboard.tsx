@@ -46,7 +46,7 @@ interface ForecastDashboardProps {
   report?: QualityReport | null;
   /** Historical series and real forecast dates from /api/forecasting/series/. */
   series?: ForecastSeries | null;
-  /** Pipeline stage the forecast ran on — labels the plotted history. */
+  /** Pipeline stage the forecast ran on - labels the plotted history. */
   historyStage?: StageKey;
   /** Per-stage historical series, for the data-evolution overlay. */
   stageSeries?: VersionSeries[];
@@ -57,7 +57,7 @@ interface ForecastDashboardProps {
 /**
  * Forecast results view.
  *
- * The Overview tab is the analyst's read — chart, summary figures, backtest.
+ * The Overview tab is the analyst's read - chart, summary figures, backtest.
  * Decisions is the operational read: what to do, and what to watch. Both are
  * one click apart so neither audience has to scroll past the other's material.
  */

@@ -6,7 +6,7 @@ import { Section, Stat, StatGrid } from "./Section";
 import { num } from "./format";
 import { cn } from "@/lib/utils";
 
-/** Section 13 — the Augmented Dickey-Fuller test for a unit root. */
+/** Section 13 - the Augmented Dickey-Fuller test for a unit root. */
 export default function StationarityAnalysis({ data }: { data: StationarityAnalysisData }) {
   const levels = Object.entries(data.critical_values).sort(
     (a, b) => parseFloat(a[0]) - parseFloat(b[0]),
@@ -28,7 +28,7 @@ export default function StationarityAnalysis({ data }: { data: StationarityAnaly
         <Stat
           label="p-value"
           value={num(data.p_value, 5)}
-          hint={data.p_value < 0.05 ? "below 0.05 — reject unit root" : "above 0.05 — unit root likely"}
+          hint={data.p_value < 0.05 ? "below 0.05 - reject unit root" : "above 0.05 - unit root likely"}
           tone={data.is_stationary ? "text-emerald-600" : "text-amber-600"}
         />
       </StatGrid>

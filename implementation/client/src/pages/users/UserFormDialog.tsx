@@ -18,7 +18,7 @@ interface UserFormDialogProps {
 
 /**
  * Create a user account. Rendered only for administrators, and only while
- * open — mounting fresh each time is what resets the form, so no effect has to
+ * open - mounting fresh each time is what resets the form, so no effect has to
  * clear it between openings.
  */
 export default function UserFormDialog({ busy, onClose, onSubmit }: UserFormDialogProps) {

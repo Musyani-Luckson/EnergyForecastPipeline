@@ -111,7 +111,7 @@ export default function ForecastChart({ insights }: { insights: ForecastInsights
 
       <p className="flex items-start gap-1.5 text-[11px] text-slate-400 mt-2">
         <Info size={12} className="mt-0.5 shrink-0" />
-        Historical readings aren’t overlaid — the API returns forecast values only. The dashed line
+        Historical readings aren’t overlaid - the API returns forecast values only. The dashed line
         is the source dataset’s historical daily average.
       </p>
     </Section>

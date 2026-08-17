@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, Stat, StatGrid } from "./Section";
 import { int, num, shortDate } from "./format";
 
-/** Section 1 — shape and span of the dataset. */
+/** Section 1 - shape and span of the dataset. */
 export default function DatasetOverview({ data }: { data: DatasetOverviewData }) {
   return (
     <Section

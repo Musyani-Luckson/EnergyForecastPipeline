@@ -86,7 +86,7 @@ class AccessController:
         Revoke a user's access by deactivating the account
         (per the class diagram: revokeAccess()).
 
-        Deactivation, not deletion — the user's history stays
+        Deactivation, not deletion - the user's history stays
         intact for auditability.
         """
         try:

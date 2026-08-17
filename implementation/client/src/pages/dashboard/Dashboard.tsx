@@ -17,7 +17,7 @@ import {
  * Landing view: the state of every dataset in the system at a glance.
  *
  * Totals come from the dashboard overview endpoint, but per-dataset state is
- * derived from the pipeline runs — `versions_by_stage` counts versions, so a
+ * derived from the pipeline runs - `versions_by_stage` counts versions, so a
  * run that reached OUTLIERS lands in three buckets and can't answer "how many
  * datasets are still waiting".
  */
@@ -36,7 +36,7 @@ export default function Dashboard() {
         const data = await fetchDashboardOverview();
         if (active) setOverview(data);
       } catch {
-        // Totals are supplementary — the portfolio derives from the runs.
+        // Totals are supplementary - the portfolio derives from the runs.
         if (active) setOverview(null);
       } finally {
         if (active) setOverviewLoading(false);
@@ -67,7 +67,7 @@ export default function Dashboard() {
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Dashboard</h1>
           <p className="text-sm text-slate-500 mt-1">
             {empty
-              ? "No datasets yet — upload one to get started."
+              ? "No datasets yet - upload one to get started."
               : `${portfolio.total} dataset${portfolio.total === 1 ? "" : "s"} in the system, ${portfolio.completed} forecast.`}
           </p>
         </div>

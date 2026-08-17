@@ -54,7 +54,7 @@ export default function PipelineFunnel({ portfolio }: { portfolio: Portfolio }) 
       </div>
 
       <p className="text-[11px] text-slate-400 mt-3">
-        Counts the furthest stage each run reached — every dataset appears exactly once.
+        Counts the furthest stage each run reached - every dataset appears exactly once.
       </p>
     </Section>
   );

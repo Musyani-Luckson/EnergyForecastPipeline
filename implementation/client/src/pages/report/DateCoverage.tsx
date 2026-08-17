@@ -6,7 +6,7 @@ import { Section, Stat } from "./Section";
 import CircularGauge from "./CircularGauge";
 import { int, pct } from "./format";
 
-/** Section 2 — how much of the expected calendar the dataset actually covers. */
+/** Section 2 - how much of the expected calendar the dataset actually covers. */
 export default function DateCoverage({ data }: { data: DateCoverageData }) {
   const complete = data.completeness_percent >= 99.5;
   const tone = complete

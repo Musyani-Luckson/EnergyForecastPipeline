@@ -76,7 +76,7 @@ export function useAuth(): AuthHookValue {
       // apiLogout clears the access token + the server refresh cookie.
       await apiLogout();
     } catch {
-      /* best effort — clear local state regardless */
+      /* best effort - clear local state regardless */
     }
     dispatch({ type: "LOGOUT" });
   };

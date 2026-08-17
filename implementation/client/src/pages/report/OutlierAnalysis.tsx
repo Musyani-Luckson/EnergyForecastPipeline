@@ -23,7 +23,7 @@ function BoxPlot({ iqr }: { iqr: OutlierAnalysisData["iqr_method"] }) {
 
   const boxLeft = scale(q1);
   const boxWidth = Math.max(0.5, scale(q3) - boxLeft);
-  const median = q1 + (q3 - q1) / 2; // midhinge — the API doesn't return the median here
+  const median = q1 + (q3 - q1) / 2; // midhinge - the API doesn't return the median here
 
   return (
     <div className="pt-6 pb-8 px-2">
@@ -81,7 +81,7 @@ function BoxPlot({ iqr }: { iqr: OutlierAnalysisData["iqr_method"] }) {
   );
 }
 
-/** Section 9 — anomalous readings by IQR, cross-checked against Z-score. */
+/** Section 9 - anomalous readings by IQR, cross-checked against Z-score. */
 export default function OutlierAnalysis({ data }: { data: OutlierAnalysisData }) {
   const { iqr_method: iqr, zscore_method: z } = data;
   const clean = iqr.outlier_count === 0;
@@ -119,7 +119,7 @@ export default function OutlierAnalysis({ data }: { data: OutlierAnalysisData })
             <span className="text-sm font-medium tabular-nums text-slate-800">
               {num(iqr.lower_bound, 1)}
             </span>
-            <span className="text-slate-300">—</span>
+            <span className="text-slate-300">-</span>
             <span className="text-sm font-medium tabular-nums text-slate-800">
               {num(iqr.upper_bound, 1)}
             </span>
@@ -157,7 +157,7 @@ export default function OutlierAnalysis({ data }: { data: OutlierAnalysisData })
           <p className="text-[11px] text-slate-400 mt-1">
             {methodsAgree
               ? "Both methods agree on the count."
-              : "The methods disagree — IQR is the one applied by the pipeline."}
+              : "The methods disagree - IQR is the one applied by the pipeline."}
           </p>
         </div>
       </div>

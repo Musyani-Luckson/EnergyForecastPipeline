@@ -77,7 +77,7 @@ export default function ForecastSummaryCard({ insights }: { insights: ForecastIn
             icon={TrendingUp}
             iconClass="bg-rose-50 text-rose-600"
             label="Peak Forecast"
-            value={insights.peak ? n(insights.peak.value).toLocaleString() : "—"}
+            value={insights.peak ? n(insights.peak.value).toLocaleString() : "-"}
             unit="kWh"
             sub={insights.peak?.date ? `On ${fullDate(insights.peak.date)}` : null}
           />
@@ -85,7 +85,7 @@ export default function ForecastSummaryCard({ insights }: { insights: ForecastIn
             icon={TrendingDown}
             iconClass="bg-emerald-50 text-emerald-600"
             label="Lowest Forecast"
-            value={insights.trough ? n(insights.trough.value).toLocaleString() : "—"}
+            value={insights.trough ? n(insights.trough.value).toLocaleString() : "-"}
             unit="kWh"
             sub={insights.trough?.date ? `On ${fullDate(insights.trough.date)}` : null}
           />
@@ -93,14 +93,14 @@ export default function ForecastSummaryCard({ insights }: { insights: ForecastIn
             icon={ArrowUpRight}
             iconClass="bg-sky-50 text-sky-600"
             label="Upper 95% CI (Max)"
-            value={upperMax != null ? n(upperMax).toLocaleString() : "—"}
+            value={upperMax != null ? n(upperMax).toLocaleString() : "-"}
             unit="kWh"
           />
           <Tile
             icon={ArrowDownRight}
             iconClass="bg-slate-100 text-slate-600"
             label="Lower 95% CI (Min)"
-            value={lowerMin != null ? n(lowerMin).toLocaleString() : "—"}
+            value={lowerMin != null ? n(lowerMin).toLocaleString() : "-"}
             unit="kWh"
           />
         </div>

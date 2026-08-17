@@ -27,7 +27,7 @@ class Report(models.Model):
         choices=ReportType.choices,
         db_index=True,
     )
-    # Stored path only — never a FilePathField (form-time chooser).
+    # Stored path only - never a FilePathField (form-time chooser).
     file_path = models.CharField(max_length=500)
     generated_at = models.DateTimeField(auto_now_add=True)
 

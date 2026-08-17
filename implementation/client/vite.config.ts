@@ -30,7 +30,7 @@ export default defineConfig({
         // start_url, so changing that would register as a different app.
         id: "/",
 
-        name: "BEFDSS — Building Energy Forecasting and Decision-Support System",
+        name: "BEFDSS: Building Energy Forecasting and Decision-Support System",
 
         short_name: "BEFDSS",
 

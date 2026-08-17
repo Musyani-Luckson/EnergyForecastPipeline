@@ -160,8 +160,8 @@ export default function Settings() {
               onChange={(e) => set("outlierMethod", e.target.value as AppSettings["outlierMethod"])}
               className={cn(field, "mt-1 w-full")}
             >
-              <option value="iqr">IQR — 1.5 × interquartile range</option>
-              <option value="zscore">Z-score — standard deviations from the mean</option>
+              <option value="iqr">IQR - 1.5 × interquartile range</option>
+              <option value="zscore">Z-score - standard deviations from the mean</option>
             </select>
             <span className="block text-[11px] text-slate-500 mt-1">
               IQR is the methodology default and is resistant to extreme values.
@@ -270,7 +270,7 @@ export default function Settings() {
 
       <p className="text-[11px] text-slate-400">
         Editable settings are stored in this browser and applied to the next pipeline step you run.
-        They aren’t yet shared across users or devices — that needs a settings endpoint on the
+        They aren’t yet shared across users or devices - that needs a settings endpoint on the
         server.
       </p>
     </div>

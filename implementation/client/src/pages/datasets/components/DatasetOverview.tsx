@@ -14,7 +14,7 @@ function Tile({ label, value, mono }: { label: string; value: string; mono?: boo
   );
 }
 
-/** General information about the selected dataset — backend data only. */
+/** General information about the selected dataset - backend data only. */
 export default function DatasetOverview({ run }: { run: PipelineRun }) {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">

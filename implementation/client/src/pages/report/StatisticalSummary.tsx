@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, Stat } from "./Section";
 import { compact, int, num } from "./format";
 
-/** Section 6 — the descriptive statistics of the energy series. */
+/** Section 6 - the descriptive statistics of the energy series. */
 export default function StatisticalSummary({ data }: { data: StatisticalSummaryData }) {
   // Coefficient of variation gives the spread a scale-free reading.
   const cv = data.mean !== 0 ? (data.std / data.mean) * 100 : null;

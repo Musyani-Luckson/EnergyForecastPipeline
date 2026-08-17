@@ -20,7 +20,7 @@ const MAX_TICKS = 9;
 
 /**
  * Share of the plot width given to history. The forecast is anchored to its
- * true start date and never moves — this only decides how much historical
+ * true start date and never moves - this only decides how much historical
  * context sits beside it, by changing how many past days are drawn.
  */
 const DEFAULT_FOCUS = 0.78;
@@ -44,7 +44,7 @@ const RIGHT_AXIS_WIDTH = 48;
 
 /**
  * Visual weight per layer. With five series overlaid, equal strokes read as
- * noise — so the series the model was fitted on leads, earlier stages sit
+ * noise - so the series the model was fitted on leads, earlier stages sit
  * behind it as context, and the differenced series stays faint because it is
  * diagnostic and shares no scale with the rest.
  */
@@ -148,7 +148,7 @@ function ChartTooltip({
                   ? l.key === "STATIONARY"
                     ? value.toFixed(2)
                     : `${Math.round(value).toLocaleString()} kWh`
-                  : "—"}
+                  : "-"}
                 {changed && <span className="ml-1 text-[10px] text-amber-600">changed</span>}
               </span>
             </div>
@@ -182,7 +182,7 @@ interface DataEvolutionChartProps {
  * The data-evolution timeline: every preprocessing stage overlaid on one axis,
  * with the forecast picking up exactly where the history ends.
  *
- * The point is comparison — how far the cleaned series moved from the raw one,
+ * The point is comparison - how far the cleaned series moved from the raw one,
  * which readings outlier treatment rewrote, and what the model was finally
  * fitted on. Stages the user toggles off aren't rendered at all, so the chart
  * stays readable at five layers.
@@ -389,7 +389,7 @@ export default function DataEvolutionChart({
                 <button
                   key={p.label}
                   onClick={() => setFocus(p.focus)}
-                  title={`${p.label} — view only, the forecast is unchanged`}
+                  title={`${p.label} - view only, the forecast is unchanged`}
                   className={cn(
                     "px-2.5 py-1.5 text-[11px] font-semibold transition",
                     Math.abs(focus - p.focus) < 0.01
@@ -422,7 +422,7 @@ export default function DataEvolutionChart({
           </div>
         </div>
 
-        {/* Layer toggles double as the legend — one control, one source of truth. */}
+        {/* Layer toggles double as the legend - one control, one source of truth. */}
         <div className="flex flex-wrap gap-1.5 mt-3">
           {offered.map((l) => {
             const on = shown.includes(l.key);
@@ -470,7 +470,7 @@ export default function DataEvolutionChart({
 
         {shown.length === 0 ? (
           <div className="h-[460px] grid place-items-center text-sm text-slate-400">
-            No layers selected — pick one above.
+            No layers selected - pick one above.
           </div>
         ) : (
           <div
@@ -481,7 +481,7 @@ export default function DataEvolutionChart({
             onPointerCancel={endDrag}
           >
             {/* Draggable viewport handle, pinned to the real forecast start.
-                Dragging changes only how many past days are drawn — never the
+                Dragging changes only how many past days are drawn - never the
                 forecast, its horizon, or its origin. */}
             {forecastRows.length > 0 && shown.includes("FORECAST") && (
               <div
@@ -639,7 +639,7 @@ export default function DataEvolutionChart({
                     isAnimationActive={false}
                   />
                 )}
-                {/* Anomalies only when nothing has corrected them yet —
+                {/* Anomalies only when nothing has corrected them yet -
                     otherwise 100+ red dots bury the lines they annotate. */}
                 {shown.includes("RAW") && !shown.includes("OUTLIERS") && (
                   <Scatter
@@ -664,7 +664,7 @@ export default function DataEvolutionChart({
             </p>
             {forecastRows.length > 0 && shown.includes("FORECAST") && (
               <p className="text-[11px] text-slate-400">
-                Drag the handle to balance history against forecast — showing{" "}
+                Drag the handle to balance history against forecast - showing{" "}
                 <span className="font-medium text-slate-500">
                   {historyCount.toLocaleString()} of {historyRows.length.toLocaleString()}
                 </span>{" "}
@@ -676,7 +676,7 @@ export default function DataEvolutionChart({
           {showStationaryAxis && (
             <p className="inline-flex items-start gap-1.5 text-[11px] text-amber-600">
               <Info size={12} className="mt-0.5 shrink-0" />
-              Stationary is differenced — read it on the right axis, not in kWh.
+              Stationary is differenced - read it on the right axis, not in kWh.
             </p>
           )}
         </div>

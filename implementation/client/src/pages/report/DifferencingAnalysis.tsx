@@ -35,7 +35,7 @@ function OrderRow({ order, label, result }: { order: number; label: string; resu
   );
 }
 
-/** Section 14 — how much differencing the series needs, and why. */
+/** Section 14 - how much differencing the series needs, and why. */
 export default function DifferencingAnalysis({ data }: { data: DifferencingAnalysisData }) {
   const unresolved = data.recommended_d === null;
 

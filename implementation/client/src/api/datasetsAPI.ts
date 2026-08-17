@@ -205,7 +205,7 @@ export interface ForecastMetrics {
    * `build_forecast_dto`; typed so it renders as soon as it is.
    */
   r_squared?: number | null;
-  /** RMSE as a percentage of the forecast mean — the contract's headline. */
+  /** RMSE as a percentage of the forecast mean - the contract's headline. */
   rmse_pct_of_mean?: number | null;
   meets_rmse_threshold?: boolean | null;
   meets_mape_threshold?: boolean | null;
@@ -235,12 +235,12 @@ export interface SeriesPoint {
 /**
  * Charting series for a forecast: the tail of the actual cleaned history plus
  * the forecast's real dates. Derived server-side on read from the source
- * version's file — this is the only endpoint exposing per-day observations.
+ * version's file - this is the only endpoint exposing per-day observations.
  */
 export interface ForecastSeries {
   /**
-   * The complete actual history, oldest first — the same span the model was
-   * fitted on — the model trains on every observation, nothing withheld.
+   * The complete actual history, oldest first - the same span the model was
+   * fitted on - the model trains on every observation, nothing withheld.
    */
   historical: SeriesPoint[];
   /** One ISO date per forecast step, aligned with `values`. */
@@ -355,7 +355,7 @@ export async function fetchVersionReport(versionId: number): Promise<QualityRepo
   return res.data.data;
 }
 
-/** Forecast(s) for a run — used to enable "Generate Report" on the FORECAST stage. */
+/** Forecast(s) for a run - used to enable "Generate Report" on the FORECAST stage. */
 export async function fetchForecastSummaries(runId: string): Promise<ForecastSummary[]> {
   const res = await baseApi.get<Envelope<ForecastSummary[]>>("/api/forecasting/results/", {
     params: { run_id: runId },
@@ -392,7 +392,7 @@ export interface VersionSeries {
 
 /**
  * Per-day observations for one or more versions, so the pipeline stages can be
- * overlaid on one chart. STATIONARY values are differenced rather than kWh —
+ * overlaid on one chart. STATIONARY values are differenced rather than kWh -
  * check `stage` before putting a series on a shared axis.
  */
 export async function fetchVersionSeries(versionIds: number[]): Promise<VersionSeries[]> {

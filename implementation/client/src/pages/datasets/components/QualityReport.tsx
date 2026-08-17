@@ -5,10 +5,10 @@ import ReadinessScore, { type TrajectoryPoint } from "./ReadinessScore";
 import MetricTile from "./MetricTile";
 
 const num = (v: number | undefined | null, d = 2): string =>
-  typeof v === "number" && Number.isFinite(v) ? v.toFixed(d) : "—";
+  typeof v === "number" && Number.isFinite(v) ? v.toFixed(d) : "-";
 
 /**
- * Notes that an issue is expected here because a later stage owns it — so an
+ * Notes that an issue is expected here because a later stage owns it - so an
  * unresolved value at an early checkpoint doesn't read as a failure.
  */
 function HandledLater({ stage }: { stage: StageKey }) {
@@ -21,7 +21,7 @@ function HandledLater({ stage }: { stage: StageKey }) {
 
 interface QualityReportProps {
   report: Report;
-  /** The stage this report certifies — drives which metrics are emphasised. */
+  /** The stage this report certifies - drives which metrics are emphasised. */
   stage: StageKey;
   /** The previous checkpoint's report, for change chips. */
   previous?: Report | null;
@@ -55,12 +55,12 @@ export default function QualityReport({
       <ReadinessScore
         compact
         score={report.forecasting_readiness?.score ?? 0}
-        grade={report.forecasting_readiness?.grade ?? "—"}
+        grade={report.forecasting_readiness?.grade ?? "-"}
         trajectory={trajectory}
         isBaseline={stage === "RAW"}
       />
 
-      {/* Headline metrics — focused tiles belong to this stage. */}
+      {/* Headline metrics - focused tiles belong to this stage. */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
         <MetricTile
           label="Rows"
@@ -122,13 +122,13 @@ export default function QualityReport({
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-1">
           {outliersPending && iqr.outlier_count > 0 && (
             <span className="inline-flex items-center gap-1.5 text-xs text-slate-500">
-              {iqr.outlier_count.toLocaleString()} outliers detected —{" "}
+              {iqr.outlier_count.toLocaleString()} outliers detected -{" "}
               <HandledLater stage="OUTLIERS" />
             </span>
           )}
           {stationarityPending && !adf.is_stationary && (
             <span className="inline-flex items-center gap-1.5 text-xs text-slate-500">
-              Series is not yet stationary — <HandledLater stage="STATIONARY" />
+              Series is not yet stationary - <HandledLater stage="STATIONARY" />
             </span>
           )}
         </div>

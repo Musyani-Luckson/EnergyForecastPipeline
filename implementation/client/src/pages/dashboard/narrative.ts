@@ -29,18 +29,18 @@ const kwh = (v: number) => `${Math.round(v).toLocaleString()} kWh`;
 
 /** "14 January" when dates are known, otherwise "day 14 of the horizon". */
 export function whenLabel(day: DayPoint | null): string {
-  if (!day) return "—";
+  if (!day) return "-";
   if (!day.date) return `day ${day.step}`;
   return day.date.toLocaleDateString("en-GB", { day: "numeric", month: "long" });
 }
 
 export function shortWhen(day: DayPoint | null): string {
-  if (!day) return "—";
+  if (!day) return "-";
   if (!day.date) return `Day ${day.step}`;
   return day.date.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
 }
 
-/** Key insights — the "tell them, don't make them read the graph" list. */
+/** Key insights - the "tell them, don't make them read the graph" list. */
 export function keyInsights(ins: ForecastInsights, report?: QualityReport | null): Statement[] {
   const out: Statement[] = [];
 
@@ -74,7 +74,7 @@ export function keyInsights(ins: ForecastInsights, report?: QualityReport | null
       ? { tone: "good", text: "No unusual forecast instability." }
       : {
           tone: "watch",
-          text: `Day-to-day variation is ${ins.volatilityPercent.toFixed(1)}% — higher than typical.`,
+          text: `Day-to-day variation is ${ins.volatilityPercent.toFixed(1)}% - higher than typical.`,
         },
   );
 
@@ -93,7 +93,7 @@ export function keyInsights(ins: ForecastInsights, report?: QualityReport | null
         ? { tone: "good", text: "Prediction confidence remains high across the horizon." }
         : {
             tone: "watch",
-            text: `Prediction confidence averages ${ins.confidencePercent.toFixed(0)}% — interpret later days with care.`,
+            text: `Prediction confidence averages ${ins.confidencePercent.toFixed(0)}% - interpret later days with care.`,
           },
     );
   }
@@ -105,7 +105,7 @@ export function keyInsights(ins: ForecastInsights, report?: QualityReport | null
   return out;
 }
 
-/** Recommended actions — every insight paired with something to do. */
+/** Recommended actions - every insight paired with something to do. */
 export function recommendedActions(ins: ForecastInsights, report?: QualityReport | null): ActionItem[] {
   const out: ActionItem[] = [];
 
@@ -123,7 +123,7 @@ export function recommendedActions(ins: ForecastInsights, report?: QualityReport
       tone: "good",
       title: `Schedule maintenance around ${whenLabel(ins.trough)}`,
       detail:
-        "This is the lowest forecast demand in the horizon — the least disruptive window for planned downtime or equipment work.",
+        "This is the lowest forecast demand in the horizon - the least disruptive window for planned downtime or equipment work.",
       metric: { label: "Forecast demand", value: kwh(ins.trough.value) },
     });
   }
@@ -152,14 +152,14 @@ export function recommendedActions(ins: ForecastInsights, report?: QualityReport
     out.push({
       tone: "good",
       title: "No preprocessing issues remain",
-      detail: "The source dataset passed every quality checkpoint — the forecast is suitable for operational planning.",
+      detail: "The source dataset passed every quality checkpoint - the forecast is suitable for operational planning.",
     });
   }
 
   return out;
 }
 
-/** Smart alerts — the things that would warrant a notification. */
+/** Smart alerts - the things that would warrant a notification. */
 export function smartAlerts(ins: ForecastInsights): Statement[] {
   const out: Statement[] = [];
 
@@ -194,13 +194,13 @@ export function smartAlerts(ins: ForecastInsights): Statement[] {
   }
 
   if (!out.length) {
-    out.push({ tone: "good", text: "No alerts — the forecast shows no abnormal behaviour." });
+    out.push({ tone: "good", text: "No alerts - the forecast shows no abnormal behaviour." });
   }
 
   return out;
 }
 
-/** The Energy Intelligence narrative — prose, in reading order. */
+/** The Energy Intelligence narrative - prose, in reading order. */
 export function energyNarrative(ins: ForecastInsights, report?: QualityReport | null): string[] {
   const lines: string[] = [];
 

@@ -74,7 +74,7 @@ class ForecastRunner:
 
     # Minimum interval between progress writes, in seconds. The client
     # polls far slower than the search fits models, so writing more often
-    # than this cannot reach the interface — it only costs UPDATEs.
+    # than this cannot reach the interface - it only costs UPDATEs.
     PROGRESS_INTERVAL_S = 0.4
 
     @staticmethod

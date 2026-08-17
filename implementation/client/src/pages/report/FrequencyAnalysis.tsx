@@ -7,7 +7,7 @@ import { int, shortDate } from "./format";
 
 const PREVIEW_LIMIT = 12;
 
-/** Section 3 — is the series sampled at a regular interval, with no gaps? */
+/** Section 3 - is the series sampled at a regular interval, with no gaps? */
 export default function FrequencyAnalysis({ data }: { data: FrequencyAnalysisData }) {
   const healthy = data.frequency_violations === 0 && data.missing_timestamp_count === 0;
   const preview = data.missing_timestamps.slice(0, PREVIEW_LIMIT);

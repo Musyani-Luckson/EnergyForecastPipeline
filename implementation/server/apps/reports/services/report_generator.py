@@ -23,7 +23,7 @@ class ReportGenerator:
 
     Composes a forecast report entirely from the normalized tables
     (Forecast + ForecastValue + EvaluationMetric + the pipeline's
-    DatasetVersion lineage) — nothing is read from stored JSON.
+    DatasetVersion lineage) - nothing is read from stored JSON.
     """
 
     SUPPORTED_FORMATS = {"json", "pdf", "csv"}

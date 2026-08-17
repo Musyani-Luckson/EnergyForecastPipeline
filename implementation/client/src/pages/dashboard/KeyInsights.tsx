@@ -18,7 +18,7 @@ const COLOUR: Record<Tone, string> = {
   risk: "text-rose-600",
 };
 
-/** The graph, read for you — stated rather than plotted. */
+/** The graph, read for you - stated rather than plotted. */
 export default function KeyInsights({
   insights,
   report,

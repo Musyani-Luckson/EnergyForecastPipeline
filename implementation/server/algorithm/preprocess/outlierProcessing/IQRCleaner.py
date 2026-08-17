@@ -13,8 +13,8 @@ class IQRCleaner:
         Lower Bound = Q1 - 1.5 * IQR
         Upper Bound = Q3 + 1.5 * IQR
 
-    Points outside [Lower, Upper] — and physically invalid
-    negative readings — are anomalies, replaced by
+    Points outside [Lower, Upper] - and physically invalid
+    negative readings - are anomalies, replaced by
     locality-based median imputation over a +/- 7-day
     neighbourhood (radius = 7) to preserve local seasonality.
     """

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, Stat, StatGrid } from "./Section";
 import { monthName, num, pct } from "./format";
 
-/** Section 11 — how consumption moves across the calendar year. */
+/** Section 11 - how consumption moves across the calendar year. */
 export default function SeasonalityAnalysis({ data }: { data: SeasonalityAnalysisData }) {
   const months = useMemo(
     () =>

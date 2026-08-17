@@ -53,10 +53,10 @@ export default function DailyForecastTable({ insights }: { insights: ForecastIns
                     {Math.round(d.value).toLocaleString()}
                   </TableCell>
                   <TableCell className="px-3 text-right tabular-nums text-slate-500">
-                    {d.lower != null ? Math.round(d.lower).toLocaleString() : "—"}
+                    {d.lower != null ? Math.round(d.lower).toLocaleString() : "-"}
                   </TableCell>
                   <TableCell className="px-3 text-right tabular-nums text-slate-500">
-                    {d.upper != null ? Math.round(d.upper).toLocaleString() : "—"}
+                    {d.upper != null ? Math.round(d.upper).toLocaleString() : "-"}
                   </TableCell>
                   <TableCell
                     className={cn(

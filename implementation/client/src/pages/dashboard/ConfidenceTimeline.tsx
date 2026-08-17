@@ -9,7 +9,7 @@ import type { ForecastInsights } from "./insights";
 const BUCKETS = 6;
 
 /**
- * Confidence decays across a forecast horizon — the interval widens with every
+ * Confidence decays across a forecast horizon - the interval widens with every
  * step ahead. Showing that decay stops users trusting day 30 as much as day 1.
  */
 export default function ConfidenceTimeline({ insights }: { insights: ForecastInsights }) {

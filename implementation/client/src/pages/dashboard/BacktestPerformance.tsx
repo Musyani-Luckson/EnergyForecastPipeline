@@ -16,7 +16,7 @@ function Metric({ label, value, unit }: { label: string; value: string; unit?: s
 }
 
 const num = (v: number | null | undefined, d = 2) =>
-  typeof v === "number" && Number.isFinite(v) ? v.toFixed(d) : "—";
+  typeof v === "number" && Number.isFinite(v) ? v.toFixed(d) : "-";
 
 /**
  * What the model is, and what it was fitted on.
@@ -46,13 +46,13 @@ export default function BacktestPerformance({
         <h2 className="text-sm font-semibold text-slate-900 mb-3">Model</h2>
 
         <div className="grid grid-cols-4 gap-3">
-          <Metric label="Order" value={`(${p ?? "—"},${d ?? "—"},${q ?? "—"})`} unit="p, d, q" />
+          <Metric label="Order" value={`(${p ?? "-"},${d ?? "-"},${q ?? "-"})`} unit="p, d, q" />
           <Metric
             label="Seasonal"
-            value={seasonal.length ? `(${seasonal.slice(0, 3).join(",")})` : "—"}
+            value={seasonal.length ? `(${seasonal.slice(0, 3).join(",")})` : "-"}
             unit={seasonal[3] ? `period ${seasonal[3]}` : undefined}
           />
-          <Metric label="Horizon" value={insights ? `${insights.horizon}` : "—"} unit="days" />
+          <Metric label="Horizon" value={insights ? `${insights.horizon}` : "-"} unit="days" />
           <Metric label="Trained on" value="100%" unit="of history" />
         </div>
 

@@ -48,7 +48,7 @@ class DifferencingView(APIView):
             # With d=0 and D=0 nothing was differenced, so the values are still
             # consumption and keep the consumption column. Once differenced they
             # are period-over-period change and must not be labelled as kWh
-            # levels — negative changes are normal there, and calling them
+            # levels - negative changes are normal there, and calling them
             # consumption would make them read as invalid energy readings.
             was_differenced = order > 0 or seasonal_order > 0
             column = DIFFERENCED_VALUE_COLUMN if was_differenced else VALUE_COLUMN

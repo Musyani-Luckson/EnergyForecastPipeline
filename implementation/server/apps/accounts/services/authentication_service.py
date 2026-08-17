@@ -15,7 +15,7 @@ class AuthenticationService:
     refresh token in the logout view.
     """
 
-    # Refresh-cookie lifetime — mirrors REFRESH_TOKEN_LIFETIME
+    # Refresh-cookie lifetime - mirrors REFRESH_TOKEN_LIFETIME
     # in SIMPLE_JWT. (Attribute name kept for the login view.)
     SESSION_TIMEOUT = timedelta(days=7)
 

@@ -26,7 +26,7 @@ def resolve_value_column(df) -> str:
 
     A STATIONARY version written with d=0 and D=0 is unchanged from its
     source and therefore still holds consumption under VALUE_COLUMN, so the
-    stage alone cannot decide this — the file has to be asked.
+    stage alone cannot decide this - the file has to be asked.
     """
     if DIFFERENCED_VALUE_COLUMN in getattr(df, "columns", []):
         return DIFFERENCED_VALUE_COLUMN

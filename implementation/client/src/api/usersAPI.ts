@@ -12,7 +12,7 @@ export interface ServerUser {
   role: ServerRole | null;
   is_superuser: boolean;
   /**
-   * Only the list endpoint returns this — `serialize_user` omits it, and the
+   * Only the list endpoint returns this - `serialize_user` omits it, and the
    * create/update/revoke responses use that serializer directly. Callers
    * should refetch the list after a mutation rather than trust the response.
    */

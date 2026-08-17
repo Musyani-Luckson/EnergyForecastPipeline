@@ -14,7 +14,7 @@ interface EventCardProps {
 
 /**
  * The single most and least demanding day in the horizon, each with the action
- * it implies — a peak to prepare for, or a quiet window to exploit.
+ * it implies - a peak to prepare for, or a quiet window to exploit.
  */
 export default function PeakEvent({ day, average, variant }: EventCardProps) {
   if (!day) return null;
@@ -70,7 +70,7 @@ export default function PeakEvent({ day, average, variant }: EventCardProps) {
         </p>
         <p className="text-sm text-slate-700 mt-0.5">
           {isPeak
-            ? `Reduce discretionary load on ${whenLabel(day)} — consider pre-cooling, HVAC setpoint relaxation, or shifting flexible equipment away from the afternoon.`
+            ? `Reduce discretionary load on ${whenLabel(day)} - consider pre-cooling, HVAC setpoint relaxation, or shifting flexible equipment away from the afternoon.`
             : `Schedule planned maintenance or equipment downtime around ${whenLabel(day)}, when demand is at its lowest.`}
         </p>
       </div>

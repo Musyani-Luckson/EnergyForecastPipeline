@@ -17,7 +17,7 @@ export default function ForecastKPIs({ insights }: { insights: ForecastInsights 
         <Stat label="Average daily demand" value={kwh(insights.average)} hint="kWh/day" />
         <Stat
           label="Peak load"
-          value={insights.peak ? kwh(insights.peak.value) : "—"}
+          value={insights.peak ? kwh(insights.peak.value) : "-"}
           hint="kWh"
           tone="text-amber-600"
         />
@@ -26,7 +26,7 @@ export default function ForecastKPIs({ insights }: { insights: ForecastInsights 
           value={
             insights.peakAbovePercent != null
               ? `+${insights.peakAbovePercent.toFixed(0)}%`
-              : "—"
+              : "-"
           }
           hint="above average"
         />

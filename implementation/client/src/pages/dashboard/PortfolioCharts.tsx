@@ -80,7 +80,7 @@ export function CompletionRing({ portfolio }: { portfolio: Portfolio }) {
   );
 }
 
-/** Where datasets sit, as a donut — complements the funnel's exact counts. */
+/** Where datasets sit, as a donut - complements the funnel's exact counts. */
 export function StageDistribution({ portfolio }: { portfolio: Portfolio }) {
   const data = useMemo(
     () =>
@@ -149,7 +149,7 @@ export function StageDistribution({ portfolio }: { portfolio: Portfolio }) {
   );
 }
 
-/** Uploads over the last twelve months — is the system actually being used? */
+/** Uploads over the last twelve months - is the system actually being used? */
 export function UploadActivity({ portfolio }: { portfolio: Portfolio }) {
   const data = useMemo(() => {
     const months: { key: string; label: string; count: number }[] = [];
@@ -251,7 +251,7 @@ export function DemandComparison({ forecasts }: { forecasts: ForecastSummary[] }
         description="Average projected daily consumption."
       >
         <p className="text-sm text-slate-500">
-          No forecasts yet — run a dataset through the pipeline to compare demand here.
+          No forecasts yet - run a dataset through the pipeline to compare demand here.
         </p>
       </Section>
     );

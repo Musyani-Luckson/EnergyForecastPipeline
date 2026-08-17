@@ -51,6 +51,6 @@ export {
 export type { ForecastInsights, DayPoint, RiskLevel, Verdict } from "./insights";
 export type { Statement, ActionItem, Tone } from "./narrative";
 
-// Shared stage palette — keep colour meaning consistent across the app.
+// Shared stage palette - keep colour meaning consistent across the app.
 export { LAYERS, LAYER_BY_KEY, PRESETS, DEFAULT_LAYERS, HISTORY_STAGES } from "./layers";
 export type { LayerKey, LayerMeta, Preset } from "./layers";

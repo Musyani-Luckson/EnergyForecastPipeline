@@ -21,14 +21,14 @@ interface ChartRow {
 const fmt = (iso: string) =>
   new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
 
-/** Tooltip heading — the year matters once history and forecast span one. */
+/** Tooltip heading - the year matters once history and forecast span one. */
 const fmtLong = (iso: string) =>
   new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", {
     weekday: "short", day: "numeric", month: "short", year: "numeric",
   });
 
 /**
- * "Dec '23" — the apostrophe matters. A bare "Dec 23" on a daily axis reads as
+ * "Dec '23" - the apostrophe matters. A bare "Dec 23" on a daily axis reads as
  * the 23rd of December rather than the year.
  */
 const monthLabel = (iso: string) => {
@@ -47,7 +47,7 @@ const finite = (v: unknown): v is number => typeof v === "number" && Number.isFi
  * Reads the row behind the hovered point rather than the payload entries.
  *
  * Recharts emits an entry for every series on every row, including the ones
- * with no value there — a historical point still yields a `forecast` entry of
+ * with no value there - a historical point still yields a `forecast` entry of
  * `undefined`. Formatting those produced "NaN kWh"; taking the row directly
  * means a line only appears when that series genuinely has a value.
  */
@@ -104,12 +104,12 @@ function ChartTooltip({
  * the anomalies already flagged in the source data.
  *
  * Anomalies use the quality report's own IQR fences, so what's marked here is
- * exactly what the preprocessing pipeline classes as an outlier — no second,
+ * exactly what the preprocessing pipeline classes as an outlier - no second,
  * competing definition.
  */
 /**
  * What the plotted history has had done to it. The forecast runs on the last
- * real-kWh version, so this is never RAW once cleaning has run — and never
+ * real-kWh version, so this is never RAW once cleaning has run - and never
  * STATIONARY, whose differenced values would not share an axis with a kWh
  * forecast.
  */
@@ -128,7 +128,7 @@ export default function ForecastOverviewChart({
   insights: ForecastInsights;
   series?: ForecastSeries | null;
   report?: QualityReport | null;
-  /** Pipeline stage the forecast — and therefore this history — ran on. */
+  /** Pipeline stage the forecast - and therefore this history - ran on. */
   historyStage?: StageKey;
 }) {
   const iqr = report?.outlier_analysis?.iqr_method;
@@ -168,7 +168,7 @@ export default function ForecastOverviewChart({
   /**
    * One tick at the first row of each calendar month. Letting `minTickGap`
    * choose by pixel spacing puts two ticks in the same month, which then render
-   * as identical labels — the axis is categorical, so spacing knows nothing
+   * as identical labels - the axis is categorical, so spacing knows nothing
    * about the dates behind it.
    */
   const monthTicks = useMemo(() => {
@@ -203,7 +203,7 @@ export default function ForecastOverviewChart({
           </h2>
         </div>
 
-        {/* Legend — explicit, because five encodings share one plot. */}
+        {/* Legend - explicit, because five encodings share one plot. */}
         <div className="flex items-center gap-4 flex-wrap text-[11px] text-slate-500 mb-3">
           <span className="inline-flex items-center gap-1.5">
             <span className="w-5 h-0.5 bg-blue-800 rounded" />
@@ -307,7 +307,7 @@ export default function ForecastOverviewChart({
         {series?.historical?.length && !iqr ? (
           <p className="flex items-start gap-1.5 text-[11px] text-slate-400 mt-2">
             <Info size={12} className="mt-0.5 shrink-0" />
-            Anomalies aren’t marked — they need the source dataset’s IQR bounds from its quality report.
+            Anomalies aren’t marked - they need the source dataset’s IQR bounds from its quality report.
           </p>
         ) : null}
 

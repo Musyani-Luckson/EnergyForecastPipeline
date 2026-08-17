@@ -10,7 +10,7 @@ import { relativeTime } from "./portfolio";
 const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
 
 function accuracyBadge(mape: number | null | undefined) {
-  if (typeof mape !== "number") return { label: "—", variant: "secondary" as const };
+  if (typeof mape !== "number") return { label: "-", variant: "secondary" as const };
   if (mape <= 10) return { label: `${mape.toFixed(1)}% MAPE`, variant: "success" as const };
   if (mape <= 20) return { label: `${mape.toFixed(1)}% MAPE`, variant: "warning" as const };
   return { label: `${mape.toFixed(1)}% MAPE`, variant: "destructive" as const };
@@ -72,10 +72,10 @@ export default function RecentForecasts({ forecasts }: { forecasts: ForecastSumm
                     </span>
                   </TableCell>
                   <TableCell className="px-3 text-right tabular-nums">
-                    {avg ? Math.round(avg).toLocaleString() : "—"}
+                    {avg ? Math.round(avg).toLocaleString() : "-"}
                   </TableCell>
                   <TableCell className="px-3 text-right tabular-nums text-slate-500">
-                    {peak != null ? Math.round(peak).toLocaleString() : "—"}
+                    {peak != null ? Math.round(peak).toLocaleString() : "-"}
                   </TableCell>
                   <TableCell className="px-3">
                     <Badge variant={acc.variant} className="text-[11px]">

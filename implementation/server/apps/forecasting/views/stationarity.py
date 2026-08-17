@@ -11,7 +11,7 @@ from apps.processing.services import load_version_series
 class StationarityView(APIView):
     """
     ADF stationarity test on a DatasetVersion. Records a
-    PreprocessingLog (adf_statistic, p_value) — the diagnostic
+    PreprocessingLog (adf_statistic, p_value) - the diagnostic
     lives in structured columns, not a JSON blob.
     """
 

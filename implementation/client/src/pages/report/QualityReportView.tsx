@@ -31,7 +31,7 @@ function GroupHeading({ children }: { children: ReactNode }) {
 /**
  * Default composition of the full quality report: verdict first, then the
  * plain-language findings, then the detailed sections grouped by what they
- * answer — data integrity, consumption behaviour, and model assumptions.
+ * answer - data integrity, consumption behaviour, and model assumptions.
  *
  * Sections are independent, so callers that need a different order or subset
  * can import them individually from `@/pages/report` instead of using this.
@@ -43,7 +43,7 @@ export default function QualityReportView({
   report: QualityReport;
   /**
    * The preceding checkpoint, if any. Only used to report what a transformation
-   * corrected — a single report describes one version and can't know that.
+   * corrected - a single report describes one version and can't know that.
    */
   previous?: QualityReport | null;
 }) {

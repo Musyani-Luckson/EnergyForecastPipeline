@@ -64,7 +64,7 @@ export function useUsers(enabled: boolean): UseUsersResult {
 
   useEffect(() => {
     // `loading` is initialised from `enabled`, so a disabled hook is already
-    // settled — no setState needed here (it would trip the effect lint rule).
+    // settled - no setState needed here (it would trip the effect lint rule).
     if (!enabled) return;
 
     let active = true;

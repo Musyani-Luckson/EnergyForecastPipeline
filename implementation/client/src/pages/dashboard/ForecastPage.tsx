@@ -14,7 +14,7 @@ import ForecastDashboard from "./ForecastDashboard";
 
 /**
  * Standalone forecast dashboard for a completed run, reached from the dataset's
- * version timeline. Unlike the in-workflow view it holds no pipeline state — it
+ * version timeline. Unlike the in-workflow view it holds no pipeline state - it
  * reloads the forecast and its source report from the run alone, so the page
  * survives a refresh and can be linked to directly.
  */
@@ -33,7 +33,7 @@ export default function ForecastPage() {
   const [error, setError] = useState<string | null>(null);
 
   /**
-   * The version the forecast was run on — the last one still in real kWh.
+   * The version the forecast was run on - the last one still in real kWh.
    * STATIONARY is excluded: its values are period-over-period changes, so its
    * statistics would give the dashboard the wrong historical baseline.
    */
@@ -55,7 +55,7 @@ export default function ForecastPage() {
     let active = true;
 
     (async () => {
-      // Reset inside the async body rather than the effect body — a synchronous
+      // Reset inside the async body rather than the effect body - a synchronous
       // setState here would trigger the cascading-render lint rule.
       setLoading(true);
       setError(null);

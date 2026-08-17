@@ -6,7 +6,7 @@ import { Section, Stat, StatGrid } from "@/pages/report/Section";
 import { cn } from "@/lib/utils";
 
 const num = (v: number | null | undefined, d = 2) =>
-  typeof v === "number" && Number.isFinite(v) ? v.toFixed(d) : "—";
+  typeof v === "number" && Number.isFinite(v) ? v.toFixed(d) : "-";
 
 function Threshold({ label, met, detail }: { label: string; met: boolean | null | undefined; detail: string }) {
   if (met == null) return null;
@@ -56,13 +56,13 @@ export default function ModelPerformance({ forecast }: { forecast: ForecastSumma
         <Stat label="RMSE" value={num(m.rmse)} hint="kWh" />
         <Stat
           label="RMSE % of mean"
-          value={m.rmse_pct_of_mean != null ? `${num(m.rmse_pct_of_mean)}%` : "—"}
+          value={m.rmse_pct_of_mean != null ? `${num(m.rmse_pct_of_mean)}%` : "-"}
           hint="target ≤ 15%"
         />
         <Stat label="MAE" value={num(m.mae)} hint="kWh" />
         <Stat
           label="MAPE"
-          value={m.mape != null ? `${num(m.mape)}%` : "—"}
+          value={m.mape != null ? `${num(m.mape)}%` : "-"}
           hint="target ≤ 10%"
         />
       </StatGrid>

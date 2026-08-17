@@ -25,14 +25,14 @@ export function deriveFindings(report: QualityReport): Finding[] {
       ? { tone: "pass", text: "Dataset is 100% complete across its date range." }
       : {
           tone: coverage.completeness_percent >= 90 ? "warn" : "fail",
-          text: `Dataset is ${pct(coverage.completeness_percent, 1)} complete — ${plural(coverage.missing_records, "calendar day")} absent.`,
+          text: `Dataset is ${pct(coverage.completeness_percent, 1)} complete - ${plural(coverage.missing_records, "calendar day")} absent.`,
         },
   );
 
   if (!coverage.passes_minimum_requirement) {
     findings.push({
       tone: "fail",
-      text: `Only ${coverage.actual_records.toLocaleString()} records — below the ${coverage.minimum_required_records.toLocaleString()} minimum for reliable forecasting.`,
+      text: `Only ${coverage.actual_records.toLocaleString()} records - below the ${coverage.minimum_required_records.toLocaleString()} minimum for reliable forecasting.`,
     });
   }
 
@@ -76,10 +76,10 @@ export function deriveFindings(report: QualityReport): Finding[] {
           // Differenced values are changes, so negatives are decreases in
           // demand rather than impossible readings.
           tone: "pass",
-          text: `Differenced series — ${plural(energy.negative_values_count, "period")} show a fall in demand, which is expected.`,
+          text: `Differenced series - ${plural(energy.negative_values_count, "period")} show a fall in demand, which is expected.`,
         }
       : energy.is_energy_data_valid
-        ? { tone: "pass", text: "Energy values are valid — no negative or zero readings." }
+        ? { tone: "pass", text: "Energy values are valid - no negative or zero readings." }
         : {
             tone: "warn",
             text: `${plural(energy.negative_values_count, "negative reading")} and ${plural(energy.zero_values_count, "zero reading")} require review.`,
@@ -108,14 +108,14 @@ export function deriveFindings(report: QualityReport): Finding[] {
   if (trend.direction !== "stable" && trend.p_value < 0.05) {
     findings.push({
       tone: "warn",
-      text: `Consumption is significantly ${trend.direction} — ${num(Math.abs(trend.slope * 365), 1)} kWh per year.`,
+      text: `Consumption is significantly ${trend.direction} - ${num(Math.abs(trend.slope * 365), 1)} kWh per year.`,
     });
   }
 
   const season = report.seasonality_analysis;
   findings.push({
     tone: "pass",
-    text: `Peak consumption in ${monthName(season.peak_month)}, lowest in ${monthName(season.lowest_month)} — ${pct(season.seasonal_variation_percent, 1)} seasonal variation.`,
+    text: `Peak consumption in ${monthName(season.peak_month)}, lowest in ${monthName(season.lowest_month)} - ${pct(season.seasonal_variation_percent, 1)} seasonal variation.`,
   });
 
   const adf = report.stationarity_analysis;

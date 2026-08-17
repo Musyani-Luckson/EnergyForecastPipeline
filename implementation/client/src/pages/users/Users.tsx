@@ -39,7 +39,7 @@ export default function Users() {
   const isAdmin = canManageUsers(role);
 
   // Only administrators may call these endpoints, so don't even attempt the
-  // fetch otherwise — it would 403 and surface a pointless error.
+  // fetch otherwise - it would 403 and surface a pointless error.
   const { users, loading, busy, error, add, changeRole, revoke, clearError } = useUsers(isAdmin);
   const [creating, setCreating] = useState(false);
 

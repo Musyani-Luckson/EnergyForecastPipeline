@@ -8,7 +8,7 @@ MAPE_THRESHOLD_PCT = 10.0
 
 def build_forecast_dto(forecast) -> dict:
     """Assemble the legacy ForecastResult shape from Forecast +
-    ForecastValue + EvaluationMetric. Nothing is stored — arrays,
+    ForecastValue + EvaluationMetric. Nothing is stored - arrays,
     peaks and threshold verdicts are all derived on read."""
     rows = list(forecast.values.all().order_by("forecast_date"))
     values = [float(r.predicted_value) for r in rows]

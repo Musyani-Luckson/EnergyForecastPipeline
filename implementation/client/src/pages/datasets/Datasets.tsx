@@ -23,7 +23,7 @@ export default function Datasets() {
     if (!file) return;
     const result = await upload(file);
     if (result) {
-      // Skip any success screen — land straight in the RAW analysis.
+      // Skip any success screen - land straight in the RAW analysis.
       navigate(`/datasets/${result.run_id}/versions/${result.id}`);
     }
   };

@@ -8,7 +8,7 @@ interface SectionProps {
   icon: LucideIcon;
   title: string;
   description?: string;
-  /** Rendered top-right — typically a status Badge. */
+  /** Rendered top-right - typically a status Badge. */
   action?: ReactNode;
   className?: string;
   children: ReactNode;

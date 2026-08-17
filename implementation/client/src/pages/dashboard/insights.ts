@@ -3,7 +3,7 @@ import type { ForecastSeries, ForecastSummary, QualityReport } from "@/api/datas
 /**
  * Decision-support derivations over a forecast result.
  *
- * Everything here is computed from values the API actually returns — the
+ * Everything here is computed from values the API actually returns - the
  * forecast arrays, its evaluation metrics, and (optionally) the quality report
  * of the source version for historical comparison. Nothing is invented: where
  * a figure cannot be derived it is returned as null and the UI shows "N/A"
@@ -60,7 +60,7 @@ export interface ForecastInsights {
   peakAbovePercent: number | null;
   /** Percentage change from the first to the last day of the horizon. */
   growthPercent: number;
-  /** Coefficient of variation — day-to-day dispersion. */
+  /** Coefficient of variation - day-to-day dispersion. */
   volatilityPercent: number;
 
   /** Confidence derived from interval width; null when bounds are absent. */
@@ -68,7 +68,7 @@ export interface ForecastInsights {
   /** How much wider the interval becomes across the horizon, as a multiple. */
   intervalWidening: number | null;
 
-  /** Historical comparison — null unless the source report was supplied. */
+  /** Historical comparison - null unless the source report was supplied. */
   historicalAverage: number | null;
   vsHistoricalPercent: number | null;
 

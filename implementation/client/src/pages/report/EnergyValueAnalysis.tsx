@@ -45,7 +45,7 @@ function ValidationCard({
   );
 }
 
-/** Section 8 — physical plausibility of the energy readings. */
+/** Section 8 - physical plausibility of the energy readings. */
 export default function EnergyValueAnalysis({ data }: { data: EnergyValueAnalysisData }) {
   // A differenced version measures change between consecutive periods, so the
   // non-negativity rule does not apply to it: a negative entry is a fall in
@@ -74,7 +74,7 @@ export default function EnergyValueAnalysis({ data }: { data: EnergyValueAnalysi
           ok={differenced || !data.has_negative_values}
           explanation={
             differenced
-              ? "Periods where demand fell — expected here"
+              ? "Periods where demand fell - expected here"
               : "Consumption cannot be below zero"
           }
         />
@@ -103,7 +103,7 @@ export default function EnergyValueAnalysis({ data }: { data: EnergyValueAnalysi
           </p>
           <p className="text-[11px] text-slate-500 mt-0.5">
             {differenced
-              ? "Change values — the non-negative rule does not apply"
+              ? "Change values - the non-negative rule does not apply"
               : data.is_energy_data_valid
                 ? "All readings are plausible"
                 : "Some readings need investigation"}

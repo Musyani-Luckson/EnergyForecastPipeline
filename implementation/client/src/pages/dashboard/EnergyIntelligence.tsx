@@ -14,7 +14,7 @@ const RISK_BADGE = {
 } as const;
 
 /**
- * The plain-prose reading of the forecast — what a manager scans before the
+ * The plain-prose reading of the forecast - what a manager scans before the
  * chart. Every sentence is generated from a derived figure, so the narrative
  * can never claim more than the data supports.
  */

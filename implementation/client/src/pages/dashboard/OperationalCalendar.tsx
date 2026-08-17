@@ -22,7 +22,7 @@ function level(day: DayPoint, average: number): Level {
   return "low";
 }
 
-/** Day-by-day demand at a glance — the horizon as an operational calendar. */
+/** Day-by-day demand at a glance - the horizon as an operational calendar. */
 export default function OperationalCalendar({ insights }: { insights: ForecastInsights }) {
   const counts = insights.days.reduce(
     (acc, d) => {
@@ -66,7 +66,7 @@ export default function OperationalCalendar({ insights }: { insights: ForecastIn
                       weekday: "short", day: "numeric", month: "short",
                     })
                   : `Day ${d.step}`}
-                {" — "}
+                {" - "}
                 {Math.round(d.value).toLocaleString()} kWh
               </TooltipContent>
             </Tooltip>

@@ -16,7 +16,7 @@ interface Row {
 
 /**
  * Puts the forecast next to what the building actually did. The comparisons
- * come from the source report's statistics — the API exposes no historical
+ * come from the source report's statistics - the API exposes no historical
  * series, so period-by-period baselines beyond these aren't available.
  */
 export default function CompareWithHistory({

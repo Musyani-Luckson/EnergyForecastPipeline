@@ -50,7 +50,7 @@ class ProcessingJob(models.Model):
 
     # Live progress of the running phase, so a long grid search can be
     # reported to the client while it executes rather than only on
-    # completion. Scalar run state belonging to the job itself — the
+    # completion. Scalar run state belonging to the job itself - the
     # counts are transient and are not derivable from any other table.
     progress_phase = models.CharField(max_length=32, blank=True)
     progress_done = models.PositiveIntegerField(default=0)
@@ -105,7 +105,7 @@ class DatasetVersion(models.Model):
     )
     version_number = models.PositiveIntegerField()
     stage = models.CharField(max_length=20, choices=Stage.choices, db_index=True)
-    # Stored path only — never a FilePathField (which is a form-time chooser).
+    # Stored path only - never a FilePathField (which is a form-time chooser).
     file_path = models.CharField(max_length=500)
     file_size = models.PositiveBigIntegerField(default=0)
     record_count = models.PositiveIntegerField(default=0)

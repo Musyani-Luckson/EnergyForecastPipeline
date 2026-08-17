@@ -14,7 +14,7 @@ interface CircularGaugeProps {
   className?: string;
 }
 
-/** SVG ring gauge — used for coverage completeness and the readiness score. */
+/** SVG ring gauge - used for coverage completeness and the readiness score. */
 export default function CircularGauge({
   value,
   size = 120,

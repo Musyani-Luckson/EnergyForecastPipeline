@@ -28,7 +28,7 @@ export const LAYERS: LayerMeta[] = [
     colour: "#94a3b8",
     chip: "border-slate-400 bg-slate-100 text-slate-700",
     swatch: "bg-slate-400",
-    description: "As uploaded — missing values, duplicates and outliers intact.",
+    description: "As uploaded - missing values, duplicates and outliers intact.",
   },
   {
     key: "CLEANED",
@@ -53,7 +53,7 @@ export const LAYERS: LayerMeta[] = [
     chip: "border-amber-400 bg-amber-50 text-amber-700",
     swatch: "bg-amber-500",
     ownAxis: true,
-    description: "Differenced for the model. Period-over-period change, not kWh — plotted on the right axis.",
+    description: "Differenced for the model. Period-over-period change, not kWh - plotted on the right axis.",
   },
   {
     key: "FORECAST",

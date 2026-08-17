@@ -128,7 +128,7 @@ class UploadView(APIView):
 class DatasetReportView(APIView):
     """
     Compute a data-quality report for any DatasetVersion (raw after
-    upload, or a preprocessed version). Stateless — computed on
+    upload, or a preprocessed version). Stateless - computed on
     demand from the version's file, never persisted.
     """
 
@@ -198,7 +198,7 @@ class DatasetPipelineView(APIView):
     """
     Derive the pipeline DAG projection the client expects
     ({run_id, pipeline:{RAW,CLEANED,OUTLIERS,STATIONARY,FORECAST}})
-    dynamically from ProcessingJob + DatasetVersion — no stored DAG.
+    dynamically from ProcessingJob + DatasetVersion - no stored DAG.
     """
 
     def get(self, request):
@@ -241,8 +241,8 @@ class DatasetSeriesView(APIView):
     `dataset_id`, or `dataset_ids` as a comma-separated list to fetch several
     stages in one round trip.
 
-    Note that STATIONARY values are differenced — period-over-period changes,
-    not kWh — so callers must plot that stage on its own axis. The `stage` on
+    Note that STATIONARY values are differenced - period-over-period changes,
+    not kWh - so callers must plot that stage on its own axis. The `stage` on
     each entry is what tells them apart.
     """
 

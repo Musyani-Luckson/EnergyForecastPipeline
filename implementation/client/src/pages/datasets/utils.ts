@@ -20,9 +20,9 @@ export const STAGE_ORDER: StageKey[] = STAGES.map((s) => s.key);
 export interface StagePurpose {
   /** Plain-language name of the checkpoint. */
   title: string;
-  /** What produced this version — past tense, or the origin for RAW. */
+  /** What produced this version - past tense, or the origin for RAW. */
   did: string;
-  /** What this checkpoint is certifying — present tense. */
+  /** What this checkpoint is certifying - present tense. */
   checking: string;
 }
 
@@ -33,7 +33,7 @@ export interface StagePurpose {
 export const STAGE_PURPOSE: Record<StageKey, StagePurpose> = {
   RAW: {
     title: "Initial assessment",
-    did: "Your file was uploaded exactly as supplied — nothing has been altered yet.",
+    did: "Your file was uploaded exactly as supplied - nothing has been altered yet.",
     checking: "Measuring the starting condition of the data so every later change can be compared against it.",
   },
   CLEANED: {
@@ -75,7 +75,7 @@ export const STAGE_FOCUS: Record<StageKey, ReportFocus[]> = {
 
 /**
  * Transformations the user opts into rather than the pipeline imposing. Both
- * are *measured and reported* at every checkpoint regardless — it is only the
+ * are *measured and reported* at every checkpoint regardless - it is only the
  * corrective transformation that is the user's call.
  */
 export const OPTIONAL_STAGES: StageKey[] = ["OUTLIERS", "STATIONARY"];
@@ -119,14 +119,14 @@ export const NEXT_STEP: Record<StageKey, NextStep> = {
     label: "Treat Outliers",
     action: "Apply treatment",
     summary:
-      "Optional. Replace readings outside the IQR fences with local medians. Outliers are always reported — treating them is your decision.",
+      "Optional. Replace readings outside the IQR fences with local medians. Outliers are always reported - treating them is your decision.",
     skipHint: "Keep every reading as recorded and move on to the next step.",
   },
   STATIONARY: {
     label: "Apply Differencing",
     action: "Apply differencing",
     summary:
-      "Optional. Difference the series to remove trend so it meets the model's stationarity assumption. The ADF test is always reported — differencing is your decision.",
+      "Optional. Difference the series to remove trend so it meets the model's stationarity assumption. The ADF test is always reported - differencing is your decision.",
     skipHint: "Forecast on the undifferenced series and let SARIMA handle the trend itself.",
   },
   FORECAST: {
@@ -138,7 +138,7 @@ export const NEXT_STEP: Record<StageKey, NextStep> = {
 
 /**
  * What declining each optional step means for the data, so a skip is never a
- * silent omission. Both analyses still run — only the transformation is
+ * silent omission. Both analyses still run - only the transformation is
  * declined, which is what these notes make explicit.
  */
 export const SKIPPED_NOTE: Record<StageKey, { title: string; detail: string }> = {
@@ -174,7 +174,7 @@ export function nextStepEffects(target: StageKey, report: QualityReport | null):
     if (dupes > 0) effects.push(`Remove ${plural(dupes, "duplicate row")}`);
     if (gaps > 0) effects.push(`Fill ${plural(gaps, "missing day")}`);
     if (missing > 0) effects.push(`Impute ${plural(missing, "missing reading")}`);
-    if (!effects.length) effects.push("No issues found — the dataset will pass through unchanged");
+    if (!effects.length) effects.push("No issues found - the dataset will pass through unchanged");
   }
 
   if (target === "OUTLIERS") {
@@ -183,10 +183,10 @@ export function nextStepEffects(target: StageKey, report: QualityReport | null):
     if (n > 0) {
       effects.push(`Replace ${plural(n, "reading")} outside the IQR fences with local medians`);
       effects.push(
-        `Affects ${(iqr?.outlier_percentage ?? 0).toFixed(2)}% of readings — the rest are left untouched`,
+        `Affects ${(iqr?.outlier_percentage ?? 0).toFixed(2)}% of readings - the rest are left untouched`,
       );
     } else {
-      effects.push("No outliers detected — the dataset would pass through unchanged");
+      effects.push("No outliers detected - the dataset would pass through unchanged");
     }
   }
 
@@ -194,11 +194,11 @@ export function nextStepEffects(target: StageKey, report: QualityReport | null):
     const adf = report.stationarity_analysis;
     const d = report.differencing_analysis?.recommended_d;
     if (adf?.is_stationary) {
-      effects.push("Series is already stationary — differencing isn’t needed");
+      effects.push("Series is already stationary - differencing isn’t needed");
       effects.push(`ADF p-value ${(adf.p_value ?? 0).toFixed(4)} is already below 0.05`);
     } else if (d == null) {
       effects.push("Stationarity was not achieved even at second-order differencing");
-      effects.push("Differencing here may not help — consider forecasting the series as-is");
+      effects.push("Differencing here may not help - consider forecasting the series as-is");
     } else {
       effects.push(`Apply differencing of order d = ${d} to remove the trend`);
       effects.push("Values become period-over-period changes, not absolute kWh");
@@ -246,7 +246,7 @@ export function stageLabel(key: StageKey): string {
 }
 
 export function fmtDate(iso: string | null): string {
-  if (!iso) return "—";
+  if (!iso) return "-";
   try {
     return new Date(iso).toLocaleDateString("en-GB", {
       day: "2-digit", month: "short", year: "numeric",
@@ -257,7 +257,7 @@ export function fmtDate(iso: string | null): string {
 }
 
 export function fmtDateTime(iso: string | null): string {
-  if (!iso) return "—";
+  if (!iso) return "-";
   try {
     return new Date(iso).toLocaleString("en-GB", {
       day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",

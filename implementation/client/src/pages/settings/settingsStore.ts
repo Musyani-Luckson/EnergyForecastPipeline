@@ -8,7 +8,7 @@ const STORAGE_KEY = "befdss.settings.v1";
  * System parameters, held in a small external store.
  *
  * These belong to the installation rather than to a page, and the pipeline
- * reads them at the moment a step runs — so a module store subscribed to via
+ * reads them at the moment a step runs - so a module store subscribed to via
  * `useSyncExternalStore` keeps them available everywhere without threading a
  * provider through the tree.
  *
@@ -46,7 +46,7 @@ function persist(next: AppSettings) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
   } catch {
-    /* storage unavailable — settings still apply for this session */
+    /* storage unavailable - settings still apply for this session */
   }
   emit();
 }
@@ -59,7 +59,7 @@ export function resetSettings(): void {
   persist({ ...DEFAULT_SETTINGS });
 }
 
-/** Read the settings outside React — used by the pipeline call sites. */
+/** Read the settings outside React - used by the pipeline call sites. */
 export const getSettings = (): AppSettings => current;
 
 /** Whether anything differs from the shipped defaults. */

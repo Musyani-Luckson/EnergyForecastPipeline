@@ -12,7 +12,7 @@ from apps.forecasting.serializers import build_forecast_dto
 
 class OverviewView(APIView):
     """
-    Dashboard overview — aggregates pipeline and forecast state,
+    Dashboard overview - aggregates pipeline and forecast state,
     all queried from the normalized tables.
     """
 
@@ -50,7 +50,7 @@ class OverviewView(APIView):
 
 class AnalyticsView(APIView):
     """
-    Dashboard analytics — forecast series + metrics per run, derived
+    Dashboard analytics - forecast series + metrics per run, derived
     from the normalized tables.
     """
 

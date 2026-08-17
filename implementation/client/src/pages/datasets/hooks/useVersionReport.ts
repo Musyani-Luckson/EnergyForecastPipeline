@@ -9,7 +9,7 @@ interface UseVersionReportResult {
   loading: boolean;
   error: string | null;
   load: (versionId: number) => Promise<void>;
-  /** Any previously loaded report, by version id — powers checkpoint deltas. */
+  /** Any previously loaded report, by version id - powers checkpoint deltas. */
   reportFor: (versionId: number | undefined) => QualityReport | null;
   reset: () => void;
 }
@@ -37,7 +37,7 @@ export function useVersionReport(): UseVersionReportResult {
     setActiveId(versionId);
     setError(null);
 
-    // Already analysed — show it immediately: no spinner, no refetch.
+    // Already analysed - show it immediately: no spinner, no refetch.
     if (cacheRef.current[versionId]) {
       setLoading(false);
       return;

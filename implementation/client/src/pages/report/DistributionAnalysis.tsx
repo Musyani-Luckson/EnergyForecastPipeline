@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, Stat, StatGrid } from "./Section";
 import { num } from "./format";
 
-/** Abramowitz & Stegun 7.1.26 — good to ~1e-7, plenty for a shape curve. */
+/** Abramowitz & Stegun 7.1.26 - good to ~1e-7, plenty for a shape curve. */
 function erf(x: number): number {
   const sign = Math.sign(x);
   const t = 1 / (1 + 0.3275911 * Math.abs(x));
@@ -24,7 +24,7 @@ const cdf = (x: number) => 0.5 * (1 + erf(x / Math.SQRT2));
 
 /**
  * Skew-normal density, shaped by the measured skewness. This is an illustration
- * of the distribution's *shape* — the report API returns summary statistics
+ * of the distribution's *shape* - the report API returns summary statistics
  * only, with no binned frequencies, so a true histogram isn't available.
  */
 function densityCurve(skewness: number) {
@@ -44,7 +44,7 @@ function shapeLabel(data: DistributionAnalysisData): { text: string; variant: "s
   return { text: "Symmetric", variant: "success" };
 }
 
-/** Section 7 — the shape of the consumption distribution. */
+/** Section 7 - the shape of the consumption distribution. */
 export default function DistributionAnalysis({ data }: { data: DistributionAnalysisData }) {
   const curve = useMemo(() => densityCurve(data.skewness), [data.skewness]);
   const shape = shapeLabel(data);
@@ -85,7 +85,7 @@ export default function DistributionAnalysis({ data }: { data: DistributionAnaly
 
       <p className="flex items-start gap-1.5 text-[11px] text-slate-400 mb-3">
         <Info size={12} className="mt-0.5 shrink-0" />
-        Shape illustration derived from the measured skewness — not a histogram of the readings.
+        Shape illustration derived from the measured skewness - not a histogram of the readings.
       </p>
 
       <StatGrid cols={3}>

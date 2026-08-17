@@ -14,7 +14,7 @@ export default function StagePurposeHeader({ stage }: { stage: StageKey }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-slate-50/70 px-5 py-4">
       <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
-        Step {step} of {STAGE_ORDER.length} — Quality checkpoint
+        Step {step} of {STAGE_ORDER.length} - Quality checkpoint
       </p>
       <h2 className="text-base font-bold text-slate-900 mt-1">{purpose.title}</h2>
       <p className="text-sm text-slate-600 mt-1.5">{purpose.did}</p>

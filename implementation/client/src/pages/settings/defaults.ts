@@ -3,8 +3,8 @@
  * defaults.
  *
  * `wired` records whether changing a value reaches the backend. Three
- * endpoints already accept configuration — cleaning, outlier detection and
- * differencing — so those settings genuinely alter the pipeline. The SARIMA
+ * endpoints already accept configuration - cleaning, outlier detection and
+ * differencing - so those settings genuinely alter the pipeline. The SARIMA
  * engine and the accuracy thresholds are module-level constants with no
  * request field, so those are surfaced read-only rather than pretending to
  * take effect. Each entry names the file it came from.

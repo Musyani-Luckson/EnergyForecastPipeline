@@ -11,7 +11,7 @@ from apps.forecasting.serializers import (
 
 def _metrics_payload(forecast) -> dict:
     """Derive the metrics payload (with threshold verdicts) from the
-    stored EvaluationMetric — verdicts recomputed, not stored."""
+    stored EvaluationMetric - verdicts recomputed, not stored."""
     ev = getattr(forecast, "evaluation", None)
     if ev is None:
         return {}

@@ -28,7 +28,7 @@ const TONE: Record<ReadinessStatus, { text: string; ring: string; card: string; 
   },
 };
 
-/** Section 15 — the hero verdict for the whole report. */
+/** Section 15 - the hero verdict for the whole report. */
 export default function ForecastReadiness({ data }: { data: ForecastingReadinessData }) {
   const status = readinessStatus(data);
   const tone = TONE[status];
@@ -53,7 +53,7 @@ export default function ForecastReadiness({ data }: { data: ForecastingReadiness
           </div>
 
           <p className={cn("text-2xl font-bold mt-1", tone.text)}>
-            Grade {data.grade} — {data.score}%
+            Grade {data.grade} - {data.score}%
           </p>
 
           <p className="text-sm text-slate-600 mt-2">{READINESS_RECOMMENDATION[status]}</p>

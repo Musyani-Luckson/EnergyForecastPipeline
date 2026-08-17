@@ -6,7 +6,7 @@ import type { ServerRole } from "@/api/usersAPI";
  *
  * Administration is admin-only: managers run the forecasting pipeline but do
  * not create accounts, change roles or revoke access. This mirrors the server,
- * where every endpoint under /api/accounts/users/ carries `IsAdmin` — the UI
+ * where every endpoint under /api/accounts/users/ carries `IsAdmin` - the UI
  * gate is for clarity, not for security, and a manager who reached these calls
  * anyway would still be refused with a 403.
  */

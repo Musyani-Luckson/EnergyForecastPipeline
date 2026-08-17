@@ -9,7 +9,7 @@ interface DatasetRowProps {
   onOpen: () => void;
 }
 
-/** A single dataset in the list — summary only, no pipeline graphic. */
+/** A single dataset in the list - summary only, no pipeline graphic. */
 export default function DatasetRow({ run, onOpen }: DatasetRowProps) {
   return (
     <button

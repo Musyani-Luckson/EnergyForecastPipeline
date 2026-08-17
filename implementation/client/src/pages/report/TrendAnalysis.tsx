@@ -13,7 +13,7 @@ const DIRECTION = {
   stable: { icon: Minus, variant: "secondary" as const, label: "Stable" },
 };
 
-/** Section 10 — the long-run direction of consumption. */
+/** Section 10 - the long-run direction of consumption. */
 export default function TrendAnalysis({
   data,
   /** Number of observations, so the fitted line spans the real series length. */

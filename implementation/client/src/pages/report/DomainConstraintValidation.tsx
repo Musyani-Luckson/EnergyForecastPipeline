@@ -25,7 +25,7 @@ interface DomainConstraintValidationProps {
  * cannot be negative, so readings below zero are treated as anomalies and
  * imputed alongside statistical outliers.
  *
- * Rendered only when the constraint actually did something — most datasets
+ * Rendered only when the constraint actually did something - most datasets
  * carry no invalid readings and never see this panel.
  */
 export default function DomainConstraintValidation({

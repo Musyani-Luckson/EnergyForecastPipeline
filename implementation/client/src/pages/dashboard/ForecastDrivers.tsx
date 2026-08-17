@@ -28,7 +28,7 @@ const rate = (v: number, thresholds: [number, number, number, number]): number =
 /**
  * Why the model produced this forecast, rated from measurable evidence.
  *
- * These are strength ratings, not variance decomposition — SARIMA doesn't
+ * These are strength ratings, not variance decomposition - SARIMA doesn't
  * expose additive trend/seasonality contributions, so percentage splits would
  * be invented. Each rating names the figure it comes from.
  */
@@ -129,7 +129,7 @@ export default function ForecastDrivers({
 
       <p className="flex items-start gap-1.5 text-[11px] text-slate-400 mt-3">
         <Info size={12} className="mt-0.5 shrink-0" />
-        Strength ratings, not a variance decomposition — SARIMA doesn’t expose additive
+        Strength ratings, not a variance decomposition - SARIMA doesn’t expose additive
         trend/seasonality shares, so percentage splits aren’t derivable.
       </p>
     </Section>

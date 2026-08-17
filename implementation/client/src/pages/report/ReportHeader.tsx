@@ -15,7 +15,7 @@ interface ReportHeaderProps {
   actions?: ReactNode;
 }
 
-/** Title block for the quality report — identity and span of what was analysed. */
+/** Title block for the quality report - identity and span of what was analysed. */
 export default function ReportHeader({ title, subtitle, overview, actions }: ReportHeaderProps) {
   return (
     <div className="flex items-start justify-between gap-4 flex-wrap">
@@ -28,7 +28,7 @@ export default function ReportHeader({ title, subtitle, overview, actions }: Rep
           {subtitle && <p className="text-sm text-slate-500 mt-0.5">{subtitle}</p>}
           <div className="flex items-center gap-1.5 mt-2 flex-wrap">
             <Badge variant="outline" className="text-[11px]">
-              {shortDate(overview.start_date)} — {shortDate(overview.end_date)}
+              {shortDate(overview.start_date)} - {shortDate(overview.end_date)}
             </Badge>
             <Badge variant="outline" className="text-[11px]">
               {overview.rows.toLocaleString()} records

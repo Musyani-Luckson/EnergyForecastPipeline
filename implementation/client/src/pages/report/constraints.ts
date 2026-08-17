@@ -1,5 +1,5 @@
 /**
- * Domain constraint policy — the physical limits the pipeline enforces on
+ * Domain constraint policy - the physical limits the pipeline enforces on
  * metered consumption, independent of statistical outlier detection.
  *
  * The strategies below mirror the server's ReplacementEngine. Only

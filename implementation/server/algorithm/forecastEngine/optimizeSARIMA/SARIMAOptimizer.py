@@ -41,7 +41,7 @@ class SARIMAOptimizer:
         Fit every (p, d, q)(P, D, Q, s) combination and rank
         candidates by AIC (ascending).
 
-        d and D are fixed inputs — they come from the
+        d and D are fixed inputs - they come from the
         differencing analysis, not from the search.
 
         progress_callback, if given, is called after each candidate as
