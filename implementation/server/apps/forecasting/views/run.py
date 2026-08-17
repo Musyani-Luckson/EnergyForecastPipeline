@@ -1,5 +1,7 @@
 import pandas as pd
 
+from django.utils import timezone
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -139,6 +141,22 @@ class RunStatusView(APIView):
         if running_best is not None:
             running_best["aic"] = job.progress_best_aic
 
+        # How long the run has been going. Measured from the job's own
+        # started_at rather than from when the client began polling, so the
+        # figure stays correct across a page reload and is unaffected by any
+        # clock difference on the client. Once the run is finished this is the
+        # settled duration rather than a still-advancing one.
+        elapsed_seconds = None
+        if job.started_at:
+            end = job.completed_at if job.completed_at else timezone.now()
+            elapsed_seconds = max(0.0, (end - job.started_at).total_seconds())
+
+        finished = job.status in (
+            ProcessingJob.Status.COMPLETED,
+            ProcessingJob.Status.FAILED,
+            ProcessingJob.Status.CANCELLED,
+        )
+
         # The order chosen by the grid search, available once a Forecast
         # exists so the client can report what the search settled on.
         selected_model = (
@@ -172,6 +190,10 @@ class RunStatusView(APIView):
                         # lowest-AIC order seen so far in this search.
                         "candidate": candidate,
                         "best": running_best,
+                        # Seconds since the run started. Still advancing while
+                        # the job runs; settled once it has finished.
+                        "elapsed_seconds": elapsed_seconds,
+                        "is_running": not finished,
                     },
                     "selected_model": selected_model,
                     "error": job.error_message or None,

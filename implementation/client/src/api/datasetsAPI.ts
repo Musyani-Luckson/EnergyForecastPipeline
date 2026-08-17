@@ -269,6 +269,14 @@ export interface ForecastProgress {
   candidate: CandidateOrder | null;
   /** The lowest-AIC order seen so far in this search. */
   best: (CandidateOrder & { aic: number | null }) | null;
+  /**
+   * Seconds since the run started, measured server-side from the job's own
+   * start time. Still advancing while the run is going; settled once it
+   * finishes. Null before the job has started.
+   */
+  elapsed_seconds: number | null;
+  /** False once the run reaches a terminal state. */
+  is_running: boolean;
 }
 
 /** The order the grid search settled on; present once the model is fitted. */

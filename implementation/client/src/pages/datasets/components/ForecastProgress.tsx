@@ -1,8 +1,8 @@
-import { CheckCircle2, Loader2, Trophy } from "lucide-react";
+import { CheckCircle2, Clock, Loader2, Trophy } from "lucide-react";
 
 import type { ForecastProgress as Progress, SelectedModel } from "@/api/datasetsAPI";
 import { cn } from "@/lib/utils";
-import { formatOrder, type FittedEntry } from "./forecastProgressUtils";
+import { formatDuration, formatOrder, type FittedEntry } from "./forecastProgressUtils";
 
 /**
  * Live progress of a forecast run.
@@ -40,17 +40,38 @@ export default function ForecastProgress({
   // Newest first: the interesting end of a feed that outgrows its box.
   const recent = [...fitted].reverse().slice(0, 8);
 
+  // Taken straight from the server, which measures it from the job's own
+  // start time: correct across a reload, immune to clock differences here,
+  // and refreshed on every poll, which is often enough for a duration.
+  const elapsed = progress?.elapsed_seconds ?? null;
+
   return (
     <div className="w-full py-10">
-      <div className="flex items-center gap-2.5">
-        {done ? (
-          <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
-        ) : (
-          <Loader2 size={18} className="animate-spin text-blue-600 shrink-0" />
+      <div className="flex items-center justify-between gap-4 flex-wrap">
+        <div className="flex items-center gap-2.5">
+          {done ? (
+            <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
+          ) : (
+            <Loader2 size={18} className="animate-spin text-blue-600 shrink-0" />
+          )}
+          <h2 className="text-base font-semibold text-slate-900">
+            {done ? "Forecast complete" : "Running SARIMA forecast…"}
+          </h2>
+        </div>
+
+        {/* How long this run has been going, so a search that takes minutes
+            does not look stalled. */}
+        {elapsed !== null && (
+          <div
+            className={cn(
+              "flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium tabular-nums",
+              done ? "bg-emerald-50 text-emerald-700" : "bg-slate-100 text-slate-600",
+            )}
+          >
+            <Clock size={13} className="shrink-0" />
+            {done ? `Completed in ${formatDuration(elapsed)}` : `${formatDuration(elapsed)} elapsed`}
+          </div>
         )}
-        <h2 className="text-base font-semibold text-slate-900">
-          {done ? "Forecast complete" : "Running SARIMA forecast…"}
-        </h2>
       </div>
 
       {/* Two columns across the full width: what the run is doing on the left,
