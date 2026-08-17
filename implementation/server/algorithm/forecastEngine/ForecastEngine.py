@@ -45,6 +45,11 @@ class ForecastEngine:
         "q_range": SARIMAOptimizer.DEFAULT_Q_RANGE,
         "P_range": SARIMAOptimizer.DEFAULT_SEASONAL_P_RANGE,
         "Q_range": SARIMAOptimizer.DEFAULT_SEASONAL_Q_RANGE,
+        # Processes the grid search fits across. None lets the
+        # optimiser size the pool from the available cores; 1 fits
+        # sequentially. Parallelism shortens the search without
+        # changing which model it selects.
+        "workers": None,
     }
 
     def __init__(self, configuration: dict | None = None):
@@ -172,6 +177,7 @@ class ForecastEngine:
             q_range=config["q_range"],
             P_range=config["P_range"],
             Q_range=config["Q_range"],
+            workers=config["workers"],
             progress_callback=lambda done, total, evaluated, best: report(
                 "optimizing", done, total, evaluated, best
             ),

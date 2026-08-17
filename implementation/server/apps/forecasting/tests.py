@@ -371,3 +371,71 @@ class DifferencedReportTests(TestCase):
             resolve_value_column(pd.DataFrame({DIFFERENCED_VALUE_COLUMN: [1.0]})),
             DIFFERENCED_VALUE_COLUMN,
         )
+
+
+class GridSearchParallelTests(TestCase):
+    """Parallel fitting must shorten the search without altering it."""
+
+    def _series(self, n=200):
+        rng = np.random.default_rng(11)
+        t = np.arange(n)
+        return pd.Series(
+            100 + 0.05 * t + 8 * np.sin(2 * np.pi * t / 7) + rng.normal(0, 2, n),
+            index=pd.date_range("2024-01-01", periods=n, freq="D"),
+        )
+
+    SMALL = dict(p_range=(0, 1), q_range=(0, 1), P_range=(0, 1), Q_range=(0,))
+
+    def test_parallel_matches_sequential_exactly(self):
+        from algorithm.forecastEngine.optimizeSARIMA.SARIMAOptimizer import SARIMAOptimizer
+
+        s = self._series()
+        seq = SARIMAOptimizer.grid_search(s, d=1, D=0, seasonal_period=7, workers=1, **self.SMALL)
+        par = SARIMAOptimizer.grid_search(s, d=1, D=0, seasonal_period=7, workers=2, **self.SMALL)
+
+        self.assertEqual(seq["best"]["order"], par["best"]["order"])
+        self.assertEqual(seq["best"]["seasonal_order"], par["best"]["seasonal_order"])
+        self.assertEqual(seq["evaluated"], par["evaluated"])
+        self.assertEqual(
+            [(c["order"], c["seasonal_order"]) for c in seq["candidates"]],
+            [(c["order"], c["seasonal_order"]) for c in par["candidates"]],
+        )
+        for a, b in zip(seq["candidates"], par["candidates"]):
+            self.assertAlmostEqual(a["aic"], b["aic"], places=6)
+
+    def test_progress_is_reported_for_every_candidate(self):
+        from algorithm.forecastEngine.optimizeSARIMA.SARIMAOptimizer import SARIMAOptimizer
+
+        seen = []
+        SARIMAOptimizer.grid_search(
+            self._series(), d=1, D=0, seasonal_period=7, workers=2,
+            progress_callback=lambda done, total, ev, best: seen.append((done, total, ev)),
+            **self.SMALL,
+        )
+        # (0,1) x (0,1) x (0,1) x (0,) = 8 combinations.
+        self.assertEqual(len(seen), 8)
+        self.assertEqual([d for d, _, _ in seen], [1, 2, 3, 4, 5, 6, 7, 8])
+        self.assertTrue(all(t == 8 for _, t, _ in seen))
+        # Each candidate is fitted exactly once, whatever order they finish in.
+        fitted = {(tuple(ev["order"]), tuple(ev["seasonal_order"])) for _, _, ev in seen}
+        self.assertEqual(len(fitted), 8)
+
+    def test_worker_count_is_reported_and_bounded(self):
+        from algorithm.forecastEngine.optimizeSARIMA.SARIMAOptimizer import (
+            SARIMAOptimizer, default_workers,
+        )
+
+        result = SARIMAOptimizer.grid_search(
+            self._series(), d=1, D=0, seasonal_period=7, workers=1, **self.SMALL
+        )
+        self.assertEqual(result["workers"], 1)
+        self.assertGreaterEqual(default_workers(), 1)
+
+    def test_ranking_is_deterministic_under_equal_aic(self):
+        """Ties break on the orders, not on which fit finished first."""
+        from algorithm.forecastEngine.optimizeSARIMA.SARIMAOptimizer import _rank_key
+
+        a = {"aic": 100.0, "order": [0, 1, 1], "seasonal_order": [0, 0, 0, 7]}
+        b = {"aic": 100.0, "order": [0, 1, 0], "seasonal_order": [0, 0, 0, 7]}
+        self.assertEqual(sorted([a, b], key=_rank_key)[0], b)
+        self.assertEqual(sorted([b, a], key=_rank_key)[0], b)
