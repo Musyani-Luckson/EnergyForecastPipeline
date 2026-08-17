@@ -28,7 +28,7 @@ class ReportGeneratorTests(TestCase):
         )
         self.forecast = Forecast.objects.create(
             processing_job=self.job, dataset=self.dataset,
-            stationary_dataset_version=self.raw,
+            source_dataset_version=self.raw,
             p=1, d=1, q=0, seasonal_p=1, seasonal_d=0, seasonal_q=0, seasonal_period=7,
             aic=193.0, bic=203.0, forecast_horizon=3,
         )

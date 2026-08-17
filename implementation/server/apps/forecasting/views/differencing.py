@@ -6,7 +6,12 @@ from algorithm.forecastEngine.differencing.DifferencingEngine import Differencin
 from algorithm.forecastEngine.stationarity.StationarityEngine import StationarityEngine
 
 from apps.processing.models import DatasetVersion, PreprocessingLog, Stage
-from apps.processing.services import load_version_series, next_version, VALUE_COLUMN
+from apps.processing.services import (
+    load_version_series,
+    next_version,
+    DIFFERENCED_VALUE_COLUMN,
+    VALUE_COLUMN,
+)
 
 
 class DifferencingView(APIView):
@@ -40,7 +45,15 @@ class DifferencingView(APIView):
             )
             report = StationarityEngine.analyze(differenced)
 
-            frame = differenced.rename(VALUE_COLUMN).reset_index()
+            # With d=0 and D=0 nothing was differenced, so the values are still
+            # consumption and keep the consumption column. Once differenced they
+            # are period-over-period change and must not be labelled as kWh
+            # levels — negative changes are normal there, and calling them
+            # consumption would make them read as invalid energy readings.
+            was_differenced = order > 0 or seasonal_order > 0
+            column = DIFFERENCED_VALUE_COLUMN if was_differenced else VALUE_COLUMN
+
+            frame = differenced.rename(column).reset_index()
             stationary_version = next_version(source, Stage.STATIONARY, frame, "stationary")
 
             PreprocessingLog.objects.create(
@@ -63,6 +76,8 @@ class DifferencingView(APIView):
                         "stationary_id": stationary_version.id,
                         "run_id": str(stationary_version.processing_job_id),
                         "stage": "STATIONARY",
+                        "value_column": column,
+                        "is_differenced": was_differenced,
                         "stationarity": report,
                     },
                 }

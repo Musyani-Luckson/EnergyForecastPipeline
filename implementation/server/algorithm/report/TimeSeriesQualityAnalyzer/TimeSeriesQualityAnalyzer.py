@@ -35,8 +35,19 @@ class TimeSeriesQualityAnalyzer:
 
     @staticmethod
     def extract(
-        df, datetime_col="Date", value_col="Daily_kWh", minimum_expected_records=365
+        df,
+        datetime_col="Date",
+        value_col="Daily_kWh",
+        minimum_expected_records=365,
+        is_differenced=False,
     ):
+        """
+        Assemble the quality report for one dataset version.
+
+        `is_differenced` marks a series holding period-over-period change
+        rather than consumption levels, so the domain-validity check does
+        not report ordinary decreases as invalid energy readings.
+        """
 
         dataset_overview = DatasetOverviewAnalyzer.analyze(df, datetime_col)
 
@@ -54,7 +65,9 @@ class TimeSeriesQualityAnalyzer:
 
         distribution_analysis = DistributionAnalysisAnalyzer.analyze(df, value_col)
 
-        energy_value_analysis = EnergyValueAnalyzer.analyze(df, value_col)
+        energy_value_analysis = EnergyValueAnalyzer.analyze(
+            df, value_col, is_differenced=is_differenced
+        )
 
         outlier_analysis = OutlierAnalysisAnalyzer.analyze(df, value_col)
 

@@ -52,7 +52,12 @@ export default function QualityReportView({
   // domain-constraint panel at all.
   const invalidBefore = previous?.energy_value_analysis?.negative_values_count ?? 0;
   const invalidNow = report.energy_value_analysis.negative_values_count;
-  const constraintApplied = invalidBefore > invalidNow || invalidNow > 0;
+  // A differenced version has no domain constraint to report: its negative
+  // entries are decreases in demand, so counting them as invalid readings
+  // would present ordinary behaviour as a violation.
+  const isDifferenced = report.energy_value_analysis.is_differenced === true;
+  const constraintApplied =
+    !isDifferenced && (invalidBefore > invalidNow || invalidNow > 0);
 
   return (
     <div className="space-y-4">

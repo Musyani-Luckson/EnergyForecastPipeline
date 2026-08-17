@@ -18,6 +18,7 @@ from utils.data_loader import load_dataset
 
 from .models import Dataset
 from apps.processing.models import ProcessingJob, DatasetVersion, Stage
+from apps.processing.services import DIFFERENCED_VALUE_COLUMN, resolve_value_column
 
 
 # Client-facing stage keys (uppercase) in pipeline order.
@@ -154,7 +155,15 @@ class DatasetReportView(APIView):
 
         try:
             dataframe = load_dataset(version.file_path)["dataframe"]
-            report = TimeSeriesQualityAnalyzer.extract(dataframe)
+            # A differenced version stores change rather than consumption, so
+            # the report is told which it is holding; otherwise its ordinary
+            # negative changes would be reported as invalid energy readings.
+            value_column = resolve_value_column(dataframe)
+            report = TimeSeriesQualityAnalyzer.extract(
+                dataframe,
+                value_col=value_column,
+                is_differenced=value_column == DIFFERENCED_VALUE_COLUMN,
+            )
             from dataclasses import asdict
 
             # Normalize numpy scalar types to native Python for JSON.
@@ -278,11 +287,14 @@ class DatasetSeriesView(APIView):
             version = versions[version_id]
             try:
                 df = load_dataset(version.file_path)["dataframe"].copy()
+                # Differenced versions carry their own column; resolving it
+                # keeps the stationary layer plottable on the evolution chart.
+                column = resolve_value_column(df)
                 df["Date"] = pd.to_datetime(df["Date"])
-                df = df.dropna(subset=["Daily_kWh"]).sort_values("Date")
+                df = df.dropna(subset=[column]).sort_values("Date")
                 points = [
                     {"date": d.strftime("%Y-%m-%d"), "value": float(v)}
-                    for d, v in zip(df["Date"], df["Daily_kWh"])
+                    for d, v in zip(df["Date"], df[column])
                 ]
             except Exception:
                 points = []

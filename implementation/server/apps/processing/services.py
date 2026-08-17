@@ -13,6 +13,25 @@ from apps.processing.models import DatasetVersion, ProcessingJob, Stage
 DATE_COLUMN = "Date"
 VALUE_COLUMN = "Daily_kWh"
 
+# Differenced artefacts hold period-over-period change, not consumption, so
+# they carry a distinct column name. Storing them under VALUE_COLUMN would
+# label a change as a level, and would make legitimate negative differences
+# look like physically impossible energy readings.
+DIFFERENCED_VALUE_COLUMN = "Daily_kWh_diff"
+
+
+def resolve_value_column(df) -> str:
+    """
+    Return whichever value column a version's file actually carries.
+
+    A STATIONARY version written with d=0 and D=0 is unchanged from its
+    source and therefore still holds consumption under VALUE_COLUMN, so the
+    stage alone cannot decide this — the file has to be asked.
+    """
+    if DIFFERENCED_VALUE_COLUMN in getattr(df, "columns", []):
+        return DIFFERENCED_VALUE_COLUMN
+    return VALUE_COLUMN
+
 
 def _timestamp() -> str:
     return (
@@ -30,11 +49,20 @@ def load_version_df(version: DatasetVersion) -> pd.DataFrame:
 
 def load_version_series(
     version: DatasetVersion,
-    value_column: str = VALUE_COLUMN,
+    value_column: str | None = None,
     date_column: str = DATE_COLUMN,
 ) -> pd.Series:
-    """Load a version's value column as a date-indexed Series."""
+    """
+    Load a version's value column as a date-indexed Series.
+
+    The column is resolved from the file when not given explicitly, so a
+    differenced version loads correctly without every caller having to know
+    which stage produced it.
+    """
     df = load_dataset(version.file_path)["dataframe"]
+
+    if value_column is None:
+        value_column = resolve_value_column(df)
 
     if value_column not in df.columns:
         raise ValueError(

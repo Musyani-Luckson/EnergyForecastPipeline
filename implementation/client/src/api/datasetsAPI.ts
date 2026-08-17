@@ -90,6 +90,12 @@ export interface EnergyValueAnalysisData {
   zero_values_count: number;
   has_negative_values: boolean;
   has_zero_values: boolean;
+  /**
+   * True when the version holds period-over-period change rather than
+   * consumption levels. Negative values are then ordinary decreases in
+   * demand, not physically impossible readings.
+   */
+  is_differenced?: boolean;
   is_energy_data_valid: boolean;
 }
 

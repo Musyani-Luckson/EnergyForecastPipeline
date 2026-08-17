@@ -71,12 +71,19 @@ export function deriveFindings(report: QualityReport): Finding[] {
 
   const energy = report.energy_value_analysis;
   findings.push(
-    energy.is_energy_data_valid
-      ? { tone: "pass", text: "Energy values are valid — no negative or zero readings." }
-      : {
-          tone: "warn",
-          text: `${plural(energy.negative_values_count, "negative reading")} and ${plural(energy.zero_values_count, "zero reading")} require review.`,
-        },
+    energy.is_differenced
+      ? {
+          // Differenced values are changes, so negatives are decreases in
+          // demand rather than impossible readings.
+          tone: "pass",
+          text: `Differenced series — ${plural(energy.negative_values_count, "period")} show a fall in demand, which is expected.`,
+        }
+      : energy.is_energy_data_valid
+        ? { tone: "pass", text: "Energy values are valid — no negative or zero readings." }
+        : {
+            tone: "warn",
+            text: `${plural(energy.negative_values_count, "negative reading")} and ${plural(energy.zero_values_count, "zero reading")} require review.`,
+          },
   );
 
   const outliers = report.outlier_analysis.iqr_method;

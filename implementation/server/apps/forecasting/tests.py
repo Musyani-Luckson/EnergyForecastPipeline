@@ -175,7 +175,7 @@ class RunStatusPayloadTests(TestCase):
             stage=Stage.OUTLIERS, file_path="x.csv", record_count=1, checksum="c",
         )
         Forecast.objects.create(
-            processing_job=job, dataset=dataset, stationary_dataset_version=version,
+            processing_job=job, dataset=dataset, source_dataset_version=version,
             p=1, d=1, q=1, seasonal_p=0, seasonal_d=0, seasonal_q=1,
             seasonal_period=7, aic=123.45, bic=130.0, forecast_horizon=30,
         )
@@ -272,3 +272,102 @@ class CandidateFeedTests(TestCase):
         self.assertEqual(progress["candidate"], {"order": [1, 1, 1], "seasonal_order": [1, 0, 0, 7]})
         self.assertEqual(progress["best"]["order"], [0, 1, 1])
         self.assertAlmostEqual(progress["best"]["aic"], 530.54)
+
+
+class StationaryGuardTests(TestCase):
+    """Forecasting an already-differenced version must be refused."""
+
+    def _version(self, stage):
+        from apps.accounts.models import User
+        from apps.datasets.models import Dataset
+        from apps.processing.models import ProcessingJob, DatasetVersion
+
+        user = User.objects.create_user(email=f"g{stage}@e.local", password="x")
+        dataset = Dataset.objects.create(
+            user=user, dataset_name="d.csv", original_filename="d.csv"
+        )
+        job = ProcessingJob.objects.create(dataset=dataset, job_name="p")
+        version = DatasetVersion.objects.create(
+            processing_job=job, dataset=dataset, version_number=1,
+            stage=stage, file_path="x.csv", record_count=1, checksum="c",
+        )
+        return user, version
+
+    def _post(self, user, version):
+        from rest_framework.test import APIRequestFactory, force_authenticate
+        from apps.forecasting.views.run import RunForecastView
+
+        request = APIRequestFactory().post(
+            "/api/forecasting/run/", {"dataset_id": version.id}, format="json"
+        )
+        force_authenticate(request, user=user)
+        return RunForecastView.as_view()(request)
+
+    def test_stationary_version_is_rejected(self):
+        from apps.processing.models import Stage
+
+        user, version = self._version(Stage.STATIONARY)
+        response = self._post(user, version)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertFalse(response.data["success"])
+        self.assertIn("period-over-period change", response.data["message"])
+
+    def test_outliers_version_passes_the_guard(self):
+        """The guard must not block the version the model is meant to use."""
+        from unittest.mock import patch
+        from apps.processing.models import Stage, ProcessingJob
+
+        user, version = self._version(Stage.OUTLIERS)
+
+        # The runner is stubbed: this asserts the guard lets the version
+        # through, not that a forecast succeeds.
+        with patch(
+            "apps.forecasting.views.run.ForecastRunner.run",
+            return_value=ProcessingJob.objects.get(pk=version.processing_job_id),
+        ) as run:
+            response = self._post(user, version)
+
+        run.assert_called_once()
+        self.assertNotEqual(response.status_code, 400)
+
+
+class DifferencedReportTests(TestCase):
+    """A differenced version must not be reported as invalid energy data."""
+
+    def test_negatives_are_not_a_domain_violation_when_differenced(self):
+        import pandas as pd
+        from algorithm.report.analyzers.EnergyValueAnalyzer import EnergyValueAnalyzer
+
+        # Changes: down 30, up 20, down 10 — ordinary demand movement.
+        df = pd.DataFrame({"Daily_kWh_diff": [-30.0, 20.0, -10.0]})
+
+        differenced = EnergyValueAnalyzer.analyze(
+            df, value_col="Daily_kWh_diff", is_differenced=True
+        )
+        self.assertEqual(differenced["negative_values_count"], 2)
+        self.assertTrue(differenced["is_differenced"])
+        self.assertTrue(differenced["is_energy_data_valid"])
+
+    def test_negatives_remain_a_violation_for_consumption(self):
+        import pandas as pd
+        from algorithm.report.analyzers.EnergyValueAnalyzer import EnergyValueAnalyzer
+
+        df = pd.DataFrame({"Daily_kWh": [-5.0, 20.0, 30.0]})
+        levels = EnergyValueAnalyzer.analyze(df, value_col="Daily_kWh")
+
+        self.assertEqual(levels["negative_values_count"], 1)
+        self.assertFalse(levels["is_differenced"])
+        self.assertFalse(levels["is_energy_data_valid"])
+
+    def test_value_column_resolution(self):
+        import pandas as pd
+        from apps.processing.services import (
+            resolve_value_column, VALUE_COLUMN, DIFFERENCED_VALUE_COLUMN,
+        )
+
+        self.assertEqual(resolve_value_column(pd.DataFrame({VALUE_COLUMN: [1.0]})), VALUE_COLUMN)
+        self.assertEqual(
+            resolve_value_column(pd.DataFrame({DIFFERENCED_VALUE_COLUMN: [1.0]})),
+            DIFFERENCED_VALUE_COLUMN,
+        )

@@ -47,23 +47,36 @@ function ValidationCard({
 
 /** Section 8 — physical plausibility of the energy readings. */
 export default function EnergyValueAnalysis({ data }: { data: EnergyValueAnalysisData }) {
+  // A differenced version measures change between consecutive periods, so the
+  // non-negativity rule does not apply to it: a negative entry is a fall in
+  // demand, not an impossible meter reading.
+  const differenced = data.is_differenced === true;
+
   return (
     <Section
       icon={data.is_energy_data_valid ? ShieldCheck : ShieldAlert}
       title="Energy Data Validation"
-      description="Readings that are physically implausible for metered consumption."
+      description={
+        differenced
+          ? "This version holds period-over-period change, so negative entries are expected decreases in demand."
+          : "Readings that are physically implausible for metered consumption."
+      }
       action={
         <Badge variant={data.is_energy_data_valid ? "success" : "warning"}>
-          {data.is_energy_data_valid ? "Valid" : "Needs review"}
+          {differenced ? "Differenced series" : data.is_energy_data_valid ? "Valid" : "Needs review"}
         </Badge>
       }
     >
       <div className="grid sm:grid-cols-3 gap-2.5">
         <ValidationCard
-          label="Negative values"
+          label={differenced ? "Decreases" : "Negative values"}
           count={data.negative_values_count}
-          ok={!data.has_negative_values}
-          explanation="Consumption cannot be below zero"
+          ok={differenced || !data.has_negative_values}
+          explanation={
+            differenced
+              ? "Periods where demand fell — expected here"
+              : "Consumption cannot be below zero"
+          }
         />
         <ValidationCard
           label="Zero values"
@@ -89,9 +102,11 @@ export default function EnergyValueAnalysis({ data }: { data: EnergyValueAnalysi
             {data.is_energy_data_valid ? "Passed" : "Flagged"}
           </p>
           <p className="text-[11px] text-slate-500 mt-0.5">
-            {data.is_energy_data_valid
-              ? "All readings are plausible"
-              : "Some readings need investigation"}
+            {differenced
+              ? "Change values — the non-negative rule does not apply"
+              : data.is_energy_data_valid
+                ? "All readings are plausible"
+                : "Some readings need investigation"}
           </p>
         </div>
       </div>

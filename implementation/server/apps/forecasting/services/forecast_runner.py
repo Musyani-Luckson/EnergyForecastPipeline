@@ -188,7 +188,7 @@ class ForecastRunner:
             forecast = Forecast.objects.create(
                 processing_job=job,
                 dataset=job.dataset,
-                stationary_dataset_version=source,
+                source_dataset_version=source,
                 p=order[0], d=order[1], q=order[2],
                 seasonal_p=seasonal[0], seasonal_d=seasonal[1],
                 seasonal_q=seasonal[2], seasonal_period=seasonal[3],

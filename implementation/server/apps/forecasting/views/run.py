@@ -6,7 +6,7 @@ from rest_framework import status
 
 from utils.data_loader import load_dataset
 
-from apps.processing.models import DatasetVersion, ProcessingJob
+from apps.processing.models import DatasetVersion, ProcessingJob, Stage
 from apps.forecasting.models import Forecast
 from apps.forecasting.serializers import build_forecast_dto
 from apps.forecasting.services.forecast_runner import ForecastRunner
@@ -45,6 +45,28 @@ class RunForecastView(APIView):
             return Response(
                 {"success": False, "message": f"Dataset version {version_id} not found.", "data": None},
                 status=status.HTTP_404_NOT_FOUND,
+            )
+
+        # The engine is given an undifferenced series and told the differencing
+        # orders, which SARIMAX then applies and inverts internally. Fitting it
+        # on an already-differenced version would difference the data twice and
+        # return a forecast of change rather than of consumption, so the
+        # STATIONARY stage is refused here rather than relying on the client to
+        # send the right version.
+        if source.stage == Stage.STATIONARY:
+            return Response(
+                {
+                    "success": False,
+                    "message": (
+                        "Cannot forecast a STATIONARY version: its values are "
+                        "period-over-period change, and the model applies "
+                        "differencing itself. Supply the OUTLIERS version (or "
+                        "CLEANED, if outlier treatment was declined), which "
+                        "holds consumption in kWh."
+                    ),
+                    "data": {"dataset_id": source.id, "stage": source.stage.upper()},
+                },
+                status=status.HTTP_400_BAD_REQUEST,
             )
 
         job = ForecastRunner.run(source, background=background)
@@ -180,7 +202,7 @@ class ForecastSeriesView(APIView):
 
         try:
             forecast = (
-                Forecast.objects.select_related("stationary_dataset_version")
+                Forecast.objects.select_related("source_dataset_version")
                 .prefetch_related("values")
                 .get(pk=forecast_id)
             )
@@ -190,7 +212,7 @@ class ForecastSeriesView(APIView):
                 status=status.HTTP_404_NOT_FOUND,
             )
 
-        version = forecast.stationary_dataset_version
+        version = forecast.source_dataset_version
         try:
             df = load_dataset(version.file_path)["dataframe"]
             df = df.copy()

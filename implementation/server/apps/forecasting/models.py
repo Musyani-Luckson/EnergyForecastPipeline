@@ -18,7 +18,12 @@ class Forecast(models.Model):
         on_delete=models.CASCADE,
         related_name="forecasts",
     )
-    stationary_dataset_version = models.ForeignKey(
+    # The version the model was actually fitted on. This is the last version
+    # still holding consumption in kWh — normally OUTLIERS, or CLEANED where
+    # outlier treatment was declined — never the differenced STATIONARY
+    # version: SARIMAX is given an undifferenced series and applies the
+    # differencing orders itself.
+    source_dataset_version = models.ForeignKey(
         "processing.DatasetVersion",
         on_delete=models.PROTECT,
         related_name="forecasts",
