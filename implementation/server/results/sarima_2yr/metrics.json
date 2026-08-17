@@ -1,0 +1,45 @@
+{
+  "experiment": "2-year model",
+  "training_file": "2yrs.csv",
+  "validation_file": "2010.csv",
+  "training_observations": 731,
+  "training_period": "2008-01-01 to 2009-12-31",
+  "outliers_detected": 13,
+  "adf_statistic": -2.1769763052037847,
+  "adf_p_value": 0.21470758497219522,
+  "adf_is_stationary": false,
+  "seasonal_period": 7,
+  "differencing_d": 1,
+  "differencing_D": 0,
+  "selected_order": [
+    0,
+    1,
+    3
+  ],
+  "selected_seasonal_order": [
+    2,
+    0,
+    2,
+    7
+  ],
+  "aic": 4517.362211067862,
+  "bic": 4553.906834359157,
+  "candidates_fitted": 144,
+  "candidates_failed": 0,
+  "forecast_horizon_days": 30,
+  "observations_matched": 29,
+  "dates_without_an_actual": [
+    "2010-01-13"
+  ],
+  "mae": 6.0786612509013755,
+  "rmse": 8.324212882571592,
+  "mape_percent": 27.15997960175126,
+  "bias_mean_error": -4.3429367724749515,
+  "observations_inside_interval": 25,
+  "observations_outside_interval": 4,
+  "empirical_coverage_percent": 86.20689655172413,
+  "coverage_denominator": 29,
+  "average_interval_width": 32.09118800292052,
+  "minimum_interval_width": 22.25161329600934,
+  "maximum_interval_width": 41.027230107944135
+}
