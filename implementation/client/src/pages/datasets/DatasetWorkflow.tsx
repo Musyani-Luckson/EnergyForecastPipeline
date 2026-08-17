@@ -19,7 +19,8 @@ import {
 import StageStepper from "./components/StageStepper";
 import StagePurposeHeader from "./components/StagePurposeHeader";
 import QualityReport from "./components/QualityReport";
-import ForecastProgress, { formatOrder, type FittedEntry } from "./components/ForecastProgress";
+import ForecastProgress from "./components/ForecastProgress";
+import { formatOrder, type FittedEntry } from "./components/forecastProgressUtils";
 import { QualityReportView } from "@/pages/report";
 import NextStepCard from "./components/NextStepCard";
 import { ForecastDashboard } from "@/pages/dashboard";
@@ -44,7 +45,7 @@ export default function DatasetWorkflow() {
   const filename = run?.pipeline.RAW?.name ?? startNode?.name ?? "Dataset";
 
   const report = useVersionReport();
-  /** The furthest stage reached — where the pipeline actually is. */
+  /** The furthest stage reached - where the pipeline actually is. */
   const [activeStage, setActiveStage] = useState<StageKey | null>(null);
   /** The checkpoint being viewed; differs from `activeStage` when reviewing. */
   const [viewStage, setViewStage] = useState<StageKey | null>(null);
@@ -132,7 +133,7 @@ export default function DatasetWorkflow() {
           setForecast(result);
           if (result) {
             // Chart data: the forecast's own series, plus every preprocessing
-            // stage for the evolution overlay. Enrichment only — a failure here
+            // stage for the evolution overlay. Enrichment only - a failure here
             // leaves the dashboard usable.
             const stageIds = HISTORY_STAGES.map((s) => versionIds[s]).filter(
               (id): id is number => id != null,
@@ -146,25 +147,25 @@ export default function DatasetWorkflow() {
           }
         }
       } catch {
-        /* transient — keep polling */
+        /* transient - keep polling */
       }
     }, 2500);
   };
 
-  /** The checkpoint on screen — the furthest reached, unless reviewing. */
+  /** The checkpoint on screen - the furthest reached, unless reviewing. */
   const shownStage = viewStage ?? activeStage;
   /** The step the user is being asked to decide about next. */
   const target = shownStage ? nextStage(shownStage, skipped) : null;
 
   /**
    * The latest version still in real kWh. Differencing and forecasting both
-   * read from this — never from STATIONARY, whose values are period-over-period
+   * read from this - never from STATIONARY, whose values are period-over-period
    * changes rather than absolute consumption.
    */
   const sourceVersionId =
     versionIds.OUTLIERS ?? versionIds.CLEANED ?? versionIds.RAW ?? startNode?.id;
 
-  /** Which stage that version is — labels the history plotted on the chart. */
+  /** Which stage that version is - labels the history plotted on the chart. */
   const sourceStage: StageKey | undefined =
     versionIds.OUTLIERS != null
       ? "OUTLIERS"
@@ -243,7 +244,7 @@ export default function DatasetWorkflow() {
   };
 
   /**
-   * Decline an optional transformation. No API call — the stage is simply
+   * Decline an optional transformation. No API call - the stage is simply
    * marked skipped and the next decision is offered in its place. The analysis
    * behind it stays in every report; only the transformation is declined.
    */
@@ -288,13 +289,13 @@ export default function DatasetWorkflow() {
   const reviewing = shown !== activeStage;
   const targetStep = target ?? undefined;
 
-  // The checkpoint immediately before the one on screen — the delta baseline.
+  // The checkpoint immediately before the one on screen - the delta baseline.
   const previousStage = STAGE_ORDER.slice(0, STAGE_ORDER.indexOf(shown))
     .filter((s) => versionIds[s] != null)
     .at(-1);
   const previousReport = report.reportFor(previousStage && versionIds[previousStage]);
 
-  // Readiness at every checkpoint analysed so far — the pipeline's storyline.
+  // Readiness at every checkpoint analysed so far - the pipeline's storyline.
   const trajectory = STAGE_ORDER.slice(0, STAGE_ORDER.indexOf(shown) + 1).reduce<TrajectoryPoint[]>(
     (acc, stage) => {
       const r = report.reportFor(versionIds[stage]);
@@ -344,7 +345,7 @@ export default function DatasetWorkflow() {
               <li key={s} className="flex items-center justify-between gap-3 flex-wrap">
                 <span className="text-sm text-slate-600">
                   <span className="font-medium text-slate-700">{SKIPPED_NOTE[s].title}</span>{" "}
-                  — {SKIPPED_NOTE[s].detail}
+                  - {SKIPPED_NOTE[s].detail}
                 </span>
                 <button
                   onClick={() => unskipStep(s)}
